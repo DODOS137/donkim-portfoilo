@@ -110,8 +110,8 @@ const Slider = () => {
   return (
     <div className="relative w-full h-screen">
       {/* Main Slider */}
-      <div className="w-full h-full flex justify-center items-center overflow-hidden">
-        <div className="w-[80%] h-[70%] relative">
+      <div className="w-full h-full flex justify-center items-center">
+        <div className="w-full h-full relative bg-gray-400">
           {slides.map((slide, index) => (
             <Link
               key={index}
@@ -137,17 +137,17 @@ const Slider = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-4 right-4 md:bottom-10 md:right-10 flex space-x-2">
+        <div className="absolute bottom-4 right-4 flex space-x-0 border border-white">
           <button
             onClick={prevSlide}
-            className="nav-button bg-transparent text-white border border-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none"
+            className="nav-button bg-transparent text-white border-r border-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none"
             aria-label="Previous slide"
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
           <button
             onClick={nextSlide}
-            className="nav-button bg-transparent text-white border border-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none"
+            className="nav-button bg-transparent text-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none"
             aria-label="Next slide"
           >
             <ArrowRight className="h-5 w-5" />
@@ -156,13 +156,15 @@ const Slider = () => {
       </div>
 
       {/* Indicators */}
-      <SliderControls
-        totalSlides={slides.length}
-        currentIndex={currentIndex}
-        goToSlide={goToSlide}
-        prevSlide={prevSlide}
-        nextSlide={nextSlide}
-      />
+      <div className="absolute bottom-32 left-32">
+        <SliderControls
+          totalSlides={slides.length}
+          currentIndex={currentIndex}
+          goToSlide={goToSlide}
+          prevSlide={prevSlide}
+          nextSlide={nextSlide}
+        />
+      </div>
     </div>
   );
 };
