@@ -108,7 +108,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-[calc(100vh-64px)]">
       {/* Main Slider */}
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full h-full relative bg-gray-400">
