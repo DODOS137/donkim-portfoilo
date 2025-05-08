@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
-
 interface Project {
   id: string;
   title: string;
@@ -12,7 +10,6 @@ interface Project {
   fullDescription?: string;
   imageUrl?: string;
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -56,7 +53,6 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -64,7 +60,6 @@ const ProjectDetail = () => {
     slug: string;
   }>();
   const project = projects.find(p => p.slug === slug);
-
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -77,7 +72,6 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
-
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -91,7 +85,11 @@ const ProjectDetail = () => {
           
           
           {project.imageUrl && <div className="w-full overflow-hidden mb-8">
-              <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-cover" style={{width: '1920px', height: '835px', maxWidth: 'none'}} />
+              <img src={project.imageUrl} alt={project.title} style={{
+            width: '1920px',
+            height: '835px',
+            maxWidth: 'none'
+          }} className="w-full h-auto object-contain" />
             </div>}
           
           <div className="prose prose-invert max-w-none">
@@ -103,5 +101,4 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
-
 export default ProjectDetail;
