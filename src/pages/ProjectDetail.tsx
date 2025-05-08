@@ -89,15 +89,9 @@ const ProjectDetail = () => {
             </div>}
           
           <div className="prose prose-invert max-w-none">
-            <p className="text-gray-200 text-lg">{project.fullDescription}</p>
             
-            <div className="mt-12 py-8 border-t border-gray-800">
-              <h2 className="text-2xl font-bold text-white mb-4">Project Details</h2>
-              <p className="text-gray-300">
-                This is where more detailed information about the project would go, including technologies used,
-                challenges overcome, and results achieved.
-              </p>
-            </div>
+            
+            
           </div>
         </div>
       </main>
