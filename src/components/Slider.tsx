@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
 import { Link } from 'react-router-dom';
+
 interface SlideProps {
   image: string;
   projectName: string;
   link: string;
 }
+
 const slides: SlideProps[] = [{
   image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
   projectName: "Forest Lights",
@@ -31,7 +33,24 @@ const slides: SlideProps[] = [{
   image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
   projectName: "Code Studio",
   link: "/work"
+}, {
+  image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+  projectName: "Remote Work",
+  link: "/work"
+}, {
+  image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+  projectName: "Digital Life",
+  link: "/work"
+}, {
+  image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+  projectName: "Tech Innovation",
+  link: "/work"
+}, {
+  image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+  projectName: "Code Development",
+  link: "/work"
 }];
+
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
