@@ -1,6 +1,53 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+
+interface Project {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+}
+
+const projects: Project[] = [
+  {
+    id: "1",
+    title: "Invisible Space Museum",
+    slug: "invisible-space-museum",
+    description: "An interactive digital museum experience"
+  },
+  {
+    id: "2",
+    title: "Learn",
+    slug: "learn",
+    description: "Educational platform for creative professionals"
+  },
+  {
+    id: "3",
+    title: "Project 3",
+    slug: "project-3",
+    description: "Innovative digital solution for modern problems"
+  },
+  {
+    id: "4",
+    title: "Project 4",
+    slug: "project-4",
+    description: "Cutting-edge technology implementation"
+  },
+  {
+    id: "5",
+    title: "Project 5",
+    slug: "project-5",
+    description: "Revolutionary user experience design"
+  },
+  {
+    id: "6",
+    title: "Project 6",
+    slug: "project-6",
+    description: "Next-generation application framework"
+  }
+];
 
 const Work = () => {
   return <div className="min-h-screen bg-black overflow-y-auto">
@@ -9,25 +56,18 @@ const Work = () => {
         <div className="max-w-5xl mx-auto mt-16">
           <h1 className="text-4xl font-bold text-white mb-8">Work</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project items would go here */}
-            <div className="bg-[#333] aspect-video flex items-center justify-center">
-              <p className="text-white text-center">Invisible Space Museum</p>
-            </div>
-            <div className="bg-[#333] aspect-video flex items-center justify-center">
-              <p className="text-white text-center">Learn</p>
-            </div>
-            <div className="bg-[#333] aspect-video flex items-center justify-center">
-              <p className="text-white">Project 3</p>
-            </div>
-            <div className="bg-[#333] aspect-video flex items-center justify-center">
-              <p className="text-white">Project 4</p>
-            </div>
-            <div className="bg-[#333] aspect-video flex items-center justify-center">
-              <p className="text-white">Project 5</p>
-            </div>
-            <div className="bg-[#333] aspect-video flex items-center justify-center">
-              <p className="text-white">Project 6</p>
-            </div>
+            {projects.map((project) => (
+              <Link 
+                key={project.id} 
+                to={`/project/${project.slug}`}
+                className="bg-[#333] aspect-video flex items-center justify-center group relative overflow-hidden hover:bg-[#444] transition-colors duration-300"
+              >
+                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-2 p-4">
+                  <p className="text-white text-center text-xl font-medium">{project.title}</p>
+                  <p className="text-gray-300 text-center text-sm opacity-0 group-hover:opacity-100 transition-opacity">{project.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </main>
