@@ -36,8 +36,8 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
-      <main className="flex relative">
-        <div className="w-1/2 h-screen relative border-r border-white/10">
+      <main className="flex relative h-screen">
+        <div className="w-1/2 relative border-r border-white/10 flex flex-col justify-between">
           {/* Vertical line on the left */}
           <div className="absolute left-20 top-0 bottom-0 w-px bg-white/10"></div>
           
@@ -46,17 +46,19 @@ const Home = () => {
             <h1 className="text-7xl font-bold tracking-widest text-white">DOHYUN KIM</h1>
           </div>
           
-          {/* Slider indicators */}
-          <div className="absolute bottom-52 left-32">
-            <SliderIndicators />
-          </div>
-          
-          {/* Search box */}
-          <div className="absolute bottom-32 left-32">
-            <SearchBox />
+          <div className="mt-auto mb-32 flex flex-col space-y-6 pl-32">
+            {/* Slider indicators */}
+            <div>
+              <SliderIndicators />
+            </div>
+            
+            {/* Search box */}
+            <div>
+              <SearchBox />
+            </div>
           </div>
         </div>
-        <div className="w-1/2 h-screen">
+        <div className="w-1/2 h-full">
           <Slider />
         </div>
       </main>
