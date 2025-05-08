@@ -97,7 +97,7 @@ const Slider = () => {
               <div className="relative w-full h-full overflow-hidden">
                 <img src={slide.image} alt={slide.projectName} className="slider-image w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <h2 className="text-white text-3xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-0 my-[20px]">
+                  <h2 className="text-white text-3xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 my-[25px] mx-[15px]">
                     {slide.projectName}
                   </h2>
                 </div>
