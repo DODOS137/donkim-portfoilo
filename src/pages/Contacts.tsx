@@ -1,10 +1,7 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
-
 const Contacts = () => {
-  return (
-    <div className="min-h-screen bg-black overflow-hidden">
+  return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
       <main className="pt-16 px-4 md:px-8">
         <div className="max-w-3xl mx-auto mt-16">
@@ -12,9 +9,7 @@ const Contacts = () => {
           <div className="text-white space-y-6">
             <div className="flex items-center space-x-3">
               <span className="font-medium">Email:</span>
-              <a href="mailto:contact@example.com" className="text-white hover:underline">
-                contact@example.com
-              </a>
+              <a href="mailto:contact@example.com" className="text-white hover:underline">dohyon18@nave.com</a>
             </div>
             <div className="flex items-center space-x-3">
               <span className="font-medium">Phone:</span>
@@ -23,14 +18,12 @@ const Contacts = () => {
               </a>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="font-medium">Address:</span>
-              <span>123 Design Street, Creative City, DC 12345</span>
+              
+              
             </div>
           </div>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default Contacts;
