@@ -137,7 +137,7 @@ const Slider = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-8 right-8 flex space-x-0 border border-white">
+        <div className="absolute bottom-6 right-6 flex space-x-0 border border-white">
           <button
             onClick={prevSlide}
             className="nav-button bg-transparent text-white border-r border-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none"
@@ -155,8 +155,8 @@ const Slider = () => {
         </div>
       </div>
 
-      {/* Indicators */}
-      <div className="absolute bottom-64 left-8">
+      {/* Indicators - They're now shown inside the Home component */}
+      <div className="hidden">
         <SliderControls
           totalSlides={slides.length}
           currentIndex={currentIndex}

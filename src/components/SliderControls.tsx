@@ -15,7 +15,7 @@ const SliderControls: React.FC<SliderControlsProps> = ({
   goToSlide,
 }) => {
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-3">
       {Array.from({ length: totalSlides }).map((_, index) => (
         <button
           key={index}

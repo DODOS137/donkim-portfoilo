@@ -8,21 +8,21 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-full mx-auto px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <Link to="/home" className="text-white font-medium text-xl hover:text-gray-300 transition-colors">
+            <Link to="/home" className="text-white font-medium text-2xl hover:text-gray-300 transition-colors">
               DK
             </Link>
-            <div className="border border-white rounded-full w-8 h-8 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full"></div>
+            <div className="border border-white rounded-full w-10 h-10 flex items-center justify-center">
+              <div className="w-1 h-1 rounded-full"></div>
             </div>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10">
-            <div className="flex-1 border-t border-gray-600 mr-10 w-60"></div>
+            <div className="border-t border-gray-600 mr-10 w-52 h-0"></div>
             <Link to="/home" className="text-white hover:text-gray-300 transition-colors">
               Home
             </Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link to="/contacts" className="text-white hover:text-gray-300 transition-colors">
               Contacts
             </Link>
-            <button className="text-white hover:text-gray-300 transition-colors">
+            <button className="text-white hover:text-gray-300 transition-colors ml-6">
               <svg viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
                 <path fillRule="evenodd" d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm0 6h4v4h-4v-4zm-6 0h4v4H4v-4z" clipRule="evenodd" />
               </svg>
