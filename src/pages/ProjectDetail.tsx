@@ -89,7 +89,7 @@ const ProjectDetail = () => {
             width: '1920px',
             height: '835px',
             maxWidth: 'none'
-          }} className="w-full h-auto object-contain" />
+          }} className="w-full h-auto object-cover" />
             </div>}
           
           <div className="prose prose-invert max-w-none">
