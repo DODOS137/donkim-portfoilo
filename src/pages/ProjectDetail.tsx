@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -16,7 +17,7 @@ const projects: Project[] = [{
   slug: "invisible-space-museum",
   description: "An interactive digital museum experience",
   fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
-  imageUrl: "https://images.unsplash.com/photo-1561488111-5d800fd56b8a?q=80&w=1974&auto=format&fit=crop"
+  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png"
 }, {
   id: "2",
   title: "Learn",
