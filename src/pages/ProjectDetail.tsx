@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -82,11 +81,11 @@ const ProjectDetail = () => {
             Back to Work
           </Link>
           
-          <h1 className="text-4xl font-bold text-white mb-4">{project.title}</h1>
-          <p className="text-gray-300 mb-8">{project.description}</p>
+          
+          
           
           {project.imageUrl && <div className="w-full aspect-video mb-8 overflow-hidden rounded">
-              <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+              <img src={project.imageUrl} alt={project.title} className="w-full h-full object-fill" />
             </div>}
           
           <div className="prose prose-invert max-w-none">
