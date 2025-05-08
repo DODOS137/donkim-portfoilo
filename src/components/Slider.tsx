@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
+import { Link } from 'react-router-dom';
 
 interface SlideProps {
   image: string;
@@ -13,65 +14,78 @@ const slides: SlideProps[] = [
   {
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
     projectName: "Forest Lights",
-    link: "#project1"
+    link: "/work"
   },
   {
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
     projectName: "Landscape View",
-    link: "#project2"
+    link: "/work"
   },
   {
     image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
     projectName: "Nature Walk",
-    link: "#project3"
+    link: "/work"
   },
   {
     image: "https://images.unsplash.com/photo-1518877593221-1f28583780b4",
     projectName: "Ocean Waves",
-    link: "#project4"
+    link: "/work"
   },
   {
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     projectName: "Creative Workspace",
-    link: "#project5"
+    link: "/work"
   },
   {
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     projectName: "Code Studio",
-    link: "#project6"
+    link: "/work"
   }
 ];
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
 
   const nextSlide = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
+      setSlideDirection('right');
       setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
-      setTimeout(() => setIsTransitioning(false), 500);
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setSlideDirection(null);
+      }, 500);
     }
   };
 
   const prevSlide = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
+      setSlideDirection('left');
       setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
-      setTimeout(() => setIsTransitioning(false), 500);
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setSlideDirection(null);
+      }, 500);
     }
   };
 
   const goToSlide = (slideIndex: number) => {
     if (!isTransitioning && slideIndex !== currentIndex) {
       setIsTransitioning(true);
+      setSlideDirection(slideIndex > currentIndex ? 'right' : 'left');
       setCurrentIndex(slideIndex);
-      setTimeout(() => setIsTransitioning(false), 500);
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setSlideDirection(null);
+      }, 500);
     }
   };
 
   useEffect(() => {
-    // Optional: Auto-advance slides
+    // Auto-advance slides
     const timer = setTimeout(() => {
       nextSlide();
     }, 5000);
@@ -79,18 +93,32 @@ const Slider = () => {
     return () => clearTimeout(timer);
   }, [currentIndex]);
 
+  const getSlideClass = (index: number) => {
+    if (index === currentIndex) {
+      return 'opacity-100 z-10 translate-x-0';
+    } else if (slideDirection === 'right' && ((currentIndex === 0 && index === slides.length - 1) || index === currentIndex - 1)) {
+      return 'opacity-0 z-0 -translate-x-full';
+    } else if (slideDirection === 'left' && ((currentIndex === slides.length - 1 && index === 0) || index === currentIndex + 1)) {
+      return 'opacity-0 z-0 translate-x-full';
+    } else if (index < currentIndex) {
+      return 'opacity-0 z-0 -translate-x-full';
+    } else {
+      return 'opacity-0 z-0 translate-x-full';
+    }
+  };
+
   return (
     <div className="relative w-full h-screen">
       {/* Main Slider */}
       <div className="w-full h-full flex justify-center items-center overflow-hidden">
         <div className="w-[80%] h-[70%] relative">
           {slides.map((slide, index) => (
-            <a
+            <Link
               key={index}
-              href={slide.link}
+              to={slide.link}
               className={`absolute top-0 left-0 w-full h-full ${
-                index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              } transition-opacity duration-500 ease-in-out group`}
+                getSlideClass(index)
+              } transition-all duration-500 ease-in-out group`}
             >
               <div className="relative w-full h-full overflow-hidden">
                 <img
@@ -104,7 +132,7 @@ const Slider = () => {
                   </h2>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

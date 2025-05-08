@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,25 +12,25 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/#home" className="text-white font-medium text-xl hover:text-gray-300 transition-colors">
+            <Link to="/" className="text-white font-medium text-xl hover:text-gray-300 transition-colors">
               DK
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10">
-            <a href="/#home" className="text-white hover:text-gray-300 transition-colors">
+            <Link to="/home" className="text-white hover:text-gray-300 transition-colors">
               Home
-            </a>
-            <a href="/#work" className="text-white hover:text-gray-300 transition-colors">
+            </Link>
+            <Link to="/work" className="text-white hover:text-gray-300 transition-colors">
               Work
-            </a>
-            <a href="/#about" className="text-white hover:text-gray-300 transition-colors">
+            </Link>
+            <Link to="/about" className="text-white hover:text-gray-300 transition-colors">
               About
-            </a>
-            <a href="/#contact" className="text-white hover:text-gray-300 transition-colors">
+            </Link>
+            <Link to="/contacts" className="text-white hover:text-gray-300 transition-colors">
               Contacts
-            </a>
+            </Link>
             <button className="text-white hover:text-gray-300 transition-colors">
               <Menu className="w-6 h-6" />
             </button>
@@ -50,34 +51,34 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-black px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a 
-            href="/#home" 
+          <Link 
+            to="/home" 
             className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
             onClick={() => setMobileMenuOpen(false)}
           >
             Home
-          </a>
-          <a 
-            href="/#work" 
+          </Link>
+          <Link 
+            to="/work" 
             className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
             onClick={() => setMobileMenuOpen(false)}
           >
             Work
-          </a>
-          <a 
-            href="/#about" 
+          </Link>
+          <Link 
+            to="/about" 
             className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
             onClick={() => setMobileMenuOpen(false)}
           >
             About
-          </a>
-          <a 
-            href="/#contact" 
+          </Link>
+          <Link 
+            to="/contacts" 
             className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
             onClick={() => setMobileMenuOpen(false)}
           >
             Contacts
-          </a>
+          </Link>
         </div>
       )}
     </nav>
