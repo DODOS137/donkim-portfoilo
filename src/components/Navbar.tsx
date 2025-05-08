@@ -12,9 +12,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <Link to="/home" className="text-white font-medium text-2xl hover:text-gray-300 transition-colors">
+            <span className="text-white font-medium text-2xl">
               DK
-            </Link>
+            </span>
             <Link to="https://instagram.com" target="_blank" rel="noopener noreferrer" className="border border-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
               <Instagram size={20} className="text-white hover:text-black transition-colors" />
             </Link>
