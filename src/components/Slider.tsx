@@ -137,7 +137,7 @@ const Slider = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-4 right-4 flex space-x-0 border border-white">
+        <div className="absolute bottom-8 right-8 flex space-x-0 border border-white">
           <button
             onClick={prevSlide}
             className="nav-button bg-transparent text-white border-r border-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none"
@@ -156,7 +156,7 @@ const Slider = () => {
       </div>
 
       {/* Indicators */}
-      <div className="absolute bottom-32 left-32">
+      <div className="absolute bottom-64 left-8">
         <SliderControls
           totalSlides={slides.length}
           currentIndex={currentIndex}

@@ -22,7 +22,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10">
-            <div className="flex-1 border-t border-gray-600 mr-10"></div>
+            <div className="flex-1 border-t border-gray-600 mr-10 w-60"></div>
             <Link to="/home" className="text-white hover:text-gray-300 transition-colors">
               Home
             </Link>
