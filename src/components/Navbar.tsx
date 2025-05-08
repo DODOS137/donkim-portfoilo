@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -15,9 +15,9 @@ const Navbar = () => {
             <Link to="/home" className="text-white font-medium text-2xl hover:text-gray-300 transition-colors">
               DK
             </Link>
-            <div className="border border-white rounded-full w-10 h-10 flex items-center justify-center">
-              <div className="w-1 h-1 rounded-full"></div>
-            </div>
+            <Link to="https://instagram.com" target="_blank" rel="noopener noreferrer" className="border border-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+              <Instagram size={20} className="text-white hover:text-black transition-colors" />
+            </Link>
           </div>
 
           {/* Desktop Menu */}
