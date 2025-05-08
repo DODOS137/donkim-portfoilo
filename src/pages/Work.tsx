@@ -1,5 +1,7 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
+
 const Work = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
@@ -9,7 +11,7 @@ const Work = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Project items would go here */}
             <div className="bg-[#333] aspect-video flex items-center justify-center">
-              <p className="text-white text-center">Invisible 
+              <p className="text-white text-center">Invisible 
 Space Museum</p>
             </div>
             <div className="bg-[#333] aspect-video flex items-center justify-center">
@@ -21,9 +23,16 @@ Space Museum</p>
             <div className="bg-[#333] aspect-video flex items-center justify-center">
               <p className="text-white">Project 4</p>
             </div>
+            <div className="bg-[#333] aspect-video flex items-center justify-center">
+              <p className="text-white">Project 5</p>
+            </div>
+            <div className="bg-[#333] aspect-video flex items-center justify-center">
+              <p className="text-white">Project 6</p>
+            </div>
           </div>
         </div>
       </main>
     </div>;
 };
+
 export default Work;
