@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 interface Project {
   id: string;
   title: string;
@@ -15,60 +16,60 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
-const projects: Project[] = [{
-  id: "1",
-  title: "Invisible Space Museum",
-  slug: "invisible-space-museum",
-  description: "An interactive digital museum experience",
-  fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
-  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png",
-  videoId: "dQw4w9WgXcQ" // Sample video ID
-}, {
-  id: "2",
-  title: "Learn",
-  slug: "learn",
-  description: "Educational platform for creative professionals",
-  fullDescription: "Learn is a comprehensive educational platform designed specifically for creative professionals looking to expand their skills and knowledge in various artistic domains. The platform offers courses, workshops, and resources.",
-  imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1964&auto=format&fit=crop",
-  videoId: "jNQXAC9IVRw" // Sample video ID
-}, {
-  id: "3",
-  title: "Project 3",
-  slug: "project-3",
-  description: "Innovative digital solution for modern problems",
-  fullDescription: "Project 3 addresses key challenges in the digital landscape with innovative approaches and cutting-edge technology. This solution streamlines workflows and enhances user experiences.",
-  imageUrl: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=1974&auto=format&fit=crop"
-}, {
-  id: "4",
-  title: "Project 4",
-  slug: "project-4",
-  description: "Cutting-edge technology implementation",
-  fullDescription: "Project 4 showcases our expertise in implementing the latest technologies to solve complex business problems. This case study demonstrates how we approach technical challenges.",
-  imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1936&auto=format&fit=crop"
-}, {
-  id: "5",
-  title: "Seoul Natural History Museum",
-  slug: "project-5",
-  description: "Brand Renewal and Environmental Design",
-  fullDescription: "The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution.",
-  imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0",
-  // Updated video ID for Seoul Natural History Museum
-  secondaryImageUrl: "/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" // Added project info image
-}, {
-  id: "6",
-  title: "Project 6",
-  slug: "project-6",
-  description: "Next-generation application framework",
-  fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
-  imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
-}];
+
+const projects: Project[] = [
+  {
+    id: "1",
+    title: "Invisible Space Museum",
+    slug: "invisible-space-museum",
+    description: "An interactive digital museum experience",
+    fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
+    imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png",
+    videoId: "dQw4w9WgXcQ" // Sample video ID
+  }, {
+    id: "2",
+    title: "Learn",
+    slug: "learn",
+    description: "Educational platform for creative professionals",
+    fullDescription: "Learn is a comprehensive educational platform designed specifically for creative professionals looking to expand their skills and knowledge in various artistic domains. The platform offers courses, workshops, and resources.",
+    imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1964&auto=format&fit=crop",
+    videoId: "jNQXAC9IVRw" // Sample video ID
+  }, {
+    id: "3",
+    title: "Project 3",
+    slug: "project-3",
+    description: "Innovative digital solution for modern problems",
+    fullDescription: "Project 3 addresses key challenges in the digital landscape with innovative approaches and cutting-edge technology. This solution streamlines workflows and enhances user experiences.",
+    imageUrl: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=1974&auto=format&fit=crop"
+  }, {
+    id: "4",
+    title: "Project 4",
+    slug: "project-4",
+    description: "Cutting-edge technology implementation",
+    fullDescription: "Project 4 showcases our expertise in implementing the latest technologies to solve complex business problems. This case study demonstrates how we approach technical challenges.",
+    imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1936&auto=format&fit=crop"
+  }, {
+    id: "5",
+    title: "Seoul Natural History Museum",
+    slug: "project-5",
+    description: "Brand Renewal and Environmental Design",
+    fullDescription: "The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution.",
+    imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
+    videoId: "8GEK3igRom0",
+    // Updated video ID for Seoul Natural History Museum
+    secondaryImageUrl: "/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" // Added project info image
+  }, {
+    id: "6",
+    title: "Project 6",
+    slug: "project-6",
+    description: "Next-generation application framework",
+    fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
+    imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
+  }
+];
+
 const ProjectDetail = () => {
-  const {
-    slug
-  } = useParams<{
-    slug: string;
-  }>();
+  const { slug } = useParams<{ slug: string; }>();
   const project = projects.find(p => p.slug === slug);
 
   // YouTube video options
@@ -80,6 +81,7 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
+
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -92,6 +94,7 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
+
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -138,6 +141,28 @@ const ProjectDetail = () => {
               <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/0234df00-39cf-4afe-bd8a-cb7b2a5bdbc8.png" />
             </div>}
           
+          {/* Image section 4 - Site Selection */}
+          {project.slug === "project-5" && <div className="w-full my-10">
+              <h2 className="text-2xl font-bold text-white mb-6">Site Selection</h2>
+              <img alt="Site Selection" className="w-full h-auto object-contain" src="/lovable-uploads/45565562-f6b4-4580-bb06-8f4f14d4bec9.png" />
+              <div className="mt-4 text-gray-300">
+                <p className="text-sm">서울특별시 서대문구 연희로32길 51（연희동, 서대문자연사박물관）</p>
+                <p className="text-sm">51, Yeonhui - ro, 32 - gil, Seodaemun - gu, Seoul, Republic of Korea</p>
+              </div>
+            </div>}
+          
+          {/* Image section 5 - Context & Problem Analysis */}
+          {project.slug === "project-5" && <div className="w-full my-10">
+              <h2 className="text-2xl font-bold text-white mb-6">Context & Problem Analysis</h2>
+              <img alt="Context & Problem Analysis" className="w-full h-auto object-contain" src="/lovable-uploads/92fcacf2-6800-43ee-961d-09b6fd2da40c.png" />
+            </div>}
+          
+          {/* Image section 6 - New Museum Perspective */}
+          {project.slug === "project-5" && <div className="w-full my-10">
+              <h2 className="text-2xl font-bold text-white mb-6">New Museum Perspective / Brand Identity Redefinition</h2>
+              <img alt="New Museum Perspective" className="w-full h-auto object-contain" src="/lovable-uploads/10edf164-4c9f-4915-a779-5bb928aeed8b.png" />
+            </div>}
+          
           {/* Korean description section for Seoul project */}
           {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
               <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
@@ -154,4 +179,5 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
+
 export default ProjectDetail;
