@@ -84,13 +84,15 @@ const ProjectDetail = () => {
           <h1 className="text-4xl font-bold text-white mb-4">{project.title}</h1>
           <p className="text-gray-400 mb-8">{project.description}</p>
           
-          {project.imageUrl && <div className="w-full mb-8 relative" style={{
-          height: "70vh"
-        }}>
-              <img src={project.imageUrl} alt={project.title} className="w-full h-full" style={{
-            objectFit: "contain"
-          }} />
-            </div>}
+          project.imageUrl && (
+  <div className="w-full mb-8">
+    <img
+      src={project.imageUrl}
+      alt={project.title}
+      className="w-full h-auto object-contain"
+    />
+  </div>
+)}
           
           <div className="prose prose-invert max-w-none">
             <p className="text-white text-lg">{project.fullDescription}</p>
