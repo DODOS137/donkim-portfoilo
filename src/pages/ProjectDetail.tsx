@@ -1,11 +1,9 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-
 interface Project {
   id: string;
   title: string;
@@ -17,7 +15,6 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -54,7 +51,8 @@ const projects: Project[] = [{
   slug: "project-5",
   description: "Brand Renewal and Environmental Design",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum
+  videoId: "8GEK3igRom0",
+  // Updated video ID for Seoul Natural History Museum
   fullDescription: "Seoul Natural History Museum",
   koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다. 사용자의 몰입 경험을 중심으로 설계되었습니다."
 }, {
@@ -65,7 +63,6 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -83,7 +80,6 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
-  
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -96,7 +92,6 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
-  
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -120,19 +115,17 @@ const ProjectDetail = () => {
             </div>}
           
           {/* Text content - Moved after video */}
-          <div className="prose prose-invert max-w-none mb-8">
+          <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
             {project.fullDescription}
           </div>
           
           {/* Korean description section for Seoul project */}
-          {project.koreanDescription && (
-            <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
+          {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
               <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
               <p className="text-base leading-relaxed">
                 {project.koreanDescription}
               </p>
-            </div>
-          )}
+            </div>}
           
           {/* Added second image section */}
           {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
@@ -142,5 +135,4 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
-
 export default ProjectDetail;
