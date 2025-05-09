@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -55,7 +54,8 @@ const projects: Project[] = [{
   description: "Brand Renewal and Environmental Design",
   fullDescription: "The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0" // Updated video ID for Seoul Natural History Museum
+  videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum
+  secondaryImageUrl: "/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" // Added project info image
 }, {
   id: "6",
   title: "Project 6",
@@ -130,6 +130,17 @@ const ProjectDetail = () => {
               </div>
             </div>}
           
+          {/* Project info image section - Added below video */}
+          {project.slug === "project-5" && (
+            <div className="w-full my-10">
+              <img 
+                src="/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" 
+                alt="Project Information" 
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          )}
+          
           {/* Korean description section for Seoul project */}
           {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
               <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
@@ -139,7 +150,7 @@ const ProjectDetail = () => {
             </div>}
           
           {/* Added second image section */}
-          {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
+          {project.secondaryImageUrl && project.slug !== "project-5" && <div className="w-full mt-10 mb-8">
               <img src={project.secondaryImageUrl} alt={`${project.title} - additional image`} className="w-full h-auto object-contain" />
             </div>}
         </div>
