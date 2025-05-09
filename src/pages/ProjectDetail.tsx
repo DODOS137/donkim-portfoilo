@@ -107,9 +107,9 @@ const ProjectDetail = () => {
           
           {/* Title and description moved between image and video */}
           {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
-              <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
+              <h1 className="font-bold mb-4 text-3xl my-0 py-[30px]">{project.title}</h1>
               
-              <p className="leading-relaxed text-xl">
+              <p className="leading-relaxed text-xl py-0 my-[50px]">
                 {project.fullDescription}
               </p>
             </div>}
@@ -130,7 +130,7 @@ const ProjectDetail = () => {
           
           {/* Project info image section - Added below video */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              <img alt="Project Information" className="w-full h-auto object-contain" src="/lovable-uploads/e3c1005e-a944-4d11-a5ac-a3517bedcf1a.png" />
+              <img alt="Project Information" className="w-full h-auto object-contain" src="/lovable-uploads/156e341c-46d4-400d-916d-942aa675ab4e.png" />
             </div>}
           
           {/* Korean description section for Seoul project */}
