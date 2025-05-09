@@ -6,6 +6,7 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
+
 interface Project {
   id: string;
   title: string;
@@ -128,7 +129,7 @@ const ProjectDetail = () => {
               </div>
             </div>}
           
-          {/* Learn Project Detail Sections - New images added */}
+          {/* Learn Project Detail Sections - Images */}
           {project.slug === "learn" && <>
               {/* Image section 1 - Project Type & Info */}
               <div className="w-full my-10">
@@ -177,12 +178,31 @@ const ProjectDetail = () => {
                 <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/92cbf397-42cb-489d-8507-e50f9ab90a7d.png" />
               </div>
 
-              {/* NEW - YouTube Video Section added below Image section 9 */}
+              {/* YouTube Video Section */}
               <div className="w-full my-10">
-                
                 <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
                   <YouTube videoId="aCJblmM9yzs" opts={videoOptions} className="w-full h-full" />
                 </AspectRatio>
+              </div>
+              
+              {/* NEW: Image section 10 - Level Design */}
+              <div className="w-full my-10">
+                <img alt="Level Design Layout" className="w-full h-auto object-contain" src="/lovable-uploads/05b3cbcd-f9ff-4e49-a6c9-332c83271abc.png" />
+              </div>
+              
+              {/* NEW: Image section 11 - Artifacts Detail */}
+              <div className="w-full my-10">
+                <img alt="Artifact Details and Interactive Elements" className="w-full h-auto object-contain" src="/lovable-uploads/e7e6311d-ad0e-492f-bc55-6f702900d494.png" />
+              </div>
+              
+              {/* NEW: Image section 12 - Player Journey */}
+              <div className="w-full my-10">
+                <img alt="Player Journey and Narrative Flow" className="w-full h-auto object-contain" src="/lovable-uploads/139ca29f-9912-4258-8381-65443de63395.png" />
+              </div>
+              
+              {/* NEW: Image section 13 - Final Concept */}
+              <div className="w-full my-10">
+                <img alt="Final Concept Images - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/fa38053d-4700-43dd-a130-18c9801bd4b4.png" />
               </div>
             </>}
           
