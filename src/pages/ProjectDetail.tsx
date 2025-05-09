@@ -52,11 +52,11 @@ const projects: Project[] = [{
   id: "5",
   title: "Seoul Natural History Museum",
   slug: "project-5",
+  description: "Brand Renewal and Environmental Design",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0",
-  fullDescription: "Seoul Natural History Museum"
- 
-
+  videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum
+  fullDescription: "The Seoul Natural History Museum project focuses on creating an immersive digital interface that showcases Seoul's natural environment and ecology.",
+  koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다. 사용자의 몰입 경험을 중심으로 설계되었습니다."
 }, {
   id: "6",
   title: "Project 6",
@@ -110,6 +110,16 @@ const ProjectDetail = () => {
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
             </div>}
           
+          {/* YouTube Video Section - Moved before text content */}
+          {project.videoId && <div className="w-full mb-10">
+              <div className="w-full">
+                <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                  <YouTube videoId={project.videoId} opts={videoOptions} className="w-full h-full" />
+                </AspectRatio>
+              </div>
+            </div>}
+          
+          {/* Text content - Moved after video */}
           <div className="prose prose-invert max-w-none mb-8">
             {project.fullDescription}
           </div>
@@ -123,15 +133,6 @@ const ProjectDetail = () => {
               </p>
             </div>
           )}
-          
-          {/* YouTube Video Section */}
-          {project.videoId && <div className="w-full mb-10">
-              <div className="w-full">
-                <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
-                  <YouTube videoId={project.videoId} opts={videoOptions} className="w-full h-full" />
-                </AspectRatio>
-              </div>
-            </div>}
           
           {/* Added second image section */}
           {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
