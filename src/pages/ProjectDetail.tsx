@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Button } from '@/components/ui/button';
 
 interface Project {
   id: string;
@@ -299,6 +300,16 @@ const ProjectDetail = () => {
           {project.secondaryImageUrl && project.slug !== "project-5" && <div className="w-full mt-10 mb-8">
               <img src={project.secondaryImageUrl} alt={`${project.title} - additional image`} className="w-full h-auto object-contain" />
             </div>}
+            
+          {/* Back to Work button at the bottom */}
+          <div className="mt-16 mb-8 flex justify-center">
+            <Button asChild variant="outline" className="text-white border-white hover:bg-white hover:text-black">
+              <Link to="/work" className="inline-flex items-center">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back to Work
+              </Link>
+            </Button>
+          </div>
         </div>
       </main>
     </div>;
