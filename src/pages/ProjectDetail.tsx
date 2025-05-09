@@ -58,7 +58,7 @@ const projects: Project[] = [{
   secondaryImageUrl: "/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" // Added project info image
 }, {
   id: "6",
-  title: "Project 6",
+  title: "Island Public Space",
   slug: "project-6",
   description: "Next-generation application framework",
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
