@@ -1,7 +1,11 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
+import YouTube from 'react-youtube';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 interface Project {
   id: string;
   title: string;
@@ -9,22 +13,26 @@ interface Project {
   description: string;
   fullDescription?: string;
   imageUrl?: string;
-  secondaryImageUrl?: string; // Added secondary image field
+  secondaryImageUrl?: string;
+  videoId?: string; // Added videoId field for YouTube videos
 }
+
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
   slug: "invisible-space-museum",
   description: "An interactive digital museum experience",
   fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
-  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png"
+  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png",
+  videoId: "dQw4w9WgXcQ" // Sample video ID
 }, {
   id: "2",
   title: "Learn",
   slug: "learn",
   description: "Educational platform for creative professionals",
   fullDescription: "Learn is a comprehensive educational platform designed specifically for creative professionals looking to expand their skills and knowledge in various artistic domains. The platform offers courses, workshops, and resources.",
-  imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1964&auto=format&fit=crop"
+  imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1964&auto=format&fit=crop",
+  videoId: "jNQXAC9IVRw" // Sample video ID
 }, {
   id: "3",
   title: "Project 3",
@@ -46,7 +54,8 @@ const projects: Project[] = [{
   description: "Revolutionary user experience design",
   fullDescription: "Project 5 represents a breakthrough in user experience design, setting new standards for intuitive interfaces and engaging digital interactions. Our approach focuses on user-centered design principles.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  secondaryImageUrl: "/lovable-uploads/0f6b964e-9e87-4b17-bd2c-f5c81ccae3a0.png" // Updated secondary image
+  secondaryImageUrl: "/lovable-uploads/0f6b964e-9e87-4b17-bd2c-f5c81ccae3a0.png",
+  videoId: "1G4isv_Fylg" // Added video for Seoul Natural History Museum
 }, {
   id: "6",
   title: "Project 6",
@@ -55,6 +64,7 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
+
 const ProjectDetail = () => {
   const {
     slug
@@ -62,6 +72,17 @@ const ProjectDetail = () => {
     slug: string;
   }>();
   const project = projects.find(p => p.slug === slug);
+  
+  // YouTube video options
+  const videoOptions = {
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    },
+  };
+
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -74,6 +95,7 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
+  
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -87,9 +109,27 @@ const ProjectDetail = () => {
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
             </div>}
           
-          <div className="prose prose-invert max-w-none">
-            
+          <div className="prose prose-invert max-w-none mb-8">
+            <h1 className="text-4xl font-bold text-white">{project.title}</h1>
+            <p className="text-lg text-gray-300 mt-2">{project.description}</p>
+            {project.fullDescription && <p className="text-gray-300">{project.fullDescription}</p>}
           </div>
+          
+          {/* YouTube Video Section */}
+          {project.videoId && (
+            <div className="w-full mb-10">
+              <h2 className="text-2xl font-semibold text-white mb-4">Project Video</h2>
+              <div className="w-full">
+                <AspectRatio ratio={16/9} className="bg-gray-900 overflow-hidden rounded-lg">
+                  <YouTube 
+                    videoId={project.videoId} 
+                    opts={videoOptions} 
+                    className="w-full h-full"
+                  />
+                </AspectRatio>
+              </div>
+            </div>
+          )}
           
           {/* Added second image section */}
           {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
@@ -99,4 +139,5 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
+
 export default ProjectDetail;
