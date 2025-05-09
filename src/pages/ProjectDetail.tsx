@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-
 interface Project {
   id: string;
   title: string;
@@ -16,7 +15,6 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -54,7 +52,8 @@ const projects: Project[] = [{
   description: "Brand Renewal and Environmental Design",
   fullDescription: "The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum
+  videoId: "8GEK3igRom0",
+  // Updated video ID for Seoul Natural History Museum
   secondaryImageUrl: "/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" // Added project info image
 }, {
   id: "6",
@@ -64,7 +63,6 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -131,15 +129,9 @@ const ProjectDetail = () => {
             </div>}
           
           {/* Project info image section - Added below video */}
-          {project.slug === "project-5" && (
-            <div className="w-full my-10">
-              <img 
-                src="/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" 
-                alt="Project Information" 
-                className="w-full h-auto object-contain"
-              />
-            </div>
-          )}
+          {project.slug === "project-5" && <div className="w-full my-10">
+              <img alt="Project Information" className="w-full h-auto object-contain" src="/lovable-uploads/e3c1005e-a944-4d11-a5ac-a3517bedcf1a.png" />
+            </div>}
           
           {/* Korean description section for Seoul project */}
           {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
@@ -157,5 +149,4 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
-
 export default ProjectDetail;
