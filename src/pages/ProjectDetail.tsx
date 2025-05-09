@@ -51,8 +51,9 @@ const projects: Project[] = [{
   description: "Revolutionary user experience design",
   fullDescription: "Project 5 represents a breakthrough in user experience design, setting new standards for intuitive interfaces and engaging digital interactions. Our approach focuses on user-centered design principles.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  secondaryImageUrl: "/lovable-uploads/0f6b964e-9e87-4b17-bd2c-f5c81ccae3a0.png",
+
   videoId: "8GEK3igRom0" // Updated video ID for Seoul Natural History Museum
+  
 }, {
   id: "6",
   title: "Project 6",
