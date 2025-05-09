@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-
 interface Project {
   id: string;
   title: string;
@@ -16,7 +15,6 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -53,9 +51,9 @@ const projects: Project[] = [{
   slug: "project-5",
   description: "Brand Renewal and Environmental Design",
   fullDescription: "The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution.",
-  
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum
+  videoId: "8GEK3igRom0",
+  // Updated video ID for Seoul Natural History Museum
   koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다."
 }, {
   id: "6",
@@ -65,7 +63,6 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -120,7 +117,7 @@ const ProjectDetail = () => {
           {/* Enhanced text content section for Seoul project */}
           {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
               <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
-              <h2 className="text-2xl font-semibold mb-2">Project Details</h2>
+              
               <p className="leading-relaxed text-xl">
                 {project.fullDescription}
               </p>
