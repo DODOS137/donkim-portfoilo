@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 interface Project {
   id: string;
   title: string;
@@ -15,6 +17,7 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
+
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -50,21 +53,10 @@ const projects: Project[] = [{
   title: "Seoul Natural History Museum",
   slug: "project-5",
   description: "Brand Renewal and Environmental Design",
+  fullDescription: "The Seoul Natural History Museum project focuses on creating an immersive digital interface that showcases Seoul's natural environment and ecology.",
+  koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0",
-  // Updated video ID for Seoul Natural History Museum
-  {project.fullDescription && (
-  <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60">
-    {/* h1 추가 - 제목 */}
-    <h1 className="text-5xl font-bold mb-4">{project.title}</h1> {/* 큰 제목 */}
-    
-    <h2 className="text-2xl font-semibold mb-2">Project Details</h2>
-    <p className="text-3xl leading-relaxed"> {/* 텍스트 크기 설정 */}
-      {project.fullDescription}
-    </p>
-  </div>
-)}
-  
+  videoId: "8GEK3igRom0" // Updated video ID for Seoul Natural History Museum
 }, {
   id: "6",
   title: "Project 6",
@@ -73,12 +65,9 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
+
 const ProjectDetail = () => {
-  const {
-    slug
-  } = useParams<{
-    slug: string;
-  }>();
+  const { slug } = useParams<{ slug: string; }>();
   const project = projects.find(p => p.slug === slug);
 
   // YouTube video options
@@ -90,6 +79,7 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
+
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -102,6 +92,7 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
+
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -115,7 +106,7 @@ const ProjectDetail = () => {
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
             </div>}
           
-          {/* YouTube Video Section - Moved before text content */}
+          {/* YouTube Video Section - Placed before text content */}
           {project.videoId && <div className="w-full mb-10">
               <div className="w-full">
                 <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
@@ -124,10 +115,23 @@ const ProjectDetail = () => {
               </div>
             </div>}
           
-          {/* Text content - Moved after video */}
-          <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
-            {project.fullDescription}
-          </div>
+          {/* Enhanced text content section for Seoul project */}
+          {project.slug === "project-5" && project.fullDescription && (
+            <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+              <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
+              <h2 className="text-2xl font-semibold mb-2">Project Details</h2>
+              <p className="text-3xl leading-relaxed">
+                {project.fullDescription}
+              </p>
+            </div>
+          )}
+          
+          {/* Standard text content for other projects */}
+          {project.slug !== "project-5" && project.fullDescription && (
+            <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
+              {project.fullDescription}
+            </div>
+          )}
           
           {/* Korean description section for Seoul project */}
           {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
@@ -145,4 +149,5 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
+
 export default ProjectDetail;
