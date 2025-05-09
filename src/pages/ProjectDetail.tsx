@@ -31,7 +31,7 @@ const projects: Project[] = [{
   description: "Educational platform for creative professionals",
   fullDescription: "Learn is a comprehensive educational platform designed specifically for creative professionals looking to expand their skills and knowledge in various artistic domains. The platform offers courses, workshops, and resources.",
   imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1964&auto=format&fit=crop",
-  videoId: "jNQXAC9IVRw" // Sample video ID
+  
 }, {
   id: "3",
   title: "Project 3",
