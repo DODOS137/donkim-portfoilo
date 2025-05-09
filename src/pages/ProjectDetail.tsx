@@ -6,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -24,16 +23,14 @@ const projects: Project[] = [{
   slug: "invisible-space-museum",
   description: "An interactive digital museum experience",
   fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
-  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png",
- 
+  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png"
 }, {
   id: "2",
   title: "Learn",
   slug: "learn",
   description: "Educational platform for creative professionals",
   fullDescription: " This project features three robot characters as protagonists and tells a story set in a library after the fall of humanity. It is a comprehensive VR content development process that includes level design, character design, storytelling and spatial design.",
-  imageUrl: "/lovable-uploads/6ff8ff68-cb39-448d-bab7-4fe73134f9d3.png",
-  
+  imageUrl: "/lovable-uploads/6ff8ff68-cb39-448d-bab7-4fe73134f9d3.png"
 }, {
   id: "3",
   title: "Project 3",
@@ -164,17 +161,13 @@ const ProjectDetail = () => {
               </div>
               
               {/* Updated to use Sketchfab model embed */}
-              <ModelViewer 
-                modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" 
-                title="Interactive 3D Robot Model"
-                isSketchfab={true}
-              />
+              <ModelViewer modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" title="Interactive 3D Robot Model" isSketchfab={true} />
               
               {/* NEW Image section 8 - Robot Specs Detail */}
               <div className="w-full my-10">
-                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/b9c1bc90-c2d9-4383-b3d8-56731bb41385.png" />
+                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/4da912e8-c5de-40f1-a4b8-a43bc0ba8af1.png" />
                 <div className="mt-4 text-gray-300">
-                  <p className="text-sm">Robot model LS1-07 acts as the central command unit, equipped with advanced AI to coordinate operations.</p>
+                  
                 </div>
               </div>
             </>}
