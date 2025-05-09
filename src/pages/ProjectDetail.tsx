@@ -17,7 +17,12 @@ const projects: Project[] = [{
   slug: "invisible-space-museum",
   description: "An interactive digital museum experience",
   fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
-  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png"
+  imageUrl:<div
+  className="w-full aspect-video bg-cover bg-center"
+  style={{
+    backgroundImage: 'url(/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png)',
+  }}
+>
 }, {
   id: "2",
   title: "Learn",
