@@ -55,7 +55,7 @@ const projects: Project[] = [
     title: "Island",
     slug: "project-6",
     description: "Public Space Design",
-    imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
+    imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
   }
 ];
 
