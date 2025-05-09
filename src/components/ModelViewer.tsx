@@ -1,7 +1,7 @@
 
 import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
+import { OrbitControls, Environment, useGLTF, Text } from '@react-three/drei';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Mesh } from 'three';
 
@@ -49,10 +49,16 @@ function Model({ modelPath }: ModelProps) {
       {error ? (
         <>
           <FallbackCube />
-          <mesh position={[0, -2, 0]}>
-            <textGeometry args={['Error loading model', { size: 0.2, height: 0.05 }]} />
-            <meshStandardMaterial color="white" />
-          </mesh>
+          {/* Replace textGeometry with Text component from drei */}
+          <Text
+            position={[0, -2, 0]}
+            fontSize={0.2}
+            color="white"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Error loading model
+          </Text>
         </>
       ) : (
         <ModelContent />
