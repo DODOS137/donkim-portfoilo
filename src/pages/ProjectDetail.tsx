@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 interface Project {
   id: string;
   title: string;
@@ -15,6 +17,7 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
+
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -52,9 +55,7 @@ const projects: Project[] = [{
   description: "Brand Renewal and Environmental Design",
   fullDescription: "The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0",
-  // Updated video ID for Seoul Natural History Museum
- 
+  videoId: "8GEK3igRom0" // Updated video ID for Seoul Natural History Museum
 }, {
   id: "6",
   title: "Project 6",
@@ -63,6 +64,7 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
+
 const ProjectDetail = () => {
   const {
     slug
@@ -105,7 +107,21 @@ const ProjectDetail = () => {
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
             </div>}
           
-          {/* YouTube Video Section - Placed before text content */}
+          {/* Title and description moved between image and video */}
+          {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+              <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
+              
+              <p className="leading-relaxed text-xl">
+                {project.fullDescription}
+              </p>
+            </div>}
+            
+          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
+              <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+              {project.fullDescription}
+            </div>}
+          
+          {/* YouTube Video Section - Moved after text content */}
           {project.videoId && <div className="w-full mb-10">
               <div className="w-full">
                 <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
@@ -114,22 +130,13 @@ const ProjectDetail = () => {
               </div>
             </div>}
           
-          {/* Enhanced text content section for Seoul project */}
-          {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
-              <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
-              
-              <p className="leading-relaxed text-xl">
-                {project.fullDescription}
+          {/* Korean description section for Seoul project */}
+          {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
+              <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
+              <p className="text-base leading-relaxed">
+                {project.koreanDescription}
               </p>
             </div>}
-          
-          {/* Standard text content for other projects */}
-          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
-              {project.fullDescription}
-            </div>}
-          
-          {/* Korean description section for Seoul project */}
-          {project.koreanDescription}
           
           {/* Added second image section */}
           {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
@@ -139,4 +146,5 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
+
 export default ProjectDetail;
