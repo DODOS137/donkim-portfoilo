@@ -53,7 +53,17 @@ const projects: Project[] = [{
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
   videoId: "8GEK3igRom0",
   // Updated video ID for Seoul Natural History Museum
-  fullDescription: "Seoul Natural History Museum",
+  {project.fullDescription && (
+  <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60">
+    {/* h1 추가 - 제목 */}
+    <h1 className="text-5xl font-bold mb-4">{project.title}</h1> {/* 큰 제목 */}
+    
+    <h2 className="text-2xl font-semibold mb-2">Project Details</h2>
+    <p className="text-3xl leading-relaxed"> {/* 텍스트 크기 설정 */}
+      {project.fullDescription}
+    </p>
+  </div>
+)}
   
 }, {
   id: "6",
