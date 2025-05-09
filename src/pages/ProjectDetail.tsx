@@ -140,7 +140,7 @@ const ProjectDetail = () => {
           
           {/* Image section 4 - Site Selection */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              <h2 className="text-2xl font-bold text-white mb-6">Site Selection</h2>
+              
               <img alt="Site Selection" className="w-full h-auto object-contain" src="/lovable-uploads/bcd77b77-5980-4b25-8c77-668dc97cf557.png" />
               <div className="mt-4 text-gray-300">
                 
