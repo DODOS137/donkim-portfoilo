@@ -55,7 +55,7 @@ const projects: Project[] = [{
   description: "Brand Renewal and Environmental Design",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
   videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum
-  fullDescription: "The Seoul Natural History Museum project focuses on creating an immersive digital interface that showcases Seoul's natural environment and ecology.",
+  fullDescription: "Seoul Natural History Museum",
   koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다. 사용자의 몰입 경험을 중심으로 설계되었습니다."
 }, {
   id: "6",
