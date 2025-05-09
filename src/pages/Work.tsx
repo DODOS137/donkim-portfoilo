@@ -8,6 +8,7 @@ interface Project {
   title: string;
   slug: string;
   description: string;
+  imageUrl?: string;
 }
 
 const projects: Project[] = [
@@ -15,37 +16,43 @@ const projects: Project[] = [
     id: "1",
     title: "Invisible Space Museum",
     slug: "invisible-space-museum",
-    description: "Virtual Reality Museum Contents"
+    description: "Virtual Reality Museum Contents",
+    imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png"
   },
   {
     id: "2",
     title: "Learn",
     slug: "learn",
-    description: "Immersive Virtual Reality Experience"
+    description: "Immersive Virtual Reality Experience",
+    imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1964&auto=format&fit=crop"
   },
   {
     id: "3",
     title: "Thermal Trace",
-    slug: "Thermal Trace",
-    description: "A Mixed Reality Fashion Show"
+    slug: "project-3",
+    description: "A Mixed Reality Fashion Show",
+    imageUrl: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=1974&auto=format&fit=crop"
   },
   {
     id: "4",
     title: "Whispers from the Bottom",
-    slug: "Whispers from the Bottom",
-    description: "Exhibition Design"
+    slug: "project-4",
+    description: "Exhibition Design",
+    imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1936&auto=format&fit=crop"
   },
   {
     id: "5",
     title: "Seoul Nature history Museum",
-    slug: "Seoul Nature history Museum",
-    description: "Brand Renewal and Environmental Design"
+    slug: "project-5",
+    description: "Brand Renewal and Environmental Design",
+    imageUrl: "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?q=80&w=2080&auto=format&fit=crop"
   },
   {
     id: "6",
     title: "Island",
-    slug: "Island",
-    description: "Public Space Design"
+    slug: "project-6",
+    description: "Public Space Design",
+    imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
   }
 ];
 
@@ -62,7 +69,16 @@ const Work = () => {
                 to={`/project/${project.slug}`}
                 className="bg-[#333] aspect-video flex items-center justify-center group relative overflow-hidden hover:bg-[#444] transition-colors duration-300"
               >
-                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-2 p-4">
+                {project.imageUrl && (
+                  <div className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity">
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-2 p-4 z-10">
                   <p className="text-white text-center text-xl font-medium">{project.title}</p>
                   <p className="text-gray-300 text-center text-sm opacity-0 group-hover:opacity-100 transition-opacity">{project.description}</p>
                 </div>
