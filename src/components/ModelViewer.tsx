@@ -1,34 +1,64 @@
 
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Mesh } from 'three';
 
 interface ModelProps {
   modelPath: string;
 }
 
 function Model({ modelPath }: ModelProps) {
-  const [hasError, setHasError] = useState(false);
-  
-  try {
-    const { scene } = useGLTF(modelPath);
-    return <primitive object={scene} scale={1.5} position={[0, -1, 0]} />;
-  } catch (error) {
-    console.error("Error loading model:", error);
-    // If model fails to load, display a fallback box
-    if (!hasError) {
-      setHasError(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Use a separate component for the actual model to handle errors properly
+  const ModelContent = () => {
+    try {
+      // Force clear the cache for this model to ensure we load the latest version
+      useGLTF.preload(modelPath);
+      const { scene } = useGLTF(modelPath);
+      
+      // Mark as loaded when successful
+      useEffect(() => {
+        setIsLoaded(true);
+        console.log("Model loaded successfully:", modelPath);
+      }, []);
+      
+      return <primitive object={scene} scale={1.5} position={[0, -1, 0]} />;
+    } catch (err) {
+      console.error("Error in ModelContent:", err);
+      setError(err instanceof Error ? err : new Error('Unknown error loading model'));
+      return null;
     }
+  };
+
+  // Fallback cube when model fails to load
+  const FallbackCube = () => {
     return (
-      <>
-        <mesh position={[0, 0, 0]}>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
-      </>
+      <mesh position={[0, 0, 0]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="hotpink" />
+      </mesh>
     );
-  }
+  };
+
+  return (
+    <>
+      {error ? (
+        <>
+          <FallbackCube />
+          <mesh position={[0, -2, 0]}>
+            <textGeometry args={['Error loading model', { size: 0.2, height: 0.05 }]} />
+            <meshStandardMaterial color="white" />
+          </mesh>
+        </>
+      ) : (
+        <ModelContent />
+      )}
+    </>
+  );
 }
 
 interface ModelViewerProps {
@@ -37,6 +67,8 @@ interface ModelViewerProps {
 }
 
 const ModelViewer = ({ modelPath, title }: ModelViewerProps) => {
+  console.log("ModelViewer rendering with path:", modelPath);
+  
   return (
     <div className="w-full my-10">
       {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
@@ -45,7 +77,12 @@ const ModelViewer = ({ modelPath, title }: ModelViewerProps) => {
           <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 5]} intensity={1} />
-            <Suspense fallback={null}>
+            <Suspense fallback={
+              <mesh position={[0, 0, 0]}>
+                <sphereGeometry args={[0.5, 16, 16]} />
+                <meshStandardMaterial color="blue" wireframe />
+              </mesh>
+            }>
               <Model modelPath={modelPath} />
               <Environment preset="city" />
             </Suspense>
