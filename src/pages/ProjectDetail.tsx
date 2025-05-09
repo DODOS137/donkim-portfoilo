@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
+
 interface Project {
   id: string;
   title: string;
@@ -11,18 +12,14 @@ interface Project {
   fullDescription?: string;
   imageUrl?: string;
 }
+
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
   slug: "invisible-space-museum",
   description: "An interactive digital museum experience",
   fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
-  imageUrl:<div
-  className="w-full aspect-video bg-cover bg-center"
-  style={{
-    backgroundImage: 'url(/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png)',
-  }}
->
+  imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png"
 }, {
   id: "2",
   title: "Learn",
@@ -59,6 +56,7 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
+
 const ProjectDetail = () => {
   const {
     slug
@@ -66,6 +64,7 @@ const ProjectDetail = () => {
     slug: string;
   }>();
   const project = projects.find(p => p.slug === slug);
+  
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -78,6 +77,7 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
+  
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -106,4 +106,5 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
+
 export default ProjectDetail;
