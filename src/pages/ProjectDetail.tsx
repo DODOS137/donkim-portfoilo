@@ -52,10 +52,9 @@ const projects: Project[] = [{
   id: "5",
   title: "Seoul Natural History Museum",
   slug: "project-5",
-  
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
   videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum - added missing comma here
-  fullDescription: "The Seoul Natural History Museum project focuses on creating an immersive digital interface that showcases Seoul's natural environment and ecology."
+ 
 
 }, {
   id: "6",
