@@ -47,7 +47,7 @@ const projects: Project[] = [{
   slug: "project-5",
   description: "Revolutionary user experience design",
   fullDescription: "Project 5 represents a breakthrough in user experience design, setting new standards for intuitive interfaces and engaging digital interactions. Our approach focuses on user-centered design principles.",
-  imageUrl: "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?q=80&w=2080&auto=format&fit=crop"
+  imageUrl: "/lovable-uploads/54fd727a-55a5-4761-b600-4c8f428f2dd9.png"
 }, {
   id: "6",
   title: "Project 6",
