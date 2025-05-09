@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -51,12 +52,11 @@ const projects: Project[] = [{
   id: "5",
   title: "Seoul Natural History Museum",
   slug: "project-5",
+  description: "Revolutionary user experience design",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0" // Updated video ID for Seoul Natural History Museum
- 
+  videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum - added missing comma here
   fullDescription: "The Seoul Natural History Museum project focuses on creating an immersive digital interface that showcases Seoul's natural environment and ecology.",
-  koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다.
-  
+  koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다."  // Fixed closing quotation mark
 }, {
   id: "6",
   title: "Project 6",
