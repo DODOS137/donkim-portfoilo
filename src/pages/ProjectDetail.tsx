@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
+
 interface Project {
   id: string;
   title: string;
@@ -10,6 +12,7 @@ interface Project {
   fullDescription?: string;
   imageUrl?: string;
 }
+
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -41,7 +44,7 @@ const projects: Project[] = [{
 }, {
   id: "5",
   title: "Seoul Natural History Museum",
-  slug: "Seoul Natural History Museum",
+  slug: "project-5",
   description: "Revolutionary user experience design",
   fullDescription: "Project 5 represents a breakthrough in user experience design, setting new standards for intuitive interfaces and engaging digital interactions. Our approach focuses on user-centered design principles.",
   imageUrl: "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?q=80&w=2080&auto=format&fit=crop"
@@ -53,6 +56,7 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
+
 const ProjectDetail = () => {
   const {
     slug
@@ -60,6 +64,7 @@ const ProjectDetail = () => {
     slug: string;
   }>();
   const project = projects.find(p => p.slug === slug);
+  
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -72,6 +77,7 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
+  
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -84,15 +90,15 @@ const ProjectDetail = () => {
           <h1 className="text-4xl font-bold text-white mb-4">{project.title}</h1>
           <p className="text-gray-400 mb-8">{project.description}</p>
           
-          project.imageUrl && (
-  <div className="w-full mb-8">
-    <img
-      src={project.imageUrl}
-      alt={project.title}
-      className="w-full h-auto object-contain"
-    />
-  </div>
-)}
+          {project.imageUrl && (
+            <div className="w-full mb-8">
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          )}
           
           <div className="prose prose-invert max-w-none">
             <p className="text-white text-lg">{project.fullDescription}</p>
@@ -101,4 +107,5 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
+
 export default ProjectDetail;
