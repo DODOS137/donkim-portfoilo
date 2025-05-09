@@ -51,7 +51,7 @@ const projects: Project[] = [{
   slug: "project-6",
   description: "Next-generation application framework",
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
-  imageUrl: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop"
+  imageUrl: public/lovable-uploads/web1920-S.N.M_대지 1.png
 }];
 const ProjectDetail = () => {
   const {
