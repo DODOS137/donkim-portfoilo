@@ -49,8 +49,18 @@ const projects: Project[] = [{
   title: "Seoul Natural History Museum",
   slug: "project-5",
   description: "Revolutionary user experience design",
-  fullDescription: "Project 5 represents a breakthrough in user experience design, setting new standards for intuitive interfaces and engaging digital interactions. Our approach focuses on user-centered design principles.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
+    <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md">
+        <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
+        <p className="text-base leading-relaxed">
+          이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다. 사용자의 몰입 경험을 중심으로 설계되었습니다.
+        </p>
+      </div>
+    )}
+  </div>
+)}
+
+
 
   videoId: "8GEK3igRom0" // Updated video ID for Seoul Natural History Museum
   
