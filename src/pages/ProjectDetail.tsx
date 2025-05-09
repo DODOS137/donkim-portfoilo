@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
+
 interface Project {
   id: string;
   title: string;
@@ -16,6 +17,7 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
+
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -61,9 +63,10 @@ const projects: Project[] = [{
   title: "Island",
   slug: "project-6",
   description: "Next-generation application framework",
-  fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island’s identity, fostering a deeper connection between nature, architecture, and the urban community.",
-  imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
+  fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
+  imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
+
 const ProjectDetail = () => {
   const {
     slug
