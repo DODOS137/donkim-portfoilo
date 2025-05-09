@@ -54,7 +54,7 @@ const projects: Project[] = [{
   videoId: "8GEK3igRom0",
   // Updated video ID for Seoul Natural History Museum
   fullDescription: "Seoul Natural History Museum",
-  koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다. 사용자의 몰입 경험을 중심으로 설계되었습니다."
+  Description: " The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution."
 }, {
   id: "6",
   title: "Project 6",
