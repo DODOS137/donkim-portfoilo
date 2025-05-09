@@ -15,37 +15,37 @@ const projects: Project[] = [
     id: "1",
     title: "Invisible Space Museum",
     slug: "invisible-space-museum",
-    description: "An interactive digital museum experience"
+    description: "Virtual Reality Museum Contents"
   },
   {
     id: "2",
     title: "Learn",
     slug: "learn",
-    description: "Educational platform for creative professionals"
+    description: "Immersive Virtual Reality Experience"
   },
   {
     id: "3",
-    title: "Project 3",
-    slug: "project-3",
-    description: "Innovative digital solution for modern problems"
+    title: "Thermal Trace",
+    slug: "Thermal Trace",
+    description: "A Mixed Reality Fashion Show"
   },
   {
     id: "4",
-    title: "Project 4",
-    slug: "project-4",
-    description: "Cutting-edge technology implementation"
+    title: "Whispers from the Bottom",
+    slug: "Whispers from the Bottom",
+    description: "Exhibition Design"
   },
   {
     id: "5",
-    title: "Project 5",
-    slug: "project-5",
-    description: "Revolutionary user experience design"
+    title: "Seoul Nature history Museum",
+    slug: "Seoul Nature history Museum",
+    description: "Brand Renewal and Environmental Design"
   },
   {
     id: "6",
-    title: "Project 6",
-    slug: "project-6",
-    description: "Next-generation application framework"
+    title: "Island",
+    slug: "Island",
+    description: "Public Space Design"
   }
 ];
 
