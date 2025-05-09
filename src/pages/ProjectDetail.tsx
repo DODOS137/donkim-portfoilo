@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -62,7 +63,7 @@ const projects: Project[] = [{
   id: "6",
   title: "Island",
   slug: "project-6",
-  description: "Next-generation application framework",
+  description: "Public Space Design",
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
@@ -131,6 +132,71 @@ const ProjectDetail = () => {
                 </AspectRatio>
               </div>
             </div>}
+          
+          {/* Project info images section for Island project */}
+          {project.slug === "project-6" && (
+            <>
+              {/* Image section 1 - Project Overview */}
+              <div className="w-full my-10">
+                <img alt="Project Overview" className="w-full h-auto object-contain" src="/lovable-uploads/1017e5f0-34d8-478a-862d-b9a6b1c9f695.png" />
+              </div>
+              
+              {/* Image section 2 - Approach */}
+              <div className="w-full my-10">
+                <img alt="Project Approach" className="w-full h-auto object-contain" src="/lovable-uploads/234b3ab8-6e69-4463-a9cf-4200a8eca897.png" />
+              </div>
+              
+              {/* Image section 3 - Site Selection */}
+              <div className="w-full my-10">
+                <img alt="Site Selection" className="w-full h-auto object-contain" src="/lovable-uploads/a172e8d9-00d6-4b41-ac4e-a54dbfa9386f.png" />
+              </div>
+              
+              {/* Image section 4 - Bridge Analysis */}
+              <div className="w-full my-10">
+                <img alt="Bridge Analysis" className="w-full h-auto object-contain" src="/lovable-uploads/79518ec9-03d9-43fd-91a2-f0093064f858.png" />
+              </div>
+              
+              {/* Image section 5 - Environmental Context */}
+              <div className="w-full my-10">
+                <img alt="Environmental Context" className="w-full h-auto object-contain" src="/lovable-uploads/878c5f93-e2c2-484e-8701-9673796885d9.png" />
+              </div>
+              
+              {/* Image section 6 - Concept Design */}
+              <div className="w-full my-10">
+                <img alt="Concept Design" className="w-full h-auto object-contain" src="/lovable-uploads/959cc7ed-1026-44d6-b91f-dc2af37e47bb.png" />
+              </div>
+              
+              {/* Image section 7 - Spatial Design */}
+              <div className="w-full my-10">
+                <img alt="Spatial Design" className="w-full h-auto object-contain" src="/lovable-uploads/c032f8c1-ea99-4106-9f55-0359f923d3fe.png" />
+              </div>
+              
+              {/* Image section 8 - Bridge Structure */}
+              <div className="w-full my-10">
+                <img alt="Bridge Structure" className="w-full h-auto object-contain" src="/lovable-uploads/9204c7d5-567a-49d6-bed7-2119949f553d.png" />
+              </div>
+              
+              {/* Image section 9 - Surface Exposure */}
+              <div className="w-full my-10">
+                <img alt="Surface Exposure According to Rainfall" className="w-full h-auto object-contain" src="/lovable-uploads/aa565580-dbc1-4e11-a31f-e11f85c9a5c2.png" />
+              </div>
+              
+              {/* Image section 10 - Final Concept Image 1 */}
+              <div className="w-full my-10">
+                <img alt="Final Concept View 1" className="w-full h-auto object-contain" src="/lovable-uploads/fa5c04f4-9b2e-4d74-9eac-82b04077652e.png" />
+              </div>
+              
+              {/* Image section 11 - Final Concept Image 2 */}
+              <div className="w-full my-10">
+                <img alt="Final Concept Rainy Condition" className="w-full h-auto object-contain" src="/lovable-uploads/c965f215-8575-4d1f-b055-1f1fec8d9cd6.png" />
+              </div>
+              
+              {/* Image section 12 - Final Concept Image 3 */}
+              <div className="w-full my-10">
+                <img alt="Final Concept View 2" className="w-full h-auto object-contain" src="/lovable-uploads/773d9087-a073-430f-8510-1fdc452c034d.png" />
+              </div>
+            </>
+          )}
           
           {/* Project info image section - Added below video */}
           {project.slug === "project-5" && <div className="w-full my-10">
