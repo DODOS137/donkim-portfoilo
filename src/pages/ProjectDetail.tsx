@@ -129,6 +129,39 @@ const ProjectDetail = () => {
               </div>
             </div>}
           
+          {/* Learn Project Detail Sections - New images added */}
+          {project.slug === "learn" && <>
+              {/* Image section 1 - Project Type & Info */}
+              <div className="w-full my-10">
+                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/ef24cead-42d8-43b8-b1f0-8aa6e0d5d06f.png" />
+              </div>
+              
+              {/* Image section 2 - Process */}
+              <div className="w-full my-10">
+                <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/20ffeb9c-6241-4e64-b508-d87a3f26e51f.png" />
+              </div>
+              
+              {/* Image section 3 - Worldbuilding */}
+              <div className="w-full my-10">
+                <img alt="Worldbuilding - Environmental Setting" className="w-full h-auto object-contain" src="/lovable-uploads/db878cb6-21bb-45ed-bb18-f32fc6f63ec0.png" />
+              </div>
+              
+              {/* Image section 4 - Story Concept */}
+              <div className="w-full my-10">
+                <img alt="Story Concept and Plot" className="w-full h-auto object-contain" src="/lovable-uploads/33404ace-d96d-4d85-ad0e-9528701598b0.png" />
+              </div>
+              
+              {/* Image section 5 - Character Design */}
+              <div className="w-full my-10">
+                <img alt="Character Design Details" className="w-full h-auto object-contain" src="/lovable-uploads/1d6874b7-0d89-4c5a-9380-cb934ba6281d.png" />
+              </div>
+              
+              {/* Image section 6 - Robot Models */}
+              <div className="w-full my-10">
+                <img alt="Robot Character Models" className="w-full h-auto object-contain" src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" />
+              </div>
+            </>}
+          
           {/* Project info images section for Island project */}
           {project.slug === "project-6" && <>
               {/* Image section 1 - Project Overview */}
