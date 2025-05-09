@@ -110,7 +110,7 @@ const ProjectDetail = () => {
           {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
               <h1 className="font-bold mb-4 text-3xl my-0 py-[30px]">{project.title}</h1>
               
-              <p className="leading-relaxed text-xl py-0 my-[50px]">
+              <p className="leading-relaxed py-0 my-[50px] text-base">
                 {project.fullDescription}
               </p>
             </div>}
