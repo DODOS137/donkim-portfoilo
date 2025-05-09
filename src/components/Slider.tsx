@@ -34,21 +34,7 @@ const slides: SlideProps[] = [{
   projectName: "Code Studio",
   link: "/work"
 }, {
-  image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-  projectName: "Remote Work",
-  link: "/work"
-}, {
-  image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-  projectName: "Digital Life",
-  link: "/work"
-}, {
-  image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-  projectName: "Tech Innovation",
-  link: "/work"
-}, {
-  image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-  projectName: "Code Development",
-  link: "/work"
+ 
 }];
 
 const Slider = () => {
