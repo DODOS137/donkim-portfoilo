@@ -1,11 +1,9 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-
 interface Project {
   id: string;
   title: string;
@@ -17,7 +15,6 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -65,9 +62,12 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
-
 const ProjectDetail = () => {
-  const { slug } = useParams<{ slug: string; }>();
+  const {
+    slug
+  } = useParams<{
+    slug: string;
+  }>();
   const project = projects.find(p => p.slug === slug);
 
   // YouTube video options
@@ -79,7 +79,6 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
-
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -92,7 +91,6 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
-
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -116,30 +114,21 @@ const ProjectDetail = () => {
             </div>}
           
           {/* Enhanced text content section for Seoul project */}
-          {project.slug === "project-5" && project.fullDescription && (
-            <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+          {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
               <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
               <h2 className="text-2xl font-semibold mb-2">Project Details</h2>
-              <p className="text-3xl leading-relaxed">
+              <p className="leading-relaxed text-xl">
                 {project.fullDescription}
               </p>
-            </div>
-          )}
+            </div>}
           
           {/* Standard text content for other projects */}
-          {project.slug !== "project-5" && project.fullDescription && (
-            <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
+          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
               {project.fullDescription}
-            </div>
-          )}
+            </div>}
           
           {/* Korean description section for Seoul project */}
-          {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
-              <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
-              <p className="text-base leading-relaxed">
-                {project.koreanDescription}
-              </p>
-            </div>}
+          {project.koreanDescription}
           
           {/* Added second image section */}
           {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
@@ -149,5 +138,4 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
-
 export default ProjectDetail;
