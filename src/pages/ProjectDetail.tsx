@@ -5,6 +5,8 @@ import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
+import ModelViewer from '../components/ModelViewer';
+
 interface Project {
   id: string;
   title: string;
@@ -160,6 +162,12 @@ const ProjectDetail = () => {
               <div className="w-full my-10">
                 <img alt="Robot Character Models" className="w-full h-auto object-contain" src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" />
               </div>
+              
+              {/* NEW: 3D Model Viewer added below image section 7 */}
+              <ModelViewer 
+                modelPath="/robot_model.glb" 
+                title="Interactive 3D Robot Model"
+              />
             </>}
           
           {/* Project info images section for Island project */}
