@@ -1,14 +1,11 @@
-
 import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF, Text } from '@react-three/drei';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Mesh } from 'three';
-
 interface ModelProps {
   modelPath: string;
 }
-
 function Model({
   modelPath
 }: ModelProps) {
@@ -54,13 +51,11 @@ function Model({
         </> : <ModelContent />}
     </>;
 }
-
 interface ModelViewerProps {
   modelPath: string;
   title?: string;
   isSketchfab?: boolean;
 }
-
 const ModelViewer = ({
   modelPath,
   title,
@@ -77,37 +72,26 @@ const ModelViewer = ({
     // Model page URL format: https://sketchfab.com/models/[ID]
     const modelsMatch = url.match(/models\/([^\/]+)/);
     if (modelsMatch) return modelsMatch[1];
-    
+
     // 3D models format: https://sketchfab.com/3d-models/name-[ID]
     const tdModelsMatch = url.match(/3d-models\/.*-([a-f0-9]+)$/);
     if (tdModelsMatch) return tdModelsMatch[1];
-    
+
     // Direct ID format (assume the string provided is already the ID)
     if (/^[a-f0-9]+$/.test(url)) return url;
-    
+
     // If nothing matches, return the original URL (might be a direct embed URL)
     return url;
   };
-
   if (isSketchfab) {
     const modelId = getSketchfabModelId(modelPath);
     // If the URL already contains /embed, use it directly, otherwise construct it
-    const embedUrl = modelPath.includes('/embed') 
-      ? modelPath 
-      : `https://sketchfab.com/models/${modelId}/embed`;
-    
+    const embedUrl = modelPath.includes('/embed') ? modelPath : `https://sketchfab.com/models/${modelId}/embed`;
     return <div className="w-full my-10">
-        {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
+        {title}
         <div className="bg-gray-900 rounded-lg overflow-hidden">
           <AspectRatio ratio={16 / 9}>
-            <iframe 
-              title={title || "Sketchfab Model"} 
-              frameBorder="0" 
-              allowFullScreen={true}
-              allow="autoplay; fullscreen; xr-spatial-tracking" 
-              src={embedUrl} 
-              className="w-full h-full" 
-            />
+            <iframe title={title || "Sketchfab Model"} frameBorder="0" allowFullScreen={true} allow="autoplay; fullscreen; xr-spatial-tracking" src={embedUrl} className="w-full h-full" />
           </AspectRatio>
         </div>
         <p className="text-gray-400 text-sm mt-2">
@@ -115,7 +99,6 @@ const ModelViewer = ({
         </p>
       </div>;
   }
-
   return <div className="w-full my-10">
       {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
       <div className="bg-gray-900 rounded-lg overflow-hidden">
@@ -140,5 +123,4 @@ const ModelViewer = ({
       <p className="text-gray-400 text-sm mt-2">Click and drag to rotate. Scroll to zoom.</p>
     </div>;
 };
-
 export default ModelViewer;
