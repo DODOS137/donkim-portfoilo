@@ -133,6 +133,11 @@ const ProjectDetail = () => {
               <img alt="Project Information" className="w-full h-auto object-contain" src="/lovable-uploads/156e341c-46d4-400d-916d-942aa675ab4e.png" />
             </div>}
           
+          {/* Add third image section - Project 5 detailed mockup */}
+          {project.slug === "project-5" && <div className="w-full my-10">
+              <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/bdda1cc7-8a2b-4fd3-bad3-b29f3299dc8a.png" />
+            </div>}
+          
           {/* Korean description section for Seoul project */}
           {project.koreanDescription && <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
               <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
