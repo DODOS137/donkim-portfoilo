@@ -174,12 +174,12 @@ const ProjectDetail = () => {
               
               {/* Image section 9 - 3D Storyboard Development */}
               <div className="w-full my-10">
-                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/19c881f9-158b-403d-8437-0823eb514522.png" />
+                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/92cbf397-42cb-489d-8507-e50f9ab90a7d.png" />
               </div>
 
               {/* NEW - YouTube Video Section added below Image section 9 */}
               <div className="w-full my-10">
-                <h3 className="text-white text-xl font-medium mb-4">Learn Project - Video Preview</h3>
+                
                 <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
                   <YouTube videoId="aCJblmM9yzs" opts={videoOptions} className="w-full h-full" />
                 </AspectRatio>
