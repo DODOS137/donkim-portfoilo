@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -44,7 +45,7 @@ const projects: Project[] = [{
   slug: "project-5",
   description: "Revolutionary user experience design",
   fullDescription: "Project 5 represents a breakthrough in user experience design, setting new standards for intuitive interfaces and engaging digital interactions. Our approach focuses on user-centered design principles.",
-  imageUrl: "/lovable-uploads/54fd727a-55a5-4761-b600-4c8f428f2dd9.png"
+  imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png"
 }, {
   id: "6",
   title: "Project 6",
@@ -84,9 +85,15 @@ const ProjectDetail = () => {
           
           
           
-          {project.imageUrl && <div className="w-full mb-8">
-              <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
-            </div>}
+          {project.imageUrl && (
+            <div className="w-full mb-8">
+              <img 
+                src={project.imageUrl} 
+                alt={project.title} 
+                className="w-full h-auto object-contain" 
+              />
+            </div>
+          )}
           
           <div className="prose prose-invert max-w-none">
             <p className="text-white text-lg">{project.fullDescription}</p>

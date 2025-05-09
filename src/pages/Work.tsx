@@ -45,7 +45,7 @@ const projects: Project[] = [
     title: "Seoul Nature history Museum",
     slug: "project-5",
     description: "Brand Renewal and Environmental Design",
-    imageUrl: "/lovable-uploads/54fd727a-55a5-4761-b600-4c8f428f2dd9.png"
+    imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png"
   },
   {
     id: "6",
