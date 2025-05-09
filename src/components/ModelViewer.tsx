@@ -1,15 +1,14 @@
-
 import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF, Text } from '@react-three/drei';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Mesh } from 'three';
-
 interface ModelProps {
   modelPath: string;
 }
-
-function Model({ modelPath }: ModelProps) {
+function Model({
+  modelPath
+}: ModelProps) {
   const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -18,14 +17,15 @@ function Model({ modelPath }: ModelProps) {
     try {
       // Force clear the cache for this model to ensure we load the latest version
       useGLTF.preload(modelPath);
-      const { scene } = useGLTF(modelPath);
-      
+      const {
+        scene
+      } = useGLTF(modelPath);
+
       // Mark as loaded when successful
       useEffect(() => {
         setIsLoaded(true);
         console.log("Model loaded successfully:", modelPath);
       }, []);
-      
       return <primitive object={scene} scale={1.5} position={[0, -1, 0]} />;
     } catch (err) {
       console.error("Error in ModelContent:", err);
@@ -36,109 +36,76 @@ function Model({ modelPath }: ModelProps) {
 
   // Fallback cube when model fails to load
   const FallbackCube = () => {
-    return (
-      <mesh position={[0, 0, 0]}>
+    return <mesh position={[0, 0, 0]}>
         <boxGeometry args={[1, 1, 1]} />
         <meshStandardMaterial color="hotpink" />
-      </mesh>
-    );
+      </mesh>;
   };
-
-  return (
-    <>
-      {error ? (
-        <>
+  return <>
+      {error ? <>
           <FallbackCube />
           {/* Replace textGeometry with Text component from drei */}
-          <Text
-            position={[0, -2, 0]}
-            fontSize={0.2}
-            color="white"
-            anchorX="center"
-            anchorY="middle"
-          >
+          <Text position={[0, -2, 0]} fontSize={0.2} color="white" anchorX="center" anchorY="middle">
             Error loading model
           </Text>
-        </>
-      ) : (
-        <ModelContent />
-      )}
-    </>
-  );
+        </> : <ModelContent />}
+    </>;
 }
-
 interface ModelViewerProps {
   modelPath: string;
   title?: string;
   isSketchfab?: boolean;
 }
-
-const ModelViewer = ({ modelPath, title, isSketchfab = false }: ModelViewerProps) => {
+const ModelViewer = ({
+  modelPath,
+  title,
+  isSketchfab = false
+}: ModelViewerProps) => {
   console.log("ModelViewer rendering with path:", modelPath);
-  
+
   // Extract Sketchfab model ID from URL if it's a Sketchfab embed
   const getSketchfabModelId = (url: string) => {
     // Extract the ID from URLs like https://sketchfab.com/models/[ID]/embed
     const matches = url.match(/models\/([^\/]+)/);
     return matches ? matches[1] : '';
   };
-
   if (isSketchfab) {
     const modelId = getSketchfabModelId(modelPath);
     const embedUrl = `https://sketchfab.com/models/${modelId}/embed`;
-    
-    return (
-      <div className="w-full my-10">
-        {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
+    return <div className="w-full my-10">
+        {title}
         <div className="bg-gray-900 rounded-lg overflow-hidden">
           <AspectRatio ratio={16 / 9}>
-            <iframe
-              title={title || "Sketchfab Model"}
-              frameBorder="0"
-              allowFullScreen
-              mozallowfullscreen="true"
-              webkitallowfullscreen="true"
-              allow="autoplay; fullscreen; xr-spatial-tracking"
-              src={embedUrl}
-              className="w-full h-full"
-            />
+            <iframe title={title || "Sketchfab Model"} frameBorder="0" allowFullScreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src={embedUrl} className="w-full h-full" />
           </AspectRatio>
         </div>
         <p className="text-gray-400 text-sm mt-2">
           Interactive 3D model powered by Sketchfab
         </p>
-      </div>
-    );
+      </div>;
   }
-  
-  return (
-    <div className="w-full my-10">
+  return <div className="w-full my-10">
       {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
       <div className="bg-gray-900 rounded-lg overflow-hidden">
         <AspectRatio ratio={16 / 9}>
-          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+          <Canvas camera={{
+          position: [0, 0, 5],
+          fov: 50
+        }}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 5]} intensity={1} />
-            <Suspense fallback={
-              <mesh position={[0, 0, 0]}>
+            <Suspense fallback={<mesh position={[0, 0, 0]}>
                 <sphereGeometry args={[0.5, 16, 16]} />
                 <meshStandardMaterial color="blue" wireframe />
-              </mesh>
-            }>
+              </mesh>}>
               <Model modelPath={modelPath} />
               <Environment preset="city" />
             </Suspense>
-            <OrbitControls 
-              enablePan={true}
-              enableZoom={true}
-              enableRotate={true}
-            />
+            <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
           </Canvas>
         </AspectRatio>
       </div>
       <p className="text-gray-400 text-sm mt-2">Click and drag to rotate. Scroll to zoom.</p>
-    </div>
-  );
+    </div>;
 };
-
 export default ModelViewer;
