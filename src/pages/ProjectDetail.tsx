@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -6,7 +5,6 @@ import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
-
 interface Project {
   id: string;
   title: string;
@@ -18,7 +16,6 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -67,7 +64,6 @@ const projects: Project[] = [{
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -119,7 +115,7 @@ const ProjectDetail = () => {
               </p>
             </div>}
             
-          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl">
+          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px]">
               <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
               {project.fullDescription}
             </div>}
@@ -134,8 +130,7 @@ const ProjectDetail = () => {
             </div>}
           
           {/* Project info images section for Island project */}
-          {project.slug === "project-6" && (
-            <>
+          {project.slug === "project-6" && <>
               {/* Image section 1 - Project Overview */}
               <div className="w-full my-10">
                 <img alt="Project Overview" className="w-full h-auto object-contain" src="/lovable-uploads/1017e5f0-34d8-478a-862d-b9a6b1c9f695.png" />
@@ -195,8 +190,7 @@ const ProjectDetail = () => {
               <div className="w-full my-10">
                 <img alt="Final Concept View 2" className="w-full h-auto object-contain" src="/lovable-uploads/773d9087-a073-430f-8510-1fdc452c034d.png" />
               </div>
-            </>
-          )}
+            </>}
           
           {/* Project info image section - Added below video */}
           {project.slug === "project-5" && <div className="w-full my-10">
