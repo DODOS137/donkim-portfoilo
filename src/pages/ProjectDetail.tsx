@@ -163,7 +163,8 @@ const ProjectDetail = () => {
               
               {/* First 3D model viewer */}
               <ModelViewer modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" title="Interactive 3D Robot Model" isSketchfab={true} />
-              
+              title="Interactive RX-056 Robot Model"
+            
               {/* Image section 8 - Robot Specs Detail */}
               <div className="w-full my-10">
                 <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/4da912e8-c5de-40f1-a4b8-a43bc0ba8af1.png" />
