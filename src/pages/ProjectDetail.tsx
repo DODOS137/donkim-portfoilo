@@ -163,9 +163,9 @@ const ProjectDetail = () => {
                 <img alt="Robot Character Models" className="w-full h-auto object-contain" src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" />
               </div>
               
-              {/* NEW: 3D Model Viewer added below image section 7 */}
+              {/* Updated 3D Model Viewer to use the external URL */}
               <ModelViewer 
-                modelPath="/Rx056.glb" 
+                modelPath="https://DODOS137.github.io/dk-slider-showcase/Rx056.glb" 
                 title="Interactive 3D Robot Model"
               />
             </>}
