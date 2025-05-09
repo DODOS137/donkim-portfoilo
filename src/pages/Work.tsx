@@ -9,7 +9,8 @@ interface Project {
   slug: string;
   description: string;
   imageUrl?: string;
-  videoId?: string; // Added videoId field for YouTube videos
+  videoId?: string;
+  koreanDescription?: string; // Added for consistency
 }
 
 const projects: Project[] = [

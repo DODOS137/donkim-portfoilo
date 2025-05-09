@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 interface Project {
   id: string;
   title: string;
@@ -13,7 +15,9 @@ interface Project {
   imageUrl?: string;
   secondaryImageUrl?: string;
   videoId?: string; // Added videoId field for YouTube videos
+  koreanDescription?: string; // Added field for Korean description
 }
+
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -49,21 +53,10 @@ const projects: Project[] = [{
   title: "Seoul Natural History Museum",
   slug: "project-5",
   description: "Revolutionary user experience design",
+  fullDescription: "The Seoul Natural History Museum project focuses on creating an immersive digital interface that showcases Seoul's natural environment and ecology.",
+  koreanDescription: "이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다. 사용자의 몰입 경험을 중심으로 설계되었습니다.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-    <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
-        <p className="text-base leading-relaxed">
-          이 프로젝트는 서울의 자연과 생태를 주제로 한 디지털 인터페이스 전시입니다. 사용자의 몰입 경험을 중심으로 설계되었습니다.
-        </p>
-      </div>
-    )}
-  </div>
-)}
-
-
-
   videoId: "8GEK3igRom0" // Updated video ID for Seoul Natural History Museum
-  
 }, {
   id: "6",
   title: "Project 6",
@@ -72,6 +65,7 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
+
 const ProjectDetail = () => {
   const {
     slug
@@ -89,6 +83,7 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
+  
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -101,6 +96,7 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
+  
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -115,14 +111,21 @@ const ProjectDetail = () => {
             </div>}
           
           <div className="prose prose-invert max-w-none mb-8">
-            
-            
             {project.fullDescription}
           </div>
           
+          {/* Korean description section for Seoul project */}
+          {project.koreanDescription && (
+            <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
+              <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
+              <p className="text-base leading-relaxed">
+                {project.koreanDescription}
+              </p>
+            </div>
+          )}
+          
           {/* YouTube Video Section */}
           {project.videoId && <div className="w-full mb-10">
-              
               <div className="w-full">
                 <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
                   <YouTube videoId={project.videoId} opts={videoOptions} className="w-full h-full" />
@@ -132,10 +135,11 @@ const ProjectDetail = () => {
           
           {/* Added second image section */}
           {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
-              
+              <img src={project.secondaryImageUrl} alt={`${project.title} - additional image`} className="w-full h-auto object-contain" />
             </div>}
         </div>
       </main>
     </div>;
 };
+
 export default ProjectDetail;
