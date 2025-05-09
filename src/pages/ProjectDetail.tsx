@@ -165,7 +165,7 @@ const ProjectDetail = () => {
               
               {/* NEW: 3D Model Viewer added below image section 7 */}
               <ModelViewer 
-                modelPath="public/Rx056.glb" 
+                modelPath="/Rx056.glb" 
                 title="Interactive 3D Robot Model"
               />
             </>}
