@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -51,7 +52,7 @@ const projects: Project[] = [{
   slug: "project-6",
   description: "Next-generation application framework",
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
-  imageUrl: public/lovable-uploads/web1920-S.N.M_대지 1.png
+  imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
 const ProjectDetail = () => {
   const {
@@ -81,17 +82,20 @@ const ProjectDetail = () => {
             Back to Work
           </Link>
           
-          
-          
+          <h1 className="text-4xl font-bold text-white mb-4">{project.title}</h1>
+          <p className="text-gray-400 mb-8">{project.description}</p>
           
           {project.imageUrl && <div className="w-full overflow-hidden mb-8">
-              
+              <img 
+                src={project.imageUrl} 
+                alt={project.title} 
+                className="w-full h-auto" 
+                style={{ maxWidth: '1920px', height: '835px', objectFit: 'cover' }} 
+              />
             </div>}
           
           <div className="prose prose-invert max-w-none">
-            
-            
-            
+            <p className="text-white text-lg">{project.fullDescription}</p>
           </div>
         </div>
       </main>
