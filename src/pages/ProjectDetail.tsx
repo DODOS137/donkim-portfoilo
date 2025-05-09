@@ -169,9 +169,9 @@ const ProjectDetail = () => {
                 <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/4da912e8-c5de-40f1-a4b8-a43bc0ba8af1.png" />
               </div>
               
-              {/* NEW - Second 3D Model Viewer */}
+              {/* Use the exact URL provided by the user for the second model */}
               <ModelViewer 
-                modelPath="https://sketchfab.com/3d-models/ls107-65e7ff25d71f4512829dfc88c5537add" 
+                modelPath="https://sketchfab.com/models/65e7ff25d71f4512829dfc88c5537add/embed" 
                 title="Interactive LS1-07 Robot Model" 
                 isSketchfab={true} 
               />
