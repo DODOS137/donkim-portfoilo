@@ -85,11 +85,11 @@ const ProjectDetail = () => {
           <p className="text-gray-400 mb-8">{project.description}</p>
           
           {project.imageUrl && <div className="w-full overflow-hidden mb-8">
-              <img src={project.imageUrl} alt={project.title} className="w-full h-auto" style={{
+              <img src={project.imageUrl} alt={project.title} style={{
             maxWidth: '1920px',
             height: '835px',
             objectFit: 'cover'
-          }} />
+          }} className="w-full h-auto object-cover" />
             </div>}
           
           <div className="prose prose-invert max-w-none">
