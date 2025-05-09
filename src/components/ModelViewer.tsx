@@ -4,9 +4,11 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF, Text } from '@react-three/drei';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Mesh } from 'three';
+
 interface ModelProps {
   modelPath: string;
 }
+
 function Model({
   modelPath
 }: ModelProps) {
@@ -52,11 +54,13 @@ function Model({
         </> : <ModelContent />}
     </>;
 }
+
 interface ModelViewerProps {
   modelPath: string;
   title?: string;
   isSketchfab?: boolean;
 }
+
 const ModelViewer = ({
   modelPath,
   title,
@@ -64,18 +68,34 @@ const ModelViewer = ({
 }: ModelViewerProps) => {
   console.log("ModelViewer rendering with path:", modelPath);
 
-  // Extract Sketchfab model ID from URL if it's a Sketchfab embed
+  // Enhanced Sketchfab model ID extraction from various URL formats
   const getSketchfabModelId = (url: string) => {
-    // Extract the ID from URLs like https://sketchfab.com/models/[ID]/embed
-    // or https://sketchfab.com/3d-models/[name]-[ID]
+    // Direct embed URL format: https://sketchfab.com/models/[ID]/embed
+    const modelsEmbedMatch = url.match(/models\/([^\/]+)\/embed/);
+    if (modelsEmbedMatch) return modelsEmbedMatch[1];
+
+    // Model page URL format: https://sketchfab.com/models/[ID]
     const modelsMatch = url.match(/models\/([^\/]+)/);
-    const tdModelsMatch = url.match(/3d-models\/.*-([a-f0-9]+)$/);
+    if (modelsMatch) return modelsMatch[1];
     
-    return modelsMatch ? modelsMatch[1] : tdModelsMatch ? tdModelsMatch[1] : '';
+    // 3D models format: https://sketchfab.com/3d-models/name-[ID]
+    const tdModelsMatch = url.match(/3d-models\/.*-([a-f0-9]+)$/);
+    if (tdModelsMatch) return tdModelsMatch[1];
+    
+    // Direct ID format (assume the string provided is already the ID)
+    if (/^[a-f0-9]+$/.test(url)) return url;
+    
+    // If nothing matches, return the original URL (might be a direct embed URL)
+    return url;
   };
+
   if (isSketchfab) {
     const modelId = getSketchfabModelId(modelPath);
-    const embedUrl = `https://sketchfab.com/models/${modelId}/embed`;
+    // If the URL already contains /embed, use it directly, otherwise construct it
+    const embedUrl = modelPath.includes('/embed') 
+      ? modelPath 
+      : `https://sketchfab.com/models/${modelId}/embed`;
+    
     return <div className="w-full my-10">
         {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
         <div className="bg-gray-900 rounded-lg overflow-hidden">
@@ -95,6 +115,7 @@ const ModelViewer = ({
         </p>
       </div>;
   }
+
   return <div className="w-full my-10">
       {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
       <div className="bg-gray-900 rounded-lg overflow-hidden">
@@ -119,4 +140,5 @@ const ModelViewer = ({
       <p className="text-gray-400 text-sm mt-2">Click and drag to rotate. Scroll to zoom.</p>
     </div>;
 };
+
 export default ModelViewer;
