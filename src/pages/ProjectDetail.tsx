@@ -53,7 +53,7 @@ const projects: Project[] = [{
   title: "Seoul Natural History Museum",
   slug: "project-5",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
-  videoId: "8GEK3igRom0", // Updated video ID for Seoul Natural History Museum,
+  videoId: "8GEK3igRom0",
   fullDescription: "Seoul Natural History Museum"
  
 
