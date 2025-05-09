@@ -163,10 +163,11 @@ const ProjectDetail = () => {
                 <img alt="Robot Character Models" className="w-full h-auto object-contain" src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" />
               </div>
               
-              {/* Updated 3D Model Viewer to use the external URL */}
+              {/* Updated to use Sketchfab model embed */}
               <ModelViewer 
-                modelPath="https://DODOS137.github.io/dk-slider-showcase/Rx056.glb" 
+                modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" 
                 title="Interactive 3D Robot Model"
+                isSketchfab={true}
               />
             </>}
           

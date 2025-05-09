@@ -70,10 +70,46 @@ function Model({ modelPath }: ModelProps) {
 interface ModelViewerProps {
   modelPath: string;
   title?: string;
+  isSketchfab?: boolean;
 }
 
-const ModelViewer = ({ modelPath, title }: ModelViewerProps) => {
+const ModelViewer = ({ modelPath, title, isSketchfab = false }: ModelViewerProps) => {
   console.log("ModelViewer rendering with path:", modelPath);
+  
+  // Extract Sketchfab model ID from URL if it's a Sketchfab embed
+  const getSketchfabModelId = (url: string) => {
+    // Extract the ID from URLs like https://sketchfab.com/models/[ID]/embed
+    const matches = url.match(/models\/([^\/]+)/);
+    return matches ? matches[1] : '';
+  };
+
+  if (isSketchfab) {
+    const modelId = getSketchfabModelId(modelPath);
+    const embedUrl = `https://sketchfab.com/models/${modelId}/embed`;
+    
+    return (
+      <div className="w-full my-10">
+        {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
+        <div className="bg-gray-900 rounded-lg overflow-hidden">
+          <AspectRatio ratio={16 / 9}>
+            <iframe
+              title={title || "Sketchfab Model"}
+              frameBorder="0"
+              allowFullScreen
+              mozallowfullscreen="true"
+              webkitallowfullscreen="true"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              src={embedUrl}
+              className="w-full h-full"
+            />
+          </AspectRatio>
+        </div>
+        <p className="text-gray-400 text-sm mt-2">
+          Interactive 3D model powered by Sketchfab
+        </p>
+      </div>
+    );
+  }
   
   return (
     <div className="w-full my-10">
