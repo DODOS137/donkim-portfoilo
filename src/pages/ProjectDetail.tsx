@@ -6,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -171,15 +170,11 @@ const ProjectDetail = () => {
               </div>
               
               {/* Use the exact URL provided by the user for the second model */}
-              <ModelViewer 
-                modelPath="https://sketchfab.com/models/65e7ff25d71f4512829dfc88c5537add/embed" 
-                title="Interactive LS1-07 Robot Model" 
-                isSketchfab={true} 
-              />
+              <ModelViewer modelPath="https://sketchfab.com/models/65e7ff25d71f4512829dfc88c5537add/embed" title="Interactive LS1-07 Robot Model" isSketchfab={true} />
               
               {/* Image section 9 - 3D Storyboard Development - NEWLY ADDED */}
               <div className="w-full my-10">
-                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/c6c2d122-928f-448b-9b5a-4f5c6800f6df.png" />
+                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/19c881f9-158b-403d-8437-0823eb514522.png" />
               </div>
             </>}
           
