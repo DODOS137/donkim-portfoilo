@@ -1,5 +1,5 @@
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -9,8 +9,26 @@ interface ModelProps {
 }
 
 function Model({ modelPath }: ModelProps) {
-  const { scene } = useGLTF(modelPath);
-  return <primitive object={scene} scale={1.5} position={[0, -1, 0]} />;
+  const [hasError, setHasError] = useState(false);
+  
+  try {
+    const { scene } = useGLTF(modelPath);
+    return <primitive object={scene} scale={1.5} position={[0, -1, 0]} />;
+  } catch (error) {
+    console.error("Error loading model:", error);
+    // If model fails to load, display a fallback box
+    if (!hasError) {
+      setHasError(true);
+    }
+    return (
+      <>
+        <mesh position={[0, 0, 0]}>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color="hotpink" />
+        </mesh>
+      </>
+    );
+  }
 }
 
 interface ModelViewerProps {
