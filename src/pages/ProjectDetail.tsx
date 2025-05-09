@@ -54,7 +54,7 @@ const projects: Project[] = [{
   videoId: "8GEK3igRom0",
   // Updated video ID for Seoul Natural History Museum
   fullDescription: "Seoul Natural History Museum",
-  Description: " The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution."
+  
 }, {
   id: "6",
   title: "Project 6",
