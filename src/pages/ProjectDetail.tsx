@@ -176,6 +176,11 @@ const ProjectDetail = () => {
                 title="Interactive LS1-07 Robot Model" 
                 isSketchfab={true} 
               />
+              
+              {/* Image section 9 - 3D Storyboard Development - NEWLY ADDED */}
+              <div className="w-full my-10">
+                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/c6c2d122-928f-448b-9b5a-4f5c6800f6df.png" />
+              </div>
             </>}
           
           {/* Project info images section for Island project */}
