@@ -40,8 +40,8 @@ const projects: Project[] = [{
   imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1936&auto=format&fit=crop"
 }, {
   id: "5",
-  title: "Project 5",
-  slug: "project-5",
+  title: "Seoul Natural History Museum",
+  slug: "Seoul Natural History Museum",
   description: "Revolutionary user experience design",
   fullDescription: "Project 5 represents a breakthrough in user experience design, setting new standards for intuitive interfaces and engaging digital interactions. Our approach focuses on user-centered design principles.",
   imageUrl: "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?q=80&w=2080&auto=format&fit=crop"
