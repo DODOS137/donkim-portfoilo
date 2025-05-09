@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
-
 interface Project {
   id: string;
   title: string;
@@ -13,7 +11,6 @@ interface Project {
   imageUrl?: string;
   secondaryImageUrl?: string; // Added secondary image field
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -58,7 +55,6 @@ const projects: Project[] = [{
   fullDescription: "Project 6 is our next-generation application framework that enables rapid development of robust, scalable, and maintainable web applications. It incorporates the latest best practices in software engineering.",
   imageUrl: "/lovable-uploads/web1920-S.N.M_대지 1.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -66,7 +62,6 @@ const ProjectDetail = () => {
     slug: string;
   }>();
   const project = projects.find(p => p.slug === slug);
-  
   if (!project) {
     return <div className="min-h-screen bg-black">
       <Navbar />
@@ -79,7 +74,6 @@ const ProjectDetail = () => {
       </div>
     </div>;
   }
-  
   return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
@@ -89,33 +83,20 @@ const ProjectDetail = () => {
             Back to Work
           </Link>
           
-          {project.imageUrl && (
-            <div className="w-full mb-8">
-              <img 
-                src={project.imageUrl} 
-                alt={project.title} 
-                className="w-full h-auto object-contain" 
-              />
-            </div>
-          )}
+          {project.imageUrl && <div className="w-full mb-8">
+              <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
+            </div>}
           
           <div className="prose prose-invert max-w-none">
-            <p className="text-white text-lg">{project.fullDescription}</p>
+            
           </div>
           
           {/* Added second image section */}
-          {project.secondaryImageUrl && (
-            <div className="w-full mt-10 mb-8">
-              <img 
-                src={project.secondaryImageUrl} 
-                alt={`${project.title} - Additional View`} 
-                className="w-full h-auto object-contain" 
-              />
-            </div>
-          )}
+          {project.secondaryImageUrl && <div className="w-full mt-10 mb-8">
+              <img src={project.secondaryImageUrl} alt={`${project.title} - Additional View`} className="w-full h-auto object-contain" />
+            </div>}
         </div>
       </main>
     </div>;
 };
-
 export default ProjectDetail;
