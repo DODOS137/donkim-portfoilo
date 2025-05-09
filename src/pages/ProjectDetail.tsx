@@ -204,6 +204,26 @@ const ProjectDetail = () => {
               <div className="w-full my-10">
                 <img alt="Final Concept Images - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/fa38053d-4700-43dd-a130-18c9801bd4b4.png" />
               </div>
+              
+              {/* NEW: Image section 14 - Main Hall & Tree */}
+              <div className="w-full my-10">
+                <img alt="Main Hall & Tree - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/993feb4e-7411-490f-8e5a-e51216d4f546.png" />
+              </div>
+              
+              {/* NEW: Image section 15 - Library Main Hall */}
+              <div className="w-full my-10">
+                <img alt="Library Main Hall with Robot Character" className="w-full h-auto object-contain" src="/lovable-uploads/923720d8-1f64-4936-9a07-71bedb9d4a0e.png" />
+              </div>
+              
+              {/* NEW: Image section 16 - Overhead View */}
+              <div className="w-full my-10">
+                <img alt="Overhead View of Library with Robot Character" className="w-full h-auto object-contain" src="/lovable-uploads/38be711f-81bc-4f86-8fd3-eea0c5226c1a.png" />
+              </div>
+              
+              {/* NEW: Image section 17 - Post-Project Direction */}
+              <div className="w-full my-10">
+                <img alt="Post-Project Direction - Future Development Plans" className="w-full h-auto object-contain" src="/lovable-uploads/2cc04897-cb27-46d1-92b6-76c95a2afbcd.png" />
+              </div>
             </>}
           
           {/* Project info images section for Island project */}
