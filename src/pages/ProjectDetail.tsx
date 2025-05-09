@@ -165,7 +165,7 @@ const ProjectDetail = () => {
               
               {/* NEW: 3D Model Viewer added below image section 7 */}
               <ModelViewer 
-                modelPath="https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/robot-playground/model.gltf" 
+                modelPath="public/Rx056.glb" 
                 title="Interactive 3D Robot Model"
               />
             </>}
