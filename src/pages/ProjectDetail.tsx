@@ -6,6 +6,7 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
+
 interface Project {
   id: string;
   title: string;
@@ -160,16 +161,20 @@ const ProjectDetail = () => {
                 <img alt="Robot Character Models" className="w-full h-auto object-contain" src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" />
               </div>
               
-              {/* Updated to use Sketchfab model embed */}
+              {/* First 3D model viewer */}
               <ModelViewer modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" title="Interactive 3D Robot Model" isSketchfab={true} />
               
-              {/* NEW Image section 8 - Robot Specs Detail */}
+              {/* Image section 8 - Robot Specs Detail */}
               <div className="w-full my-10">
                 <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/4da912e8-c5de-40f1-a4b8-a43bc0ba8af1.png" />
-                <div className="mt-4 text-gray-300">
-                  
-                </div>
               </div>
+              
+              {/* NEW - Second 3D Model Viewer */}
+              <ModelViewer 
+                modelPath="https://sketchfab.com/3d-models/ls107-65e7ff25d71f4512829dfc88c5537add" 
+                title="Interactive LS1-07 Robot Model" 
+                isSketchfab={true} 
+              />
             </>}
           
           {/* Project info images section for Island project */}
@@ -247,49 +252,37 @@ const ProjectDetail = () => {
           
           {/* Image section 4 - Site Selection */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              
               <img alt="Site Selection" className="w-full h-auto object-contain" src="/lovable-uploads/bcd77b77-5980-4b25-8c77-668dc97cf557.png" />
-              <div className="mt-4 text-gray-300">
-                
-                
-              </div>
             </div>}
           
           {/* Image section 5 - Context & Problem Analysis */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              
               <img alt="Context & Problem Analysis" className="w-full h-auto object-contain" src="/lovable-uploads/b4236ac5-2c03-4dfa-a337-b06457754639.png" />
             </div>}
           
           {/* Image section 6 - New Museum Perspective */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              
               <img alt="New Museum Perspective" className="w-full h-auto object-contain" src="/lovable-uploads/10edf164-4c9f-4915-a779-5bb928aeed8b.png" />
             </div>}
           
           {/* Image section 7 - Floor Plan / Spatial Design */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              
               <img alt="Floor Plan and Spatial Design" className="w-full h-auto object-contain" src="/lovable-uploads/543f4a31-e026-4287-93b1-9d97726ffd62.png" />
           </div>}
           
           {/* Image section 8 - Material Board */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              
               <img alt="Material Board" className="w-full h-auto object-contain" src="/lovable-uploads/ef80e3a5-8484-4a70-8096-237b2bd5f7be.png" />
           </div>}
           
           {/* Image section 9 - Exhibition Planning and Design */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              
               <img alt="Exhibition Planning and Design" className="w-full h-auto object-contain" src="/lovable-uploads/f5645ceb-bc9c-4f26-a391-bd5a5799b169.png" />
           </div>}
           
           {/* Image section 10 & 11 - Final Concept Images */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              
               <img alt="Final Concept Images - Reception Desk" className="w-full h-auto object-contain mb-10" src="/lovable-uploads/839373a9-1ab5-4d36-b558-6757058f4cec.png" />
-              
           </div>}
           
           {/* Image section 11 - 1F Exhibition Hall - Marine Zone */}

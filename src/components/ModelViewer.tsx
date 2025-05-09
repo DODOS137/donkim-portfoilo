@@ -1,3 +1,4 @@
+
 import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF, Text } from '@react-three/drei';
@@ -66,17 +67,27 @@ const ModelViewer = ({
   // Extract Sketchfab model ID from URL if it's a Sketchfab embed
   const getSketchfabModelId = (url: string) => {
     // Extract the ID from URLs like https://sketchfab.com/models/[ID]/embed
-    const matches = url.match(/models\/([^\/]+)/);
-    return matches ? matches[1] : '';
+    // or https://sketchfab.com/3d-models/[name]-[ID]
+    const modelsMatch = url.match(/models\/([^\/]+)/);
+    const tdModelsMatch = url.match(/3d-models\/.*-([a-f0-9]+)$/);
+    
+    return modelsMatch ? modelsMatch[1] : tdModelsMatch ? tdModelsMatch[1] : '';
   };
   if (isSketchfab) {
     const modelId = getSketchfabModelId(modelPath);
     const embedUrl = `https://sketchfab.com/models/${modelId}/embed`;
     return <div className="w-full my-10">
-        {title}
+        {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
         <div className="bg-gray-900 rounded-lg overflow-hidden">
           <AspectRatio ratio={16 / 9}>
-            <iframe title={title || "Sketchfab Model"} frameBorder="0" allowFullScreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src={embedUrl} className="w-full h-full" />
+            <iframe 
+              title={title || "Sketchfab Model"} 
+              frameBorder="0" 
+              allowFullScreen={true}
+              allow="autoplay; fullscreen; xr-spatial-tracking" 
+              src={embedUrl} 
+              className="w-full h-full" 
+            />
           </AspectRatio>
         </div>
         <p className="text-gray-400 text-sm mt-2">
