@@ -172,9 +172,17 @@ const ProjectDetail = () => {
               {/* Use the exact URL provided by the user for the second model */}
               <ModelViewer modelPath="https://sketchfab.com/models/65e7ff25d71f4512829dfc88c5537add/embed" title="Interactive LS1-07 Robot Model" isSketchfab={true} />
               
-              {/* Image section 9 - 3D Storyboard Development - NEWLY ADDED */}
+              {/* Image section 9 - 3D Storyboard Development */}
               <div className="w-full my-10">
                 <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/19c881f9-158b-403d-8437-0823eb514522.png" />
+              </div>
+
+              {/* NEW - YouTube Video Section added below Image section 9 */}
+              <div className="w-full my-10">
+                <h3 className="text-white text-xl font-medium mb-4">Learn Project - Video Preview</h3>
+                <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                  <YouTube videoId="aCJblmM9yzs" opts={videoOptions} className="w-full h-full" />
+                </AspectRatio>
               </div>
             </>}
           
