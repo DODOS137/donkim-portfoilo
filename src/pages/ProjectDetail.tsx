@@ -169,6 +169,14 @@ const ProjectDetail = () => {
                 title="Interactive 3D Robot Model"
                 isSketchfab={true}
               />
+              
+              {/* NEW Image section 8 - Robot Specs Detail */}
+              <div className="w-full my-10">
+                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/b9c1bc90-c2d9-4383-b3d8-56731bb41385.png" />
+                <div className="mt-4 text-gray-300">
+                  <p className="text-sm">Robot model LS1-07 acts as the central command unit, equipped with advanced AI to coordinate operations.</p>
+                </div>
+              </div>
             </>}
           
           {/* Project info images section for Island project */}
