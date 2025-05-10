@@ -105,7 +105,7 @@ const ProjectDetail = () => {
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
             </div>}
           
-          {/* Title and description sections */}
+          {/* Title and description moved between image and video */}
           {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
               <h1 className="font-bold mb-4 text-3xl my-0 py-[30px]">{project.title}</h1>
               
@@ -130,9 +130,9 @@ const ProjectDetail = () => {
           
           {/* Learn Project Detail Sections - Images */}
           {project.slug === "learn" && <>
-              {/* Image section 1 - Project Type & Info - UPDATED IMAGE */}
+              {/* Image section 1 - Project Type & Info */}
               <div className="w-full my-10">
-                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/2fd03160-cfe2-4aff-8cb6-113e5f93ae77.png" />
+                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/ef24cead-42d8-43b8-b1f0-8aa6e0d5d06f.png" />
               </div>
               
               {/* Image section 2 - Process */}
@@ -163,10 +163,9 @@ const ProjectDetail = () => {
               {/* First 3D model viewer */}
               <ModelViewer modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" title="Interactive 3D Robot Model" isSketchfab={true} />
              
-            
-              {/* Image section 8 - Robot Specs Detail */}
+              {/* Image section 8 - Robot Specs Detail - THIS IS THE ONE WE'RE REPLACING */}
               <div className="w-full my-10">
-                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/4da912e8-c5de-40f1-a4b8-a43bc0ba8af1.png" />
+                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/a8ff993c-68e8-4d62-a7b4-60947790f4cd.png" />
               </div>
               
               {/* Use the exact URL provided by the user for the second model */}
