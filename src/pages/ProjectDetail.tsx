@@ -114,7 +114,7 @@ const ProjectDetail = () => {
               </p>
             </div>}
             
-          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px]">
+          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl px-[50px] py-[30px] my-0">
               <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
               {project.fullDescription}
             </div>}
