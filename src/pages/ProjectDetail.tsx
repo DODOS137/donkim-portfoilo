@@ -107,9 +107,9 @@ const ProjectDetail = () => {
           
           {/* Title and description moved between image and video */}
           {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
-              <h1 className="font-bold mb-4 text-3xl my-0 py-[30px]">{project.title}</h1>
+              <h1 className="font-bold mb-4 text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
               
-              <p className="leading-relaxed py-0 my-[50px] text-base">
+              <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
                 {project.fullDescription}
               </p>
             </div>}
