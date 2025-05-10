@@ -165,7 +165,7 @@ const ProjectDetail = () => {
              
               {/* Image section 8 - Robot Specs Detail - THIS IS THE ONE WE'RE REPLACING */}
               <div className="w-full my-10">
-                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/a8ff993c-68e8-4d62-a7b4-60947790f4cd.png" />
+                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/5b3058a3-7730-40e1-a279-239b5c762def.png" />
               </div>
               
               {/* Use the exact URL provided by the user for the second model */}
