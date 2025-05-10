@@ -234,7 +234,7 @@ const ProjectDetail = () => {
               
               {/* Image section 2 - Approach */}
               <div className="w-full my-10">
-                <img alt="Project Approach" className="w-full h-auto object-contain" src="/lovable-uploads/234b3ab8-6e69-4463-a9cf-4200a8eca897.png" />
+                <img alt="Project Approach" className="w-full h-auto object-contain" src="/lovable-uploads/5034f020-949b-423f-b463-61e726b443fa.png" />
               </div>
               
               {/* Image section 3 - Site Selection */}
@@ -274,7 +274,7 @@ const ProjectDetail = () => {
               
               {/* Image section 10 - Final Concept Image 1 */}
               <div className="w-full my-10">
-                <img alt="Final Concept View 1" className="w-full h-auto object-contain" src="/lovable-uploads/fa5c04f4-9b2e-4d74-9eac-82b04077652e.png" />
+                <img alt="Final Concept View 1" className="w-full h-auto object-contain" src="/lovable-uploads/1368610e-96c5-47b6-a7e2-66e23ebf5c00.png" />
               </div>
               
               {/* Image section 11 - Final Concept Image 2 */}
