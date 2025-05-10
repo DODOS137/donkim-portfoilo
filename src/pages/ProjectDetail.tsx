@@ -6,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -296,7 +295,7 @@ const ProjectDetail = () => {
           
           {/* Add third image section - Project 5 detailed mockup */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/0234df00-39cf-4afe-bd8a-cb7b2a5bdbc8.png" />
+              <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/6db507e7-33b8-4ae2-8eff-915e9fb34663.png" />
             </div>}
           
           {/* Image section 4 - Site Selection */}
@@ -331,7 +330,7 @@ const ProjectDetail = () => {
           
           {/* Image section 10 & 11 - Final Concept Images */}
           {project.slug === "project-5" && <div className="w-full my-10">
-              <img alt="Final Concept Images - Reception Desk" className="w-full h-auto object-contain mb-10" src="/lovable-uploads/839373a9-1ab5-4d36-b558-6757058f4cec.png" />
+              <img alt="Final Concept Images - Reception Desk" className="w-full h-auto object-contain mb-10" src="/lovable-uploads/bd60915c-2633-49d1-aff4-fdf44bef9f66.png" />
           </div>}
           
           {/* Image section 11 - 1F Exhibition Hall - Marine Zone */}
