@@ -105,7 +105,7 @@ const ProjectDetail = () => {
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
             </div>}
           
-          {/* Title and description moved between image and video */}
+          {/* Title and description sections */}
           {project.slug === "project-5" && project.fullDescription && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
               <h1 className="font-bold mb-4 text-3xl my-0 py-[30px]">{project.title}</h1>
               
@@ -130,9 +130,9 @@ const ProjectDetail = () => {
           
           {/* Learn Project Detail Sections - Images */}
           {project.slug === "learn" && <>
-              {/* Image section 1 - Project Type & Info */}
+              {/* Image section 1 - Project Type & Info - UPDATED IMAGE */}
               <div className="w-full my-10">
-                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/ef24cead-42d8-43b8-b1f0-8aa6e0d5d06f.png" />
+                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/2fd03160-cfe2-4aff-8cb6-113e5f93ae77.png" />
               </div>
               
               {/* Image section 2 - Process */}
