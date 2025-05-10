@@ -137,7 +137,7 @@ const ProjectDetail = () => {
               
               {/* Image section 2 - Process */}
               <div className="w-full my-10">
-                <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/20ffeb9c-6241-4e64-b508-d87a3f26e51f.png" />
+                <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/a48b1d3d-db37-47b3-965c-c773003ae280.png" />
               </div>
               
               {/* Image section 3 - Worldbuilding */}
@@ -200,7 +200,7 @@ const ProjectDetail = () => {
               
               {/* NEW: Image section 13 - Final Concept */}
               <div className="w-full my-10">
-                <img alt="Final Concept Images - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/fa38053d-4700-43dd-a130-18c9801bd4b4.png" />
+                <img alt="Final Concept Images - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/39979ae1-c0f1-41d9-8035-d47b33b6520e.png" />
               </div>
               
               {/* NEW: Image section 14 - Main Hall & Tree */}
