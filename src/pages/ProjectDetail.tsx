@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -114,16 +113,6 @@ const ProjectDetail = () => {
           )}
           
           {/* Title and description moved between image and video */}
-          {project.slug === "project-5" && project.fullDescription && (
-            <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
-              <h1 className="font-bold mb-4 text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
-              
-              <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
-                {project.fullDescription}
-              </p>
-            </div>
-          )}
-            
           {project.slug === "invisible-space-museum" && project.fullDescription && (
             <>
               <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
@@ -194,9 +183,28 @@ const ProjectDetail = () => {
               <div className="w-full my-10">
                 <img alt="Spatial Design Concepts" className="w-full h-auto object-contain" src="/lovable-uploads/fdbf9b1f-d044-4c35-b65e-e702cd3cb8d3.png" />
               </div>
+              
+              {/* NEW: Additional YouTube Video Section */}
+              <div className="w-full my-10">
+                <div className="w-full">
+                  <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                    <YouTube videoId="KT0Cwy9s5n8" opts={videoOptions} className="w-full h-full" />
+                  </AspectRatio>
+                </div>
+              </div>
             </>
           )}
           
+          {project.slug === "project-5" && project.fullDescription && (
+            <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+              <h1 className="font-bold mb-4 text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
+              
+              <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
+                {project.fullDescription}
+              </p>
+            </div>
+          )}
+            
           {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && (
             <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
               <h1 className="text-4xl font-bold mb-4">Invisible</h1>
@@ -466,52 +474,4 @@ const ProjectDetail = () => {
               
               {/* Image section 17 - Product Design Reflecting Brand Identity */}
               <div className="w-full my-10">
-                <img alt="Product Design Reflecting Brand Identity" className="w-full h-auto object-contain mb-6" src="/lovable-uploads/8047ad6f-738d-475e-8def-43aa9c1f9167.png" />
-                <div className="mt-4 text-white">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div></div>
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Image section 18 - Museum Merchandise Collection */}
-              <div className="w-full my-10">
-                <img alt="Museum Merchandise Collection" className="w-full h-auto object-contain" src="/lovable-uploads/a5587d2f-e333-4df0-9625-12976038e32c.png" />
-              </div>
-            </>
-          )}
-          
-          {/* Korean description section for Seoul project */}
-          {project.koreanDescription && (
-            <div className="mt-6 bg-white/10 text-white p-6 rounded-xl backdrop-blur-lg shadow-md mb-8">
-              <h2 className="text-2xl font-semibold mb-2">서울자연사박물관 프로젝트 소개</h2>
-              <p className="text-base leading-relaxed">
-                {project.koreanDescription}
-              </p>
-            </div>
-          )}
-          
-          {/* Added second image section */}
-          {project.secondaryImageUrl && project.slug !== "project-5" && (
-            <div className="w-full mt-10 mb-8">
-              <img src={project.secondaryImageUrl} alt={`${project.title} - additional image`} className="w-full h-auto object-contain" />
-            </div>
-          )}
-            
-          {/* Back to Work button at the bottom */}
-          <div className="mt-16 mb-8 flex justify-center">
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white hover:text-black">
-              <Link to="/work" className="inline-flex items-center">
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Back to Work
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default ProjectDetail;
+                <
