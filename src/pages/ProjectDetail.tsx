@@ -19,10 +19,10 @@ interface Project {
 }
 const projects: Project[] = [{
   id: "1",
-  title: "Invisible Space Museum",
-  slug: "invisible-space-museum",
+  title: "Invisible",
+  slug: "invisible",
   description: "An interactive digital museum experience",
-  fullDescription: "The Invisible Space Museum is a revolutionary digital experience that combines art, technology, and interactivity in ways never seen before. Visitors can explore virtual galleries featuring works from renowned artists across the globe.",
+  fullDescription: " This project is designed as an educational VR experience aimed at helping the general public better understand scientific exhibitions. By presenting complex scientific principles in an intuitive and immersive virtual environment, the content lowers the barrier of entry that many people feel toward science. Through interactive visuals and storytelling, the project seeks to spark curiosity, enhance engagement, and promote more accessible scientific thinking.",
   imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png"
 }, {
   id: "2",
