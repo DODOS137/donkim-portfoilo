@@ -6,6 +6,7 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
+
 interface Project {
   id: string;
   title: string;
@@ -268,6 +269,15 @@ const ProjectDetail = () => {
               {/* Image section 10 - AR Application Development */}
               <div className="w-full my-10">
                 <img alt="AR Application Development" className="w-full h-auto object-contain" src="/lovable-uploads/588ea4f9-132e-4501-a34a-0d7fdad203ac.png" />
+              </div>
+              
+              {/* NEW: Second YouTube video player with the provided URL */}
+              <div className="w-full my-10">
+                <div className="w-full">
+                  <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                    <YouTube videoId="M0v75vAVitA" opts={videoOptions} className="w-full h-full" />
+                  </AspectRatio>
+                </div>
               </div>
             </>}
           
