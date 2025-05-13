@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -225,6 +226,54 @@ const ProjectDetail = () => {
                 </AspectRatio>
               </div>
             </div>}
+          
+          {/* New Image sections for Project 4 - Added below YouTube video */}
+          {project.slug === "project-4" && <>
+              {/* Image section 2 - Project Type */}
+              <div className="w-full my-10">
+                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/eb91abb6-c6a9-436b-aa7c-20fb0ea82b78.png" />
+              </div>
+              
+              {/* Image section 3 - Process */}
+              <div className="w-full my-10">
+                <img alt="Process" className="w-full h-auto object-contain" src="/lovable-uploads/5e22efb5-97e9-4fb2-92f0-24c80469f078.png" />
+              </div>
+              
+              {/* Image section 4 - Idea Development */}
+              <div className="w-full my-10">
+                <img alt="Idea Development" className="w-full h-auto object-contain" src="/lovable-uploads/d6f8e4b6-369a-4c4d-b123-0af214e753bc.png" />
+              </div>
+              
+              {/* Image section 5 - Core Concept */}
+              <div className="w-full my-10">
+                <img alt="Core Concept" className="w-full h-auto object-contain" src="/lovable-uploads/4e86c452-52e7-416b-87c9-f80781b563a2.png" />
+              </div>
+              
+              {/* Image section 6 - Product Design */}
+              <div className="w-full my-10">
+                <img alt="Product Design" className="w-full h-auto object-contain" src="/lovable-uploads/f55a81c3-32db-403d-9187-aa33e67f00e5.png" />
+              </div>
+              
+              {/* Image section 7 - Exhibition Elements */}
+              <div className="w-full my-10">
+                <img alt="Exhibition Elements" className="w-full h-auto object-contain" src="/lovable-uploads/b66fabbb-7f0f-489c-9125-b193f338d9a6.png" />
+              </div>
+              
+              {/* Image section 8 - Exhibition Design */}
+              <div className="w-full my-10">
+                <img alt="Exhibition Design" className="w-full h-auto object-contain" src="/lovable-uploads/3af7f241-2740-4378-b6cd-dd07d9f895d2.png" />
+              </div>
+              
+              {/* Image section 9 - Visitor Experience */}
+              <div className="w-full my-10">
+                <img alt="Visitor Experience" className="w-full h-auto object-contain" src="/lovable-uploads/fe512369-6aff-4535-87e2-d9b81dc08995.png" />
+              </div>
+              
+              {/* Image section 10 - AR Application Development */}
+              <div className="w-full my-10">
+                <img alt="AR Application Development" className="w-full h-auto object-contain" src="/lovable-uploads/588ea4f9-132e-4501-a34a-0d7fdad203ac.png" />
+              </div>
+            </>}
           
           {/* YouTube Video Section - Moved after text content for other projects with videos */}
           {project.videoId && project.slug !== "invisible-space-museum" && project.slug !== "project-4" && <div className="w-full mb-10">
