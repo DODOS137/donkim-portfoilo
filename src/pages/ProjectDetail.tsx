@@ -25,7 +25,8 @@ const projects: Project[] = [{
   slug: "invisible-space-museum",
   description: "An interactive digital museum experience",
   fullDescription: "This project is designed as an educational VR experience aimed at helping the general public better understand scientific exhibitions. By presenting complex scientific principles in an intuitive and immersive virtual environment, the content lowers the barrier of entry that many people feel toward science. Through interactive visuals and storytelling, the project seeks to spark curiosity, enhance engagement, and promote more accessible scientific thinking.",
-  imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png"
+  imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png",
+  videoId: "cc7qApfpaRg" // Added videoId for the Invisible Space Museum project
 }, {
   id: "2",
   title: "Learn",
@@ -117,13 +118,31 @@ const ProjectDetail = () => {
               </p>
             </div>}
             
-          {project.slug !== "project-5" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
+          {project.slug === "invisible-space-museum" && project.fullDescription && (
+            <>
+              <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
+                <h1 className="text-4xl font-bold mb-4">Invisible</h1>
+                {project.fullDescription}
+              </div>
+              
+              {/* YouTube Video Section for Invisible Space Museum project */}
+              <div className="w-full mb-10">
+                <div className="w-full">
+                  <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                    <YouTube videoId="cc7qApfpaRg" opts={videoOptions} className="w-full h-full" />
+                  </AspectRatio>
+                </div>
+              </div>
+            </>
+          )}
+          
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
               <h1 className="text-4xl font-bold mb-4">Invisible</h1>
               {project.fullDescription}
             </div>}
           
           {/* YouTube Video Section - Moved after text content */}
-          {project.videoId && <div className="w-full mb-10">
+          {project.videoId && project.slug !== "invisible-space-museum" && <div className="w-full mb-10">
               <div className="w-full">
                 <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
                   <YouTube videoId={project.videoId} opts={videoOptions} className="w-full h-full" />
