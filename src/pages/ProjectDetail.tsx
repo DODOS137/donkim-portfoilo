@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -474,4 +475,30 @@ const ProjectDetail = () => {
               
               {/* Image section 17 - Product Design Reflecting Brand Identity */}
               <div className="w-full my-10">
-                <
+                <img alt="Product Design Reflecting Brand Identity" className="w-full h-auto object-contain mb-6" src="/lovable-uploads/8047ad6f-738d-475e-8def-43aa9c1f9167.png" />
+                <div className="mt-4 text-white">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+          
+          {/* Back to Work button at the bottom */}
+          <div className="mt-16 mb-8 flex justify-center">
+            <Button asChild variant="outline" className="text-white border-white hover:bg-white hover:text-black">
+              <Link to="/work" className="inline-flex items-center">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Back to Work
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default ProjectDetail;
