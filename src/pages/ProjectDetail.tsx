@@ -188,7 +188,7 @@ const ProjectDetail = () => {
               
               {/* NEW: Image section 13 - Post-Project Direction */}
               <div className="w-full my-10">
-                <img alt="Post-Project Direction - Interactive Elements" className="w-full h-auto object-contain" src="/lovable-uploads/9bea9b45-e829-4a9c-8787-b7ebb1a2607d.png" />
+                <img alt="Post-Project Direction - Interactive Elements" className="w-full h-auto object-contain" src="/lovable-uploads/a96a1fbb-7e20-4e12-83dd-8b2908b357fe.png" />
               </div>
               
               {/* NEW: Image section 14 - Interactive Evolution Concept */}
