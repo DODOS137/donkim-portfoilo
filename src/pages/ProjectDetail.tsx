@@ -6,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -66,7 +65,11 @@ const projects: Project[] = [{
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
 const ProjectDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const {
+    slug
+  } = useParams<{
+    slug: string;
+  }>();
   const project = projects.find(p => p.slug === slug);
 
   // YouTube video options
@@ -90,8 +93,7 @@ const ProjectDetail = () => {
         </div>
       </div>;
   }
-  return (
-    <div className="min-h-screen bg-black">
+  return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
         <div className="max-w-full mx-auto mt-16">
@@ -101,23 +103,11 @@ const ProjectDetail = () => {
           </Link>
           
           {/* For project-4, we're replacing the first image with the uploaded one */}
-          {project.slug === "project-4" ? (
-            <div className="w-full mb-8">
-              <img 
-                src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" 
-                alt={project.title} 
-                className="w-full h-auto object-contain" 
-              />
-            </div>
-          ) : project.imageUrl && (
-            <div className="w-full mb-8">
-              <img 
-                src={project.imageUrl} 
-                alt={project.title} 
-                className="w-full h-auto object-contain" 
-              />
-            </div>
-          )}
+          {project.slug === "project-4" ? <div className="w-full mb-8">
+              <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
+            </div> : project.imageUrl && <div className="w-full mb-8">
+              <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
+            </div>}
           
           {/* Title and description moved between image and video */}
           {project.slug === "invisible-space-museum" && project.fullDescription && <>
@@ -219,7 +209,7 @@ const ProjectDetail = () => {
             </div>}
             
           {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
-              <h1 className="text-4xl font-bold mb-4">Invisible</h1>
+              <h1 className="text-4xl font-bold mb-4">Whispers From the Bottom</h1>
               {project.fullDescription}
             </div>}
           
@@ -499,8 +489,6 @@ const ProjectDetail = () => {
           </div>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default ProjectDetail;
