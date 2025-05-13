@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -7,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -19,7 +17,6 @@ interface Project {
   videoId?: string; // Added videoId field for YouTube videos
   koreanDescription?: string; // Added field for Korean description
 }
-
 const projects: Project[] = [{
   id: "1",
   title: "Invisible Space Museum",
@@ -68,7 +65,6 @@ const projects: Project[] = [{
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -231,7 +227,7 @@ const ProjectDetail = () => {
           {project.slug === "project-4" && <>
               {/* Image section 2 - Project Type */}
               <div className="w-full my-10">
-                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/eb91abb6-c6a9-436b-aa7c-20fb0ea82b78.png" />
+                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/3a6ac627-06be-4949-af56-65bba334bf9c.png" />
               </div>
               
               {/* Image section 3 - Process */}
