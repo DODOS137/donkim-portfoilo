@@ -47,7 +47,8 @@ const projects: Project[] = [{
   slug: "project-4",
   description: "Cutting-edge technology implementation",
   fullDescription: "This project focuses on the sounds of endangered marine species that dwell on the ocean floor or beneath rocks. It incorporates elements such as AR and immersive sound to enhance the exhibition experience and draw attention to these often-overlooked creatures.",
-  imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1936&auto=format&fit=crop"
+  imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1936&auto=format&fit=crop",
+  videoId: "zqz3Owz0K3o" // Added videoId for the requested YouTube video
 }, {
   id: "5",
   title: "Seoul Natural History Museum",
@@ -216,8 +217,17 @@ const ProjectDetail = () => {
               {project.fullDescription}
             </div>}
           
-          {/* YouTube Video Section - Moved after text content */}
-          {project.videoId && project.slug !== "invisible-space-museum" && <div className="w-full mb-10">
+          {/* YouTube Video Section - Show for project-4 right after the text description */}
+          {project.slug === "project-4" && <div className="w-full mb-10">
+              <div className="w-full">
+                <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                  <YouTube videoId="zqz3Owz0K3o" opts={videoOptions} className="w-full h-full" />
+                </AspectRatio>
+              </div>
+            </div>}
+          
+          {/* YouTube Video Section - Moved after text content for other projects with videos */}
+          {project.videoId && project.slug !== "invisible-space-museum" && project.slug !== "project-4" && <div className="w-full mb-10">
               <div className="w-full">
                 <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
                   <YouTube videoId={project.videoId} opts={videoOptions} className="w-full h-full" />
