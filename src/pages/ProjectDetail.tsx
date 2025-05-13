@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -475,11 +474,3 @@ const ProjectDetail = () => {
                 </div>
               </div>
             </>
-          )}
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default ProjectDetail;
