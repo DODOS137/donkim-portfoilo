@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -192,6 +191,24 @@ const ProjectDetail = () => {
                     <YouTube videoId="KT0Cwy9s5n8" opts={videoOptions} className="w-full h-full" />
                   </AspectRatio>
                 </div>
+              </div>
+              
+              {/* NEW: Image section 13 - Post-Project Direction */}
+              <div className="w-full my-10">
+                <img 
+                  alt="Post-Project Direction - Interactive Elements" 
+                  className="w-full h-auto object-contain" 
+                  src="/lovable-uploads/07ae3586-06a6-4ea3-9bd7-21a1556bc1d5.png" 
+                />
+              </div>
+              
+              {/* NEW: Image section 14 - Interactive Evolution Concept */}
+              <div className="w-full my-10">
+                <img 
+                  alt="Interactive Evolution Concept Visualization" 
+                  className="w-full h-auto object-contain" 
+                  src="/lovable-uploads/f6086651-deb6-4878-bcb1-bfa446e03f6b.png" 
+                />
               </div>
             </>
           )}
