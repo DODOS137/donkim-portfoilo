@@ -279,6 +279,26 @@ const ProjectDetail = () => {
                   </AspectRatio>
                 </div>
               </div>
+              
+              {/* NEW: Image section 11 - Exhibition & Spatial Design */}
+              <div className="w-full my-10">
+                <img alt="Exhibition & Spatial Design" className="w-full h-auto object-contain" src="/lovable-uploads/681ca87f-74f0-4b9d-af44-6cbdce8a303a.png" />
+              </div>
+              
+              {/* NEW: Image section 12 - Exhibition with Water Ceiling */}
+              <div className="w-full my-10">
+                <img alt="Exhibition with Water Ceiling" className="w-full h-auto object-contain" src="/lovable-uploads/55685a01-35c0-482d-8ee8-9306f497bf3a.png" />
+              </div>
+              
+              {/* NEW: Image section 13 - Night Exhibition View */}
+              <div className="w-full my-10">
+                <img alt="Night Exhibition View" className="w-full h-auto object-contain" src="/lovable-uploads/1ae50321-4db0-40a9-b5f4-2d05876f82a9.png" />
+              </div>
+              
+              {/* NEW: Image section 14 - Rock Character */}
+              <div className="w-full my-10">
+                <img alt="Rock Character Design" className="w-full h-auto object-contain" src="/lovable-uploads/b5a559ed-b9a5-45a4-8c87-16a5d3072ec7.png" />
+              </div>
             </>}
           
           {/* YouTube Video Section - Moved after text content for other projects with videos */}
