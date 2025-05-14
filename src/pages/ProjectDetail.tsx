@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -10,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -70,9 +68,12 @@ const projects: Project[] = [{
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
-
 const ProjectDetail = () => {
-  const { slug } = useParams<{ slug: string; }>();
+  const {
+    slug
+  } = useParams<{
+    slug: string;
+  }>();
   const project = projects.find(p => p.slug === slug);
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState("");
@@ -95,7 +96,9 @@ const ProjectDetail = () => {
   };
 
   // Handle save changes
-  const handleSave = (data: { fullDescription: string }) => {
+  const handleSave = (data: {
+    fullDescription: string;
+  }) => {
     setEditedDescription(data.fullDescription);
     setIsEditing(false);
     // In a real app, you would save this to a database
@@ -111,7 +114,6 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
-
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -124,9 +126,7 @@ const ProjectDetail = () => {
         </div>
       </div>;
   }
-
-  return (
-    <div className="min-h-screen bg-black">
+  return <div className="min-h-screen bg-black">
       <Navbar />
       <main className="pt-16 px-4 md:px-8 pb-16">
         <div className="max-w-full mx-auto mt-16">
@@ -135,13 +135,7 @@ const ProjectDetail = () => {
               <ArrowLeft className="mr-2 h-5 w-5" />
               Back to Work
             </Link>
-            <Button 
-              variant="outline" 
-              className="text-white border-white hover:bg-white hover:text-black"
-              onClick={toggleEdit}
-            >
-              {isEditing ? '취소' : '편집'}
-            </Button>
+            
           </div>
           
           {/* For project-4, we're replacing the first image with the uploaded one */}
@@ -171,36 +165,23 @@ const ProjectDetail = () => {
             </div>}
           
           {/* Title and description moved between image and video */}
-          {project.slug === "invisible-space-museum" && (
-            <>
+          {project.slug === "invisible-space-museum" && <>
               <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
                 <h1 className="text-4xl font-bold mb-4">Invisible</h1>
-                {isEditing ? (
-                  <Form {...form}>
+                {isEditing ? <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
-                      <FormField
-                        control={form.control}
-                        name="fullDescription"
-                        defaultValue={project.fullDescription}
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
+                  field
+                }) => <FormItem>
                             <FormControl>
-                              <Textarea 
-                                className="min-h-40 bg-gray-800 text-white"
-                                {...field}
-                              />
+                              <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                             </FormControl>
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       <Button type="submit" className="bg-white text-black hover:bg-gray-200">
                         저장
                       </Button>
                     </form>
-                  </Form>
-                ) : (
-                  <div>{editedDescription || project.fullDescription}</div>
-                )}
+                  </Form> : <div>{editedDescription || project.fullDescription}</div>}
               </div>
               
               {/* YouTube Video Section for Invisible Space Museum project */}
@@ -285,78 +266,49 @@ const ProjectDetail = () => {
               <div className="w-full my-10">
                 <img alt="Interactive Evolution Concept Visualization" className="w-full h-auto object-contain" src="/lovable-uploads/f6086651-deb6-4878-bcb1-bfa446e03f6b.png" />
               </div>
-            </>
-          )}
+            </>}
           
-          {project.slug === "project-5" && (
-            <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+          {project.slug === "project-5" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
               <h1 className="font-bold mb-4 text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
               
-              {isEditing ? (
-                <Form {...form}>
+              {isEditing ? <Form {...form}>
                   <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4 px-[50px]">
-                    <FormField
-                      control={form.control}
-                      name="fullDescription"
-                      defaultValue={project.fullDescription}
-                      render={({ field }) => (
-                        <FormItem>
+                    <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
+                field
+              }) => <FormItem>
                           <FormControl>
-                            <Textarea 
-                              className="min-h-40 bg-gray-800 text-white"
-                              {...field}
-                            />
+                            <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                           </FormControl>
-                        </FormItem>
-                      )}
-                    />
+                        </FormItem>} />
                     <Button type="submit" className="bg-white text-black hover:bg-gray-200">
                       저장
                     </Button>
                   </form>
-                </Form>
-              ) : (
-                <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
+                </Form> : <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
                   {editedDescription || project.fullDescription}
-                </p>
-              )}
-            </div>
-          )}
+                </p>}
+            </div>}
             
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && (
-            <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
               <h1 className="text-4xl font-bold mb-4">
                 {project.slug === "project-4" ? "Whispers From the Bottom" : project.title}
               </h1>
               
-              {isEditing ? (
-                <Form {...form}>
+              {isEditing ? <Form {...form}>
                   <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
-                    <FormField
-                      control={form.control}
-                      name="fullDescription"
-                      defaultValue={project.fullDescription}
-                      render={({ field }) => (
-                        <FormItem>
+                    <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
+                field
+              }) => <FormItem>
                           <FormControl>
-                            <Textarea 
-                              className="min-h-40 bg-gray-800 text-white"
-                              {...field}
-                            />
+                            <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                           </FormControl>
-                        </FormItem>
-                      )}
-                    />
+                        </FormItem>} />
                     <Button type="submit" className="bg-white text-black hover:bg-gray-200">
                       저장
                     </Button>
                   </form>
-                </Form>
-              ) : (
-                <div>{editedDescription || project.fullDescription}</div>
-              )}
-            </div>
-          )}
+                </Form> : <div>{editedDescription || project.fullDescription}</div>}
+            </div>}
           
           {/* YouTube Video Section - Show for project-4 right after the text description */}
           {project.slug === "project-4" && <div className="w-full mb-10">
@@ -726,8 +678,6 @@ const ProjectDetail = () => {
           </div>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default ProjectDetail;
