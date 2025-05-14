@@ -10,6 +10,7 @@ const SliderIndicators = () => {
   const totalSlides = 6;
 
   // This effect syncs with the auto-advancing slider in the Slider component
+  // Reset the counter every time to maintain perfect sync with the slider
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);

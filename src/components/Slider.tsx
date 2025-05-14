@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
@@ -123,7 +122,7 @@ const Slider = () => {
       clearTimeout(timerRef.current);
     }
 
-    // Set up new timer for auto-advance
+    // Set up new timer for auto-advance - using exact same interval as indicators
     timerRef.current = setTimeout(() => {
       nextSlide();
     }, autoAdvanceInterval);
@@ -134,7 +133,7 @@ const Slider = () => {
         clearTimeout(timerRef.current);
       }
     };
-  }, [currentIndex, isTransitioning]); // Added isTransitioning as a dependency
+  }, [currentIndex, isTransitioning]); 
 
   // Improved slide class calculation for proper looping
   const getSlideClass = (index: number) => {
