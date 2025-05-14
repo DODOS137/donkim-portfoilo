@@ -484,7 +484,7 @@ const ProjectDetail = () => {
             </>}
           
           {project.slug === "project-5" && <>
-              {/* Project info image section - Added below video */}
+              {/* Image section 1 - Project info image section - Added below video */}
               <div className="w-full my-10">
                 <img alt="Project Information" className="w-full h-auto object-contain" src="/lovable-uploads/156e341c-46d4-400d-916d-942aa675ab4e.png" />
               </div>
@@ -578,6 +578,12 @@ const ProjectDetail = () => {
                     <div></div>
                   </div>
                 </div>
+              </div>
+              
+              {/* NEW: Image section 18 - Museum Products Showcase */}
+              <div className="w-full my-10">
+                <img alt="Museum Products Showcase - Character and Gift Items" className="w-full h-auto object-contain mb-6" src="/lovable-uploads/43a439cc-4d86-4b77-8fc7-f8baec95dec2.png" />
+                <div className="mt-4 text-white"></div>
               </div>
             </>}
           
