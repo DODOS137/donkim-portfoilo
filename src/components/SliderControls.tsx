@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface SliderControlsProps {
   totalSlides: number;
@@ -20,7 +20,7 @@ const SliderControls: React.FC<SliderControlsProps> = ({
         <button
           key={index}
           onClick={() => goToSlide(index)}
-          className={`indicator h-2 w-2 rounded-full border border-white ${
+          className={`indicator h-2 w-2 rounded-full border border-white transition-all duration-500 ${
             currentIndex === index ? 'bg-white' : 'bg-transparent'
           }`}
           aria-label={`Go to slide ${index + 1}`}

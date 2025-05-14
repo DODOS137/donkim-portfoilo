@@ -55,6 +55,8 @@ const Slider = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const slideTransitionDuration = 500; // Duration in ms
+  const autoAdvanceInterval = 5000; // Time between auto-advances in ms
 
   // Function to advance to the next slide
   const nextSlide = () => {
@@ -67,7 +69,7 @@ const Slider = () => {
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
-      }, 500);
+      }, slideTransitionDuration);
     }
   };
 
@@ -82,7 +84,7 @@ const Slider = () => {
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
-      }, 500);
+      }, slideTransitionDuration);
     }
   };
 
@@ -97,7 +99,7 @@ const Slider = () => {
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
-      }, 500);
+      }, slideTransitionDuration);
     }
   };
 
@@ -120,7 +122,7 @@ const Slider = () => {
     // Set up new timer for auto-advance
     timerRef.current = setTimeout(() => {
       nextSlide();
-    }, 5000);
+    }, autoAdvanceInterval);
 
     // Cleanup on unmount or when currentIndex changes
     return () => {
@@ -156,7 +158,7 @@ const Slider = () => {
       {/* Main Slider */}
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full h-full relative bg-gray-400">
-          {projects.map((project, index) => <Link key={index} to={`/project/${project.slug}`} className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-500 ease-in-out group`}>
+          {projects.map((project, index) => <Link key={index} to={`/project/${project.slug}`} className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
               <div className="relative w-full h-full overflow-hidden">
                 <img src={project.imageUrl} alt={project.title} className="slider-image w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
@@ -184,8 +186,8 @@ const Slider = () => {
         </div>
       </div>
 
-      {/* Indicators - Hidden but available for use in the Home component */}
-      <div className="hidden">
+      {/* Show Indicators */}
+      <div className="absolute bottom-6 left-6">
         <SliderControls totalSlides={projects.length} currentIndex={currentIndex} goToSlide={goToSlide} prevSlide={prevSlide} nextSlide={nextSlide} />
       </div>
     </div>;
