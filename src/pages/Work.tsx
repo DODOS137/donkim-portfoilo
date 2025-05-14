@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "Invisible",
     slug: "invisible-space-museum",
     description: "Virtual Reality Contents",
-    imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png"
+    imageUrl: "/lovable-uploads/eec176ba-ebab-43a9-bb78-e6f08c59771b.png"
   },
   {
     id: "2",

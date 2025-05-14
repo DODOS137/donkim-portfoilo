@@ -17,7 +17,7 @@ const projects: Project[] = [{
   title: "Invisible",
   slug: "invisible-space-museum",
   description: "Virtual Reality Contents",
-  imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png"
+  imageUrl: "/lovable-uploads/eec176ba-ebab-43a9-bb78-e6f08c59771b.png"
 }, {
   id: "2",
   title: "Learn",
@@ -49,6 +49,7 @@ const projects: Project[] = [{
   description: "Public Space Design",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
+
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
