@@ -16,9 +16,9 @@ interface Project {
 const projects: Project[] = [
   {
     id: "1",
-    title: "Invisible Space Museum",
+    title: "Invisible",
     slug: "invisible-space-museum",
-    description: "Virtual Reality Museum Contents",
+    description: "Virtual Reality Contents",
     imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png"
   },
   {
@@ -32,7 +32,7 @@ const projects: Project[] = [
     id: "3",
     title: "Thermal Trace",
     slug: "project-3",
-    description: "A Mixed Reality Fashion Show",
+    description: "XR & Exhibition Design",
     imageUrl: "/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png"
   },
   {
@@ -46,7 +46,7 @@ const projects: Project[] = [
     id: "5",
     title: "Seoul Nature history Museum",
     slug: "project-5",
-    description: "Brand Renewal and Environmental Design",
+    description: "Brand Renewal and Spatial Design",
     imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png"
   },
   {
