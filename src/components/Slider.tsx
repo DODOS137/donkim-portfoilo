@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
 import { Link } from 'react-router-dom';
@@ -63,6 +63,7 @@ const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
+  const timerRef = useRef<number | null>(null);
   
   const nextSlide = () => {
     if (!isTransitioning) {
@@ -100,12 +101,30 @@ const Slider = () => {
     }
   };
   
+  // Reset timer when component unmounts
   useEffect(() => {
-    // Auto-advance slides
-    const timer = setTimeout(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
+  
+  // Auto-advance slides with proper cleanup
+  useEffect(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    
+    timerRef.current = setTimeout(() => {
       nextSlide();
-    }, 5000);
-    return () => clearTimeout(timer);
+    }, 5000) as unknown as number;
+    
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
   }, [currentIndex]);
   
   // Improved slide class calculation for proper looping
