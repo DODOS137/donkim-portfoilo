@@ -18,42 +18,42 @@ const projects: Project[] = [
     id: "1",
     title: "Invisible Space Museum",
     slug: "invisible-space-museum",
-    description: "XR & Exhibition Design",
+    description: "Virtual Reality Museum Contents",
     imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png"
   },
   {
     id: "2",
     title: "Learn",
     slug: "learn",
-    description: "XR & Exhibition Design",
+    description: "Immersive Virtual Reality Experience",
     imageUrl: "/lovable-uploads/6ff8ff68-cb39-448d-bab7-4fe73134f9d3.png"
   },
   {
     id: "3",
     title: "Thermal Trace",
     slug: "project-3",
-    description: "XR & Exhibition Design",
+    description: "A Mixed Reality Fashion Show",
     imageUrl: "/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png"
   },
   {
     id: "4",
     title: "Whispers from the Bottom",
     slug: "project-4",
-    description: "XR & Exhibition Design",
+    description: "Exhibition Design",
     imageUrl: "/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png"
   },
   {
     id: "5",
     title: "Seoul Nature history Museum",
     slug: "project-5",
-    description: "XR & Exhibition Design",
+    description: "Brand Renewal and Environmental Design",
     imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png"
   },
   {
     id: "6",
     title: "Island",
     slug: "project-6",
-    description: "XR & Exhibition Design",
+    description: "Public Space Design",
     imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
   }
 ];
