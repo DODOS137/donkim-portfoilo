@@ -6,6 +6,7 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
+
 interface Project {
   id: string;
   title: string;
@@ -66,11 +67,7 @@ const projects: Project[] = [{
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
 const ProjectDetail = () => {
-  const {
-    slug
-  } = useParams<{
-    slug: string;
-  }>();
+  const { slug } = useParams<{ slug: string; }>();
   const project = projects.find(p => p.slug === slug);
 
   // YouTube video options
@@ -82,6 +79,7 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
+
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -103,16 +101,15 @@ const ProjectDetail = () => {
             Back to Work
           </Link>
           
-          {/* For project-4, we're replacing the first image with the uploaded one */}
-          {project.slug === "project-4" ? <div className="w-full mb-8">
-              <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
-            </div> : project.imageUrl && <div className="w-full mb-8 relative">
-              <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
-              {/* Modified text overlay to be positioned on the left instead of center */}
-              <div className="absolute inset-0 flex items-center">
-                
+          {/* Replacing the image with the uploaded one */}
+          <div className="w-full mb-8 relative">
+            <img src="/lovable-uploads/3ed2d001-1a9e-431e-8cbf-06cc9465769f.png" alt={project.title} className="w-full h-auto object-contain" />
+            <div className="absolute inset-0 flex items-center">
+              <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg ml-10">
+                <h1 className="text-4xl font-bold text-white">{project.title}</h1>
               </div>
-            </div>}
+            </div>
+          </div>
           
           {/* Title and description moved between image and video */}
           {project.slug === "invisible-space-museum" && project.fullDescription && <>
@@ -582,4 +579,5 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
+
 export default ProjectDetail;
