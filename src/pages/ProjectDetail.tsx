@@ -6,6 +6,7 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
+
 interface Project {
   id: string;
   title: string;
@@ -114,6 +115,13 @@ const ProjectDetail = () => {
                   <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg ml-10">
                     <h1 className="text-4xl font-bold text-white">{project.title}</h1>
                   </div>
+                </div>
+              </div> : project.slug === "invisible-space-museum" ?
+        // Special case for Invisible Space Museum: use the new uploaded image
+        <div className="w-full mb-8 relative">
+                <img src="/lovable-uploads/eec176ba-ebab-43a9-bb78-e6f08c59771b.png" alt={project.title} className="w-full h-auto object-contain" />
+                <div className="absolute inset-0 flex items-center">
+                  {/* This div is empty in the original code */}
                 </div>
               </div> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
