@@ -108,9 +108,9 @@ const ProjectDetail = () => {
               <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
             </div> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
-              {/* Added text overlay in the middle of the image */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg">
+              {/* Modified text overlay to be positioned on the left instead of center */}
+              <div className="absolute inset-0 flex items-center">
+                <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg ml-10">
                   <h1 className="text-4xl font-bold text-white">{project.title}</h1>
                 </div>
               </div>
