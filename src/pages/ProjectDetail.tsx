@@ -6,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -67,7 +66,11 @@ const projects: Project[] = [{
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
 const ProjectDetail = () => {
-  const { slug } = useParams<{ slug: string; }>();
+  const {
+    slug
+  } = useParams<{
+    slug: string;
+  }>();
   const project = projects.find(p => p.slug === slug);
 
   // YouTube video options
@@ -79,7 +82,6 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
-
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -105,9 +107,7 @@ const ProjectDetail = () => {
           <div className="w-full mb-8 relative">
             <img src="/lovable-uploads/3ed2d001-1a9e-431e-8cbf-06cc9465769f.png" alt={project.title} className="w-full h-auto object-contain" />
             <div className="absolute inset-0 flex items-center">
-              <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg ml-10">
-                <h1 className="text-4xl font-bold text-white">{project.title}</h1>
-              </div>
+              
             </div>
           </div>
           
@@ -579,5 +579,4 @@ const ProjectDetail = () => {
       </main>
     </div>;
 };
-
 export default ProjectDetail;
