@@ -112,7 +112,7 @@ const ProjectDetail = () => {
               {project.slug === "project-5" && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-black/70 p-6 md:p-8 rounded-lg max-w-md text-center">
-                    <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">Seoul Natural History Museum</h2>
+                    <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">Seoul Natural History Museum</h2>
                     <p className="text-white/90 text-base md:text-lg">
                       Brand Renewal and Environmental Design
                     </p>
