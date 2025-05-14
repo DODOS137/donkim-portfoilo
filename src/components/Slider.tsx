@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
@@ -67,7 +68,7 @@ const Slider = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setSlideDirection('right');
-      setCurrentIndex(prevIndex => prevIndex === projects.length - 1 ? 0 : prevIndex + 1);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
@@ -79,7 +80,7 @@ const Slider = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setSlideDirection('left');
-      setCurrentIndex(prevIndex => prevIndex === 0 ? projects.length - 1 : prevIndex - 1);
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
@@ -107,14 +108,26 @@ const Slider = () => {
     return () => clearTimeout(timer);
   }, [currentIndex]);
   
+  // Improved slide class calculation for proper looping
   const getSlideClass = (index: number) => {
     if (index === currentIndex) {
       return 'opacity-100 z-10 translate-x-0';
-    } else if (slideDirection === 'right' && (currentIndex === 0 && index === projects.length - 1 || index === currentIndex - 1)) {
+    } 
+    
+    // Handle the circular relationship for previous slide
+    const prevIndex = (currentIndex - 1 + projects.length) % projects.length;
+    if (index === prevIndex && slideDirection === 'right') {
       return 'opacity-0 z-0 -translate-x-full';
-    } else if (slideDirection === 'left' && (currentIndex === projects.length - 1 && index === 0 || index === currentIndex + 1)) {
+    }
+    
+    // Handle the circular relationship for next slide
+    const nextIndex = (currentIndex + 1) % projects.length;
+    if (index === nextIndex && slideDirection === 'left') {
       return 'opacity-0 z-0 translate-x-full';
-    } else if (index < currentIndex) {
+    }
+    
+    // All other slides based on relative position
+    if ((index < currentIndex) || (currentIndex === 0 && index === projects.length - 1)) {
       return 'opacity-0 z-0 -translate-x-full';
     } else {
       return 'opacity-0 z-0 translate-x-full';
