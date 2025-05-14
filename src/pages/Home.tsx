@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import Slider from '../components/Slider';
+import Slider, { slideTransitionDuration, autoAdvanceInterval } from '../components/Slider';
 import SearchBox from '../components/SearchBox';
 
 // Create a separate component for the slider controls
 const SliderIndicators = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = 6;
-  const autoAdvanceInterval = 5000; // Match the same speed as in Slider.tsx
 
   // This effect syncs with the auto-advancing slider in the Slider component
   useEffect(() => {
@@ -24,7 +23,7 @@ const SliderIndicators = () => {
       {Array.from({ length: totalSlides }).map((_, index) => (
         <div
           key={index}
-          className={`h-2 w-2 rounded-full border border-white transition-all duration-500 ${
+          className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${
             currentIndex === index ? 'bg-white' : 'bg-transparent'
           }`}
         />

@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
 import { Link } from 'react-router-dom';
+
 interface Project {
   id: string;
   title: string;
@@ -50,14 +52,16 @@ const projects: Project[] = [{
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
 
+// IMPORTANT: Defining these constants as exports so they can be imported by other components
+export const slideTransitionDuration = 500; // Duration in ms
+export const autoAdvanceInterval = 5000; // Time between auto-advances in ms
+
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const slideTransitionDuration = 500; // Duration in ms
-  const autoAdvanceInterval = 5000; // Time between auto-advances in ms
-
+  
   // Function to advance to the next slide
   const nextSlide = () => {
     if (!isTransitioning) {
@@ -154,6 +158,7 @@ const Slider = () => {
     // All other slides (positioned based on their relation to current slide)
     return index < currentIndex ? 'opacity-0 z-0 -translate-x-full' : 'opacity-0 z-0 translate-x-full';
   };
+  
   return <div className="relative w-full h-[calc(100vh-64px)]">
       {/* Main Slider */}
       <div className="w-full h-full flex justify-center items-center">
@@ -192,4 +197,5 @@ const Slider = () => {
       </div>
     </div>;
 };
+
 export default Slider;
