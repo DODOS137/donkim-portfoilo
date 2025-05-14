@@ -6,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -107,22 +106,19 @@ const ProjectDetail = () => {
           {/* For project-4, we're replacing the first image with the uploaded one */}
           {project.slug === "project-4" ? <div className="w-full mb-8">
               <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
-            </div> : project.slug === "project-3" ? (
-              // Special case for project-3: show the new uploaded image
-              <div className="w-full mb-8 relative">
+            </div> : project.slug === "project-3" ?
+        // Special case for project-3: show the new uploaded image
+        <div className="w-full mb-8 relative">
                 <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg ml-10">
                     <h1 className="text-4xl font-bold text-white">{project.title}</h1>
                   </div>
                 </div>
-              </div>
-            ) : project.imageUrl && <div className="w-full mb-8 relative">
+              </div> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
               <div className="absolute inset-0 flex items-center">
-                <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg ml-10">
-                  <h1 className="text-4xl font-bold text-white">{project.title}</h1>
-                </div>
+                
               </div>
             </div>}
           
