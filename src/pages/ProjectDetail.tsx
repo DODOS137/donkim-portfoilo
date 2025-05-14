@@ -6,7 +6,6 @@ import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
 import ModelViewer from '../components/ModelViewer';
-
 interface Project {
   id: string;
   title: string;
@@ -107,8 +106,12 @@ const ProjectDetail = () => {
           {/* For project-4, we're replacing the first image with the uploaded one */}
           {project.slug === "project-4" ? <div className="w-full mb-8">
               <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
-            </div> : project.imageUrl && <div className="w-full mb-8">
+            </div> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
+              {/* Modified text overlay to be positioned on the left instead of center */}
+              <div className="absolute inset-0 flex items-center">
+                
+              </div>
             </div>}
           
           {/* Title and description moved between image and video */}
