@@ -146,9 +146,7 @@ const ProjectDetail = () => {
         <div className="w-full mb-8 relative">
                 <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
                 <div className="absolute inset-0 flex items-center">
-                  <div className="bg-black bg-opacity-60 px-8 py-6 rounded-lg ml-10">
-                    <h1 className="text-4xl font-bold text-white">{project.title}</h1>
-                  </div>
+                  
                 </div>
               </div> : project.slug === "invisible-space-museum" ?
         // Special case for Invisible Space Museum: use the new uploaded image
