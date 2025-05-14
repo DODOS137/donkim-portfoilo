@@ -63,13 +63,16 @@ const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
-  const timerRef = useRef<number | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   
+  // Function to advance to the next slide
   const nextSlide = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setSlideDirection('right');
       setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+      
+      // Reset transition state after animation completes
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
@@ -77,11 +80,14 @@ const Slider = () => {
     }
   };
   
+  // Function to go to the previous slide
   const prevSlide = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setSlideDirection('left');
       setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+      
+      // Reset transition state after animation completes
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
@@ -89,11 +95,14 @@ const Slider = () => {
     }
   };
   
+  // Function to go to a specific slide
   const goToSlide = (slideIndex: number) => {
     if (!isTransitioning && slideIndex !== currentIndex) {
       setIsTransitioning(true);
       setSlideDirection(slideIndex > currentIndex ? 'right' : 'left');
       setCurrentIndex(slideIndex);
+      
+      // Reset transition state after animation completes
       setTimeout(() => {
         setIsTransitioning(false);
         setSlideDirection(null);
@@ -112,45 +121,45 @@ const Slider = () => {
   
   // Auto-advance slides with proper cleanup
   useEffect(() => {
+    // Clear any existing timer
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
     
+    // Set up new timer for auto-advance
     timerRef.current = setTimeout(() => {
       nextSlide();
-    }, 5000) as unknown as number;
+    }, 5000);
     
+    // Cleanup on unmount or when currentIndex changes
     return () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
       }
     };
-  }, [currentIndex]);
+  }, [currentIndex, isTransitioning]); // Added isTransitioning as a dependency
   
   // Improved slide class calculation for proper looping
   const getSlideClass = (index: number) => {
+    // Current slide is fully visible
     if (index === currentIndex) {
       return 'opacity-100 z-10 translate-x-0';
-    } 
+    }
     
     // Handle the circular relationship for previous slide
     const prevIndex = (currentIndex - 1 + projects.length) % projects.length;
-    if (index === prevIndex && slideDirection === 'right') {
+    if (index === prevIndex) {
       return 'opacity-0 z-0 -translate-x-full';
     }
     
     // Handle the circular relationship for next slide
     const nextIndex = (currentIndex + 1) % projects.length;
-    if (index === nextIndex && slideDirection === 'left') {
+    if (index === nextIndex) {
       return 'opacity-0 z-0 translate-x-full';
     }
     
-    // All other slides based on relative position
-    if ((index < currentIndex) || (currentIndex === 0 && index === projects.length - 1)) {
-      return 'opacity-0 z-0 -translate-x-full';
-    } else {
-      return 'opacity-0 z-0 translate-x-full';
-    }
+    // All other slides (positioned based on their relation to current slide)
+    return index < currentIndex ? 'opacity-0 z-0 -translate-x-full' : 'opacity-0 z-0 translate-x-full';
   };
   
   return (
@@ -204,7 +213,7 @@ const Slider = () => {
         </div>
       </div>
 
-      {/* Indicators - They're now shown inside the Home component */}
+      {/* Indicators - Hidden but available for use in the Home component */}
       <div className="hidden">
         <SliderControls 
           totalSlides={projects.length} 
