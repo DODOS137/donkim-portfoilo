@@ -1,8 +1,37 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
 import SearchBox from '../components/SearchBox';
+
+// Create a separate component for the slider controls
+const SliderIndicators = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalSlides = 6;
+  const autoAdvanceInterval = 5000; // Match the same speed as in Slider.tsx
+
+  // This effect syncs with the auto-advancing slider in the Slider component
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+    }, autoAdvanceInterval);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="flex space-x-3">
+      {Array.from({ length: totalSlides }).map((_, index) => (
+        <div
+          key={index}
+          className={`h-2 w-2 rounded-full border border-white transition-all duration-500 ${
+            currentIndex === index ? 'bg-white' : 'bg-transparent'
+          }`}
+        />
+      ))}
+    </div>
+  );
+};
 
 const Home = () => {
   return (
@@ -19,6 +48,11 @@ const Home = () => {
           </div>
           
           <div className="mt-auto mb-32 flex flex-col space-y-6 pl-32">
+            {/* Slider indicators */}
+            <div>
+              <SliderIndicators />
+            </div>
+            
             {/* Search box */}
             <div>
               <SearchBox />
