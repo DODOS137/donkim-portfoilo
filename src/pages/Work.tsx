@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -18,28 +19,28 @@ const projects: Project[] = [
     title: "Invisible Space Museum",
     slug: "invisible-space-museum",
     description: "Virtual Reality Museum Contents",
-    imageUrl: "/lovable-uploads/977b5bab-4767-4ae1-affb-77a7381670df.png"
+    imageUrl: "/lovable-uploads/74e7f7a1-afe3-4fee-b39f-99d5957f0153.png"
   },
   {
     id: "2",
     title: "Learn",
     slug: "learn",
     description: "Immersive Virtual Reality Experience",
-    imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1964&auto=format&fit=crop"
+    imageUrl: "/lovable-uploads/6ff8ff68-cb39-448d-bab7-4fe73134f9d3.png"
   },
   {
     id: "3",
     title: "Thermal Trace",
     slug: "project-3",
     description: "A Mixed Reality Fashion Show",
-    imageUrl: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=1974&auto=format&fit=crop"
+    imageUrl: "/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png"
   },
   {
     id: "4",
     title: "Whispers from the Bottom",
     slug: "project-4",
     description: "Exhibition Design",
-    imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1936&auto=format&fit=crop"
+    imageUrl: "/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png"
   },
   {
     id: "5",
@@ -71,7 +72,7 @@ const Work = () => {
                 className="bg-[#333] aspect-video flex items-center justify-center group relative overflow-hidden hover:bg-[#444] transition-colors duration-300"
               >
                 {project.imageUrl && (
-                  <div className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity">
+                  <div className="absolute inset-0 opacity-80 group-hover:opacity-50 transition-opacity">
                     <img 
                       src={project.imageUrl} 
                       alt={project.title} 
