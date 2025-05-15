@@ -356,7 +356,7 @@ const ProjectDetail = () => {
               
               {/* Image section 9 - Visitor Experience */}
               <div className="w-full my-10">
-                <img alt="Visitor Experience" className="w-full h-auto object-contain" src="/lovable-uploads/fe512369-6aff-4535-87e2-d9b81dc08995.png" />
+                <img alt="Visitor Experience" className="w-full h-auto object-contain" src="/lovable-uploads/984cf579-cf4a-498b-8582-3b1fdd8f7770.png" />
               </div>
               
               {/* Image section 10 - AR Application Development */}
