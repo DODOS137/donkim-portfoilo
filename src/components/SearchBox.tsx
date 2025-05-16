@@ -105,10 +105,10 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <div className="flex">
         <button 
-          className="bg-transparent text-white border border-white/40 px-4 py-2 text-sm flex items-center cursor-pointer"
+          className="bg-transparent text-white border border-white/40 px-4 py-2 text-sm flex items-center cursor-pointer hover:bg-white/10 transition-colors"
           onClick={handleSearchClick}
         >
           <Search className="h-4 w-4 mr-2" />
@@ -116,7 +116,7 @@ const SearchBox = () => {
         </button>
         <Button
           variant="ghost"
-          className="border-t border-r border-b border-white/40 px-4 py-2 w-64 text-left text-white/70 hover:text-white flex justify-between items-center"
+          className="border-t border-r border-b border-white/40 px-4 py-2 w-64 text-left text-white/70 hover:text-white hover:bg-white/10 flex justify-between items-center transition-colors"
           onClick={handleSearchClick}
         >
           <span>{searchQuery || "Type to search..."}</span>
@@ -130,6 +130,7 @@ const SearchBox = () => {
             value={searchQuery}
             onValueChange={setSearchQuery}
             className="text-white"
+            autoFocus
           />
           <CommandList>
             <CommandEmpty className="py-6 text-white/70">No results found.</CommandEmpty>

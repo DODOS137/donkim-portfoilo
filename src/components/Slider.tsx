@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
@@ -165,7 +166,7 @@ const Slider = () => {
           {projects.map((project, index) => <Link key={index} to={`/project/${project.slug}`} className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
               <div className="relative w-full h-full overflow-hidden">
                 <img src={project.imageUrl} alt={project.title} className="slider-image w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center pointer-events-none">
                   <div className="text-center">
                     <h2 className="text-white text-3xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {project.title}
@@ -180,7 +181,7 @@ const Slider = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-6 right-6 flex space-x-0 border border-white">
+        <div className="absolute bottom-6 right-6 flex space-x-0 border border-white z-10">
           <button onClick={prevSlide} className="nav-button bg-transparent text-white border-r border-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none" aria-label="Previous slide">
             <ArrowLeft className="h-5 w-5" />
           </button>
@@ -191,7 +192,7 @@ const Slider = () => {
       </div>
 
       {/* Show Indicators */}
-      <div className="absolute bottom-6 left-6">
+      <div className="absolute bottom-6 left-6 z-10">
         <SliderControls totalSlides={projects.length} currentIndex={currentIndex} goToSlide={goToSlide} prevSlide={prevSlide} nextSlide={nextSlide} />
       </div>
     </div>;

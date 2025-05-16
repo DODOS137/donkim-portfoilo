@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -46,14 +47,14 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="mt-auto mb-32 flex flex-col space-y-6 pl-32">
+          <div className="mt-auto mb-32 flex flex-col space-y-6 pl-32 relative z-20">
             {/* Slider indicators */}
             <div>
               <SliderIndicators />
             </div>
             
             {/* Search box */}
-            <div>
+            <div className="relative z-20">
               <SearchBox />
             </div>
           </div>
