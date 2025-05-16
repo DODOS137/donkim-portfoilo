@@ -61,10 +61,10 @@ const projects: Project[] = [
 const Work = () => {
   return <div className="min-h-screen bg-black overflow-y-auto">
       <Navbar />
-      <main className="pt-16 px-4 md:px-8 pb-16">
-        <div className="max-w-5xl mx-auto mt-16">
-          <h1 className="text-4xl font-bold text-white mb-8">Work</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <main className="pt-24 md:pt-16 px-4 md:px-8 pb-16">
+        <div className="max-w-5xl mx-auto mt-8 md:mt-16">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">Work</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {projects.map((project) => (
               <Link 
                 key={project.id} 
@@ -81,8 +81,8 @@ const Work = () => {
                   </div>
                 )}
                 <div className="absolute inset-0 flex items-center justify-center flex-col space-y-2 p-4 z-10">
-                  <p className="text-white text-center text-xl font-medium">{project.title}</p>
-                  <p className="text-gray-300 text-center text-sm opacity-0 group-hover:opacity-100 transition-opacity">{project.description}</p>
+                  <p className="text-white text-center text-lg md:text-xl font-medium">{project.title}</p>
+                  <p className="text-gray-300 text-center text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity">{project.description}</p>
                 </div>
               </Link>
             ))}

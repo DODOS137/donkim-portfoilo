@@ -25,17 +25,18 @@ const SliderIndicators = () => {
     }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
     </div>;
 };
+
 const Home = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
-      <main className="flex relative h-screen">
-        <div className="w-1/2 relative border-r border-white/10 flex flex-col justify-between">
-          {/* Vertical line on the left */}
-          <div className="absolute left-20 top-0 bottom-0 w-px bg-white/10"></div>
+      <main className="flex flex-col md:flex-row relative h-screen">
+        <div className="w-full md:w-1/2 relative md:border-r border-white/10 flex flex-col justify-between order-2 md:order-1">
+          {/* Vertical line on the left - visible only on desktop */}
+          <div className="absolute left-20 top-0 bottom-0 w-px bg-white/10 hidden md:block"></div>
           
           {/* Main heading */}
-          <div className="absolute left-32 top-1/3 z-10">
-            <h1 className="text-7xl font-bold tracking-widest text-white">DOHYUN KIM</h1>
+          <div className="absolute left-6 md:left-32 top-1/3 z-10 px-4 md:px-0">
+            <h1 className="text-4xl md:text-7xl font-bold tracking-widest text-white">DOHYUN KIM</h1>
             <p className="text-white mt-4">Hello :)</p>
             
             <div className="mt-6">
@@ -47,7 +48,7 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="mt-auto mb-32 flex flex-col space-y-6 pl-32 relative z-20">
+          <div className="mt-auto mb-8 md:mb-32 flex flex-col space-y-6 px-6 md:pl-32 relative z-20">
             {/* Slider indicators */}
             <div>
               <SliderIndicators />
@@ -59,10 +60,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 h-full">
+        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2">
           <Slider />
         </div>
       </main>
     </div>;
 };
+
 export default Home;
