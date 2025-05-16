@@ -24,6 +24,7 @@ const SliderIndicators = () => {
     }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
     </div>;
 };
+
 const Home = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
@@ -63,4 +64,5 @@ const Home = () => {
       </main>
     </div>;
 };
+
 export default Home;
