@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SliderControls from './SliderControls';
 import { Link } from 'react-router-dom';
-
 interface Project {
   id: string;
   title: string;
@@ -61,7 +59,7 @@ const Slider = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  
+
   // Function to advance to the next slide
   const nextSlide = () => {
     if (!isTransitioning) {
@@ -134,7 +132,7 @@ const Slider = () => {
         clearTimeout(timerRef.current);
       }
     };
-  }, [currentIndex, isTransitioning]); 
+  }, [currentIndex, isTransitioning]);
 
   // Improved slide class calculation for proper looping
   const getSlideClass = (index: number) => {
@@ -158,7 +156,6 @@ const Slider = () => {
     // All other slides (positioned based on their relation to current slide)
     return index < currentIndex ? 'opacity-0 z-0 -translate-x-full' : 'opacity-0 z-0 translate-x-full';
   };
-  
   return <div className="relative w-full h-[calc(100vh-64px)]">
       {/* Main Slider */}
       <div className="w-full h-full flex justify-center items-center">
@@ -182,12 +179,8 @@ const Slider = () => {
 
         {/* Navigation Buttons */}
         <div className="absolute bottom-6 right-6 flex space-x-0 border border-white z-10">
-          <button onClick={prevSlide} className="nav-button bg-transparent text-white border-r border-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none" aria-label="Previous slide">
-            <ArrowLeft className="h-5 w-5" />
-          </button>
-          <button onClick={nextSlide} className="nav-button bg-transparent text-white hover:bg-white hover:text-black transition-colors p-2 focus:outline-none" aria-label="Next slide">
-            <ArrowRight className="h-5 w-5" />
-          </button>
+          
+          
         </div>
       </div>
 
@@ -197,5 +190,4 @@ const Slider = () => {
       </div>
     </div>;
 };
-
 export default Slider;
