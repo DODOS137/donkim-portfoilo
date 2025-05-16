@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -15,29 +14,18 @@ const SliderIndicators = () => {
   // Reset the counter every time to maintain perfect sync with the slider
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % totalSlides);
     }, autoAdvanceInterval);
-
     return () => clearInterval(timer);
   }, []);
-
-  return (
-    <div className="flex space-x-3">
-      {Array.from({ length: totalSlides }).map((_, index) => (
-        <div
-          key={index}
-          className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${
-            currentIndex === index ? 'bg-white' : 'bg-transparent'
-          }`}
-        />
-      ))}
-    </div>
-  );
+  return <div className="flex space-x-3">
+      {Array.from({
+      length: totalSlides
+    }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
+    </div>;
 };
-
 const Home = () => {
-  return (
-    <div className="min-h-screen bg-black overflow-hidden">
+  return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
       <main className="flex relative h-screen">
         <div className="w-1/2 relative border-r border-white/10 flex flex-col justify-between">
@@ -47,7 +35,7 @@ const Home = () => {
           {/* Main heading */}
           <div className="absolute left-32 top-1/3 z-10">
             <h1 className="text-7xl font-bold tracking-widest text-white">DOHYUN KIM</h1>
-            <p className="text-xl text-white mt-4">Hello :)</p>
+            
             <div className="mt-6">
               <Link to="/about">
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black transition-colors">
@@ -73,8 +61,6 @@ const Home = () => {
           <Slider />
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
