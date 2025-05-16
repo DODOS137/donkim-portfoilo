@@ -101,24 +101,26 @@ const SearchBox = () => {
   };
 
   const handleSearchClick = () => {
-    console.log("Search clicked, opening dialog");
     setIsOpen(true);
   };
 
   return (
     <div className="relative">
-      <div className="flex items-center cursor-pointer" onClick={handleSearchClick}>
-        <div 
-          className="bg-transparent text-white border border-white/40 hover:bg-white/10 px-4 py-2 text-sm flex items-center cursor-pointer transition-colors"
+      <div className="flex">
+        <button 
+          className="bg-transparent text-white border border-white/40 px-4 py-2 text-sm flex items-center cursor-pointer"
+          onClick={handleSearchClick}
         >
           <Search className="h-4 w-4 mr-2" />
           Search
-        </div>
-        <div
-          className="bg-transparent border-t border-r border-b border-white/40 hover:bg-white/10 px-4 py-2 w-64 text-left text-white/70 hover:text-white flex justify-between items-center cursor-pointer transition-colors"
+        </button>
+        <Button
+          variant="ghost"
+          className="border-t border-r border-b border-white/40 px-4 py-2 w-64 text-left text-white/70 hover:text-white flex justify-between items-center"
+          onClick={handleSearchClick}
         >
           <span>{searchQuery || "Type to search..."}</span>
-        </div>
+        </Button>
       </div>
 
       <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
@@ -128,7 +130,6 @@ const SearchBox = () => {
             value={searchQuery}
             onValueChange={setSearchQuery}
             className="text-white"
-            autoFocus
           />
           <CommandList>
             <CommandEmpty className="py-6 text-white/70">No results found.</CommandEmpty>
