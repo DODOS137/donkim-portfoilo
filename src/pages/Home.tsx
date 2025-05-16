@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -25,11 +24,10 @@ const SliderIndicators = () => {
     }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
     </div>;
 };
-
 const Home = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
-      <main className="flex flex-col md:flex-row relative min-h-[calc(100vh-200px)] md:h-screen">
+      <main className="flex flex-col md:flex-row relative min-h-[calc(100vh-200px)] md:h-screen py-[70px]">
         <div className="w-full md:w-1/2 relative md:border-r border-white/10 flex flex-col justify-between order-2 md:order-1 pt-16 md:pt-0 px-4 md:px-0">
           {/* Vertical line on the left - visible only on desktop */}
           <div className="absolute left-20 top-0 bottom-0 w-px bg-white/10 hidden md:block"></div>
@@ -60,12 +58,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Hide the slider on mobile devices */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2 hidden md:block">
+        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2">
           <Slider />
         </div>
       </main>
     </div>;
 };
-
 export default Home;
