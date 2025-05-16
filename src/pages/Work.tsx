@@ -69,7 +69,7 @@ const Work = () => {
               <Link 
                 key={project.id} 
                 to={`/project/${project.slug}`}
-                className="bg-[#333] aspect-video flex items-center justify-center group relative overflow-hidden hover:bg-[#444] transition-colors duration-300"
+                className="bg-[#333] aspect-video flex items-center justify-center group relative overflow-hidden hover:bg-[#444] transition-colors duration-300 border border-white"
               >
                 {project.imageUrl && (
                   <div className="absolute inset-0 opacity-80 group-hover:opacity-50 transition-opacity">
