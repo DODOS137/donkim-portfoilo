@@ -1,8 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Slider, { slideTransitionDuration, autoAdvanceInterval } from '../components/Slider';
 import SearchBox from '../components/SearchBox';
+import { Button } from '../components/ui/button';
 
 // Create a separate component for the slider controls
 const SliderIndicators = () => {
@@ -45,6 +47,14 @@ const Home = () => {
           {/* Main heading */}
           <div className="absolute left-32 top-1/3 z-10">
             <h1 className="text-7xl font-bold tracking-widest text-white">DOHYUN KIM</h1>
+            <p className="text-xl text-white mt-4">Hello :)</p>
+            <div className="mt-6">
+              <Link to="/about">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black transition-colors">
+                  About Me
+                </Button>
+              </Link>
+            </div>
           </div>
           
           <div className="mt-auto mb-32 flex flex-col space-y-6 pl-32">
