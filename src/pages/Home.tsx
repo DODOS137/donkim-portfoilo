@@ -38,7 +38,7 @@ const Home = () => {
             
             <div className="mt-6">
               <Link to="/about">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black transition-colors">
+                <Button variant="outline" className="border-white transition-colors my-[150px] text-black bg-white">
                   About Me
                 </Button>
               </Link>
