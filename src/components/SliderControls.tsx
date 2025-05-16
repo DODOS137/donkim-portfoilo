@@ -34,10 +34,10 @@ const SliderControls: React.FC<SliderControlsProps> = ({
       </div>
       
       {/* Navigation buttons - improved for mobile */}
-      <div className="flex space-x-0 border border-white">
+      <div className="flex space-x-0 border border-white bg-black/70 backdrop-blur-sm">
         <button
           onClick={prevSlide}
-          className="nav-button p-2 sm:p-3 hover:bg-white hover:text-black transition-colors text-white"
+          className="nav-button p-2 sm:p-3 hover:bg-white hover:text-black active:bg-white/90 active:text-black transition-colors text-white"
           aria-label="Previous slide"
         >
           <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -45,7 +45,7 @@ const SliderControls: React.FC<SliderControlsProps> = ({
         <div className="border-r border-white h-full"></div>
         <button
           onClick={nextSlide}
-          className="nav-button p-2 sm:p-3 hover:bg-white hover:text-black transition-colors text-white"
+          className="nav-button p-2 sm:p-3 hover:bg-white hover:text-black active:bg-white/90 active:text-black transition-colors text-white"
           aria-label="Next slide"
         >
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />

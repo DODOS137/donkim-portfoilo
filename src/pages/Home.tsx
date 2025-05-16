@@ -29,17 +29,17 @@ const SliderIndicators = () => {
 const Home = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
-      <main className="flex flex-col md:flex-row relative h-screen">
-        <div className="w-full md:w-1/2 relative md:border-r border-white/10 flex flex-col justify-between order-2 md:order-1">
+      <main className="flex flex-col md:flex-row relative min-h-[calc(100vh-200px)] md:h-screen">
+        <div className="w-full md:w-1/2 relative md:border-r border-white/10 flex flex-col justify-between order-2 md:order-1 pt-16 md:pt-0 px-4 md:px-0">
           {/* Vertical line on the left - visible only on desktop */}
           <div className="absolute left-20 top-0 bottom-0 w-px bg-white/10 hidden md:block"></div>
           
           {/* Main heading */}
-          <div className="absolute left-6 md:left-32 top-1/3 z-10 px-4 md:px-0">
-            <h1 className="text-4xl md:text-7xl font-bold tracking-widest text-white">DOHYUN KIM</h1>
-            <p className="text-white mt-4">Hello :)</p>
+          <div className="md:absolute left-6 md:left-32 top-8 md:top-1/3 z-10 px-0 md:px-0 mt-4 md:mt-0">
+            <h1 className="text-3xl md:text-7xl font-bold tracking-wide md:tracking-widest text-white">DOHYUN KIM</h1>
+            <p className="text-white mt-2 md:mt-4 text-sm md:text-base">Hello :)</p>
             
-            <div className="mt-6">
+            <div className="mt-4 md:mt-6">
               <Link to="/about">
                 <Button variant="outline" className="border-white transition-colors text-black bg-white my-0">
                   About Me
@@ -48,9 +48,9 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="mt-auto mb-8 md:mb-32 flex flex-col space-y-6 px-6 md:pl-32 relative z-20">
+          <div className="mt-6 md:mt-auto mb-4 md:mb-32 flex flex-col space-y-4 md:space-y-6 px-0 md:pl-32 relative z-20">
             {/* Slider indicators */}
-            <div>
+            <div className="hidden md:block">
               <SliderIndicators />
             </div>
             

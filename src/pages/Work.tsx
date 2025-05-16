@@ -61,18 +61,18 @@ const projects: Project[] = [
 const Work = () => {
   return <div className="min-h-screen bg-black overflow-y-auto">
       <Navbar />
-      <main className="pt-24 md:pt-16 px-4 md:px-8 pb-16">
-        <div className="max-w-5xl mx-auto mt-8 md:mt-16">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">Work</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+      <main className="pt-20 md:pt-24 px-4 md:px-8 pb-16">
+        <div className="max-w-5xl mx-auto mt-4 md:mt-8">
+          <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-8">Work</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
             {projects.map((project) => (
               <Link 
                 key={project.id} 
                 to={`/project/${project.slug}`}
-                className="bg-[#333] aspect-video flex items-center justify-center group relative overflow-hidden hover:bg-[#444] transition-colors duration-300 border border-white"
+                className="bg-[#333] aspect-video flex items-center justify-center group relative overflow-hidden hover:bg-[#444] transition-colors duration-300 border border-white/80"
               >
                 {project.imageUrl && (
-                  <div className="absolute inset-0 opacity-80 group-hover:opacity-50 transition-opacity">
+                  <div className="absolute inset-0 opacity-70 group-hover:opacity-40 transition-opacity">
                     <img 
                       src={project.imageUrl} 
                       alt={project.title} 
@@ -80,9 +80,9 @@ const Work = () => {
                     />
                   </div>
                 )}
-                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-2 p-4 z-10">
-                  <p className="text-white text-center text-lg md:text-xl font-medium">{project.title}</p>
-                  <p className="text-gray-300 text-center text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity">{project.description}</p>
+                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-1 md:space-y-2 p-4 z-10">
+                  <p className="text-white text-center text-base md:text-xl font-medium">{project.title}</p>
+                  <p className="text-gray-300 text-center text-xs md:text-sm group-hover:opacity-100 transition-opacity">{project.description}</p>
                 </div>
               </Link>
             ))}

@@ -170,14 +170,14 @@ const Slider = () => {
                 <img 
                   src={project.imageUrl} 
                   alt={project.title} 
-                  className="slider-image w-full md:w-full h-full md:h-full w-1/2 h-1/2 object-contain md:object-cover" 
+                  className="slider-image w-1/2 h-1/2 md:w-full md:h-full object-contain md:object-cover" 
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                  <div className="text-center">
-                    <h2 className="text-white text-3xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-black bg-opacity-30 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                  <div className="text-center px-4 md:px-0">
+                    <h2 className="text-white text-xl md:text-3xl font-bold md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                       {project.title}
                     </h2>
-                    <p className="text-white text-lg mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white text-sm md:text-lg mt-1 md:mt-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                       {project.description}
                     </p>
                   </div>
@@ -186,15 +186,10 @@ const Slider = () => {
             </Link>
           ))}
         </div>
-
-        {/* Navigation Buttons - removed from here as they're now in SliderControls */}
-        <div className="absolute bottom-6 right-6 flex space-x-0 border border-white z-10">
-          
-        </div>
       </div>
 
       {/* Show Indicators */}
-      <div className="absolute bottom-6 left-6 z-10">
+      <div className="absolute bottom-4 left-4 z-10">
         <SliderControls 
           totalSlides={projects.length} 
           currentIndex={currentIndex} 
