@@ -1,13 +1,9 @@
-
 import React, { useState } from 'react';
 import { Menu, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black">
+  return <nav className="fixed top-0 left-0 right-0 z-50 bg-black">
       <div className="max-w-full mx-auto px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -15,9 +11,7 @@ const Navbar = () => {
             <span className="text-white font-medium text-2xl">
               DK
             </span>
-            <Link to="https://instagram.com" target="_blank" rel="noopener noreferrer" className="border border-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
-              <Instagram size={20} className="text-white hover:text-black transition-colors" />
-            </Link>
+            
           </div>
 
           {/* Desktop Menu */}
@@ -44,10 +38,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white hover:text-gray-300 focus:outline-none"
-            >
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white hover:text-gray-300 focus:outline-none">
               <Menu className="w-6 h-6" />
             </button>
           </div>
@@ -55,40 +46,20 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-black px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link 
-            to="/home" 
-            className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
-            onClick={() => setMobileMenuOpen(false)}
-          >
+      {mobileMenuOpen && <div className="md:hidden bg-black px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Link to="/home" className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md" onClick={() => setMobileMenuOpen(false)}>
             Home
           </Link>
-          <Link 
-            to="/work" 
-            className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
-            onClick={() => setMobileMenuOpen(false)}
-          >
+          <Link to="/work" className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md" onClick={() => setMobileMenuOpen(false)}>
             Work
           </Link>
-          <Link 
-            to="/about" 
-            className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
-            onClick={() => setMobileMenuOpen(false)}
-          >
+          <Link to="/about" className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md" onClick={() => setMobileMenuOpen(false)}>
             About
           </Link>
-          <Link 
-            to="/contacts" 
-            className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md"
-            onClick={() => setMobileMenuOpen(false)}
-          >
+          <Link to="/contacts" className="block text-white hover:bg-gray-800 px-3 py-2 rounded-md" onClick={() => setMobileMenuOpen(false)}>
             Contacts
           </Link>
-        </div>
-      )}
-    </nav>
-  );
+        </div>}
+    </nav>;
 };
-
 export default Navbar;
