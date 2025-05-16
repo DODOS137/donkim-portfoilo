@@ -61,8 +61,8 @@ const Home = () => {
           </div>
         </div>
         
-        {/* Show slider ONLY on mobile, hide on medium screens and larger */}
-        <div className="w-full h-[calc(100vh-200px)] block md:hidden order-1">
+        {/* Show slider ONLY on mobile with MUCH smaller size */}
+        <div className="w-full h-40 block md:hidden order-1">
           <Slider />
         </div>
         
