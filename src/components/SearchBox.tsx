@@ -100,20 +100,24 @@ const SearchBox = () => {
     navigate(url);
   };
 
+  const handleSearchClick = () => {
+    setIsOpen(true);
+  };
+
   return (
     <div className="relative">
       <div className="flex">
-        <div 
-          className="bg-transparent text-white border border-white/40 px-4 py-2 text-sm flex items-center"
-          onClick={() => setIsOpen(true)}
+        <button 
+          className="bg-transparent text-white border border-white/40 px-4 py-2 text-sm flex items-center cursor-pointer"
+          onClick={handleSearchClick}
         >
           <Search className="h-4 w-4 mr-2" />
           Search
-        </div>
+        </button>
         <Button
           variant="ghost"
-          className="border-t border-r border-b border-white/40 px-4 py-2 w-64 text-left text-white/70 hover:text-white flex justify-between items-center focus:outline-none focus:border-white"
-          onClick={() => setIsOpen(true)}
+          className="border-t border-r border-b border-white/40 px-4 py-2 w-64 text-left text-white/70 hover:text-white flex justify-between items-center"
+          onClick={handleSearchClick}
         >
           <span>{searchQuery || "Type to search..."}</span>
         </Button>
