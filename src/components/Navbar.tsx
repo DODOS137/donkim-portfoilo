@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, Instagram, Mail, Phone, Linkedin } from 'lucide-react';
+import { Menu, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -87,22 +87,6 @@ const Navbar = () => {
           </Link>
         </div>
       )}
-
-      {/* Contact links at the bottom */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-6">
-        <Link to="mailto:contact@example.com" className="text-white hover:text-gray-300 transition-colors">
-          <Mail size={20} />
-        </Link>
-        <Link to="tel:+1234567890" className="text-white hover:text-gray-300 transition-colors">
-          <Phone size={20} />
-        </Link>
-        <Link to="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors">
-          <Linkedin size={20} />
-        </Link>
-        <Link to="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors">
-          <Instagram size={20} />
-        </Link>
-      </div>
     </nav>
   );
 };
