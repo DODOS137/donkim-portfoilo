@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -25,7 +24,6 @@ const SliderIndicators = () => {
     }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
     </div>;
 };
-
 const Home = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
@@ -41,7 +39,7 @@ const Home = () => {
             
             <div className="mt-6">
               <Link to="/about">
-                <Button variant="outline" className="border-white transition-colors my-[150px] text-black bg-white">
+                <Button variant="outline" className="border-white transition-colors text-black bg-white my-0">
                   About Me
                 </Button>
               </Link>
@@ -66,5 +64,4 @@ const Home = () => {
       </main>
     </div>;
 };
-
 export default Home;
