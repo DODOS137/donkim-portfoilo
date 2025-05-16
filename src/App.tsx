@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
@@ -14,19 +14,6 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
-
-// Custom footer component that conditionally renders based on route
-const ConditionalFooter = () => {
-  const location = useLocation();
-  const path = location.pathname;
-  
-  // Don't show footer on work or project detail pages
-  if (path === "/work" || path.startsWith("/project/")) {
-    return null;
-  }
-  
-  return <Footer />;
-};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -44,7 +31,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <ConditionalFooter />
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
