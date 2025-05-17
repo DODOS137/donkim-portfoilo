@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -69,7 +68,6 @@ const projects: Project[] = [{
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -166,7 +164,7 @@ const ProjectDetail = () => {
           
           {/* Title and description moved between image and video */}
           {project.slug === "invisible-space-museum" && <>
-              <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
+              <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
                 <h1 className="text-2xl md:text-4xl font-bold mb-4">Invisible</h1>
                 {isEditing ? <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
@@ -311,8 +309,7 @@ const ProjectDetail = () => {
             </div>}
           
           {/* NEW: Image sections 2-10 for Thermal Trace (project-3) only */}
-          {project.slug === "project-3" && (
-            <>
+          {project.slug === "project-3" && <>
               {/* Image section 2 - Project Type */}
               <div className="w-full my-10">
                 <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/47c2ae01-80c5-4bb3-8e69-2b3b4c7cf1a2.png" />
@@ -357,8 +354,7 @@ const ProjectDetail = () => {
               <div className="w-full my-10">
                 <img alt="Thermal Comparison" className="w-full h-auto object-contain" src="/lovable-uploads/456e9b82-cf1b-4c62-a448-f7982f317935.png" />
               </div>
-            </>
-          )}
+            </>}
           
           {/* YouTube Video Section - Show for project-4 right after the text description */}
           {project.slug === "project-4" && <div className="w-full mb-10">
