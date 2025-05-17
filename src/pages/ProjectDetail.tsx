@@ -321,7 +321,7 @@ const ProjectDetail = () => {
           {project.slug === "project-4" && <>
               {/* Image section 2 - Project Type */}
               <div className="w-full my-10">
-                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/3a6ac627-06be-4949-af56-65bba334bf9c.png" />
+                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/9a0882e4-d74a-4b2d-869e-c62d9aabe300.png" />
               </div>
               
               {/* Image section 3 - Process */}
