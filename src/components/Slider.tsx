@@ -1,7 +1,14 @@
+
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import SliderControls from './SliderControls';
 import { Link } from 'react-router-dom';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import SliderControls from './SliderControls';
 
 interface Project {
   id: string;
@@ -59,53 +66,25 @@ export const autoAdvanceInterval = 5000; // Time between auto-advances in ms
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
+  const [api, setApi] = useState<any>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Function to go to a specific slide
+  const goToSlide = (slideIndex: number) => {
+    api?.scrollTo(slideIndex);
+    setCurrentIndex(slideIndex);
+  };
 
   // Function to advance to the next slide
   const nextSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setSlideDirection('right');
-      setCurrentIndex(prevIndex => (prevIndex + 1) % projects.length);
-
-      // Reset transition state after animation completes
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setSlideDirection(null);
-      }, slideTransitionDuration);
-    }
+    api?.scrollNext();
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
 
   // Function to go to the previous slide
   const prevSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setSlideDirection('left');
-      setCurrentIndex(prevIndex => (prevIndex - 1 + projects.length) % projects.length);
-
-      // Reset transition state after animation completes
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setSlideDirection(null);
-      }, slideTransitionDuration);
-    }
-  };
-
-  // Function to go to a specific slide
-  const goToSlide = (slideIndex: number) => {
-    if (!isTransitioning && slideIndex !== currentIndex) {
-      setIsTransitioning(true);
-      setSlideDirection(slideIndex > currentIndex ? 'right' : 'left');
-      setCurrentIndex(slideIndex);
-
-      // Reset transition state after animation completes
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setSlideDirection(null);
-      }, slideTransitionDuration);
-    }
+    api?.scrollPrev();
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
   };
 
   // Reset timer when component unmounts
@@ -124,7 +103,7 @@ const Slider = () => {
       clearTimeout(timerRef.current);
     }
 
-    // Set up new timer for auto-advance - using exact same interval as indicators
+    // Set up new timer for auto-advance
     timerRef.current = setTimeout(() => {
       nextSlide();
     }, autoAdvanceInterval);
@@ -135,38 +114,46 @@ const Slider = () => {
         clearTimeout(timerRef.current);
       }
     };
-  }, [currentIndex, isTransitioning]);
+  }, [currentIndex]);
 
-  // Improved slide class calculation for proper looping
-  const getSlideClass = (index: number) => {
-    // Current slide is fully visible
-    if (index === currentIndex) {
-      return 'opacity-100 z-10 translate-x-0';
-    }
+  // Update current index when carousel changes
+  useEffect(() => {
+    if (!api) return;
 
-    // Handle the circular relationship for previous slide
-    const prevIndex = (currentIndex - 1 + projects.length) % projects.length;
-    if (index === prevIndex) {
-      return 'opacity-0 z-0 -translate-x-full';
-    }
+    const onSelect = () => {
+      setCurrentIndex(api.selectedScrollSnap() || 0);
+      
+      // Reset the auto-advance timer when manually changing slides
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      
+      timerRef.current = setTimeout(() => {
+        nextSlide();
+      }, autoAdvanceInterval);
+    };
 
-    // Handle the circular relationship for next slide
-    const nextIndex = (currentIndex + 1) % projects.length;
-    if (index === nextIndex) {
-      return 'opacity-0 z-0 translate-x-full';
-    }
+    api.on("select", onSelect);
+    
+    // Initial setup
+    setCurrentIndex(api.selectedScrollSnap() || 0);
+    
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
-    // All other slides (positioned based on their relation to current slide)
-    return index < currentIndex ? 'opacity-0 z-0 -translate-x-full' : 'opacity-0 z-0 translate-x-full';
-  };
   return (
     <div className="relative w-full h-[calc(100vh-64px)]">
-      {/* Main Slider */}
-      <div className="w-full h-full flex justify-center items-center">
-        <div className="w-full h-full relative bg-gray-400">
+      <Carousel 
+        setApi={setApi}
+        className="w-full h-full"
+        opts={{ loop: true }}
+      >
+        <CarouselContent className="h-full">
           {projects.map((project, index) => (
-            <Link key={index} to={`/project/${project.slug}`} className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
-              <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
+            <CarouselItem key={project.id} className="h-full">
+              <Link to={`/project/${project.slug}`} className="relative w-full h-full overflow-hidden flex justify-center items-center group">
                 <img 
                   src={project.imageUrl} 
                   alt={project.title} 
@@ -182,11 +169,11 @@ const Slider = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </CarouselItem>
           ))}
-        </div>
-      </div>
+        </CarouselContent>
+      </Carousel>
 
       {/* Show Indicators */}
       <div className="absolute bottom-4 left-4 z-10">
