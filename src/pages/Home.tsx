@@ -29,9 +29,8 @@ const Home = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
       <main className="flex flex-col md:flex-row relative min-h-[calc(100vh-200px)] md:h-screen">
-        <div className="w-full md:w-1/2 relative md:border-r border-white/10 flex flex-col justify-between order-2 md:order-1 pt-16 md:pt-0 px-4 md:px-0">
-          {/* Vertical line on the left - visible only on desktop */}
-          <div className="absolute left-20 top-0 bottom-0 w-px bg-white/10 hidden md:block"></div>
+        <div className="w-full md:w-1/2 relative flex flex-col justify-between order-2 md:order-1 pt-16 md:pt-0 px-4 md:px-0">
+          {/* Removing the vertical line that was here */}
           
           {/* Main heading */}
           <div className="md:absolute left-6 md:left-32 top-8 md:top-1/3 z-10 px-0 md:px-0 mt-4 md:mt-0">
