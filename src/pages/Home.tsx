@@ -12,17 +12,26 @@ const SliderIndicators = () => {
   const totalSlides = 6;
 
   // This effect syncs with the auto-advancing slider in the Slider component
+  // using the exact same interval imported from the Slider component
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % totalSlides);
     }, autoAdvanceInterval);
+    
+    // Cleanup on unmount
     return () => clearInterval(timer);
   }, []);
-  return <div className="flex space-x-3">
-      {Array.from({
-      length: totalSlides
-    }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-500 ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
-    </div>;
+  
+  return (
+    <div className="flex space-x-3">
+      {Array.from({length: totalSlides}).map((_, index) => (
+        <div 
+          key={index} 
+          className={`h-2 w-2 rounded-full border border-white transition-all duration-500 ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} 
+        />
+      ))}
+    </div>
+  );
 };
 
 const Home = () => {
