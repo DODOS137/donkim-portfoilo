@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { autoAdvanceInterval } from './Slider';
 
 interface SliderControlsProps {
   totalSlides: number;
@@ -27,7 +26,7 @@ const SliderControls: React.FC<SliderControlsProps> = ({
           <button 
             key={index} 
             onClick={() => goToSlide(index)} 
-            className={`indicator w-2 h-2 rounded-full border border-white transition-all duration-${autoAdvanceInterval/1000 * 0.1}s ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} 
+            className={`indicator w-2 h-2 rounded-full border border-white transition-all duration-500 ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} 
             aria-label={`Go to slide ${index + 1}`} 
           />
         ))}

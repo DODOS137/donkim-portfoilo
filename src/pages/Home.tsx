@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -26,7 +25,7 @@ const SliderIndicators = () => {
       {Array.from({length: totalSlides}).map((_, index) => (
         <div 
           key={index} 
-          className={`h-2 w-2 rounded-full border border-white transition-all duration-${autoAdvanceInterval/1000 * 0.1}s ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} 
+          className={`h-2 w-2 rounded-full border border-white transition-all duration-500 ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} 
         />
       ))}
     </div>
