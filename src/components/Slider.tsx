@@ -161,52 +161,55 @@ const Slider = () => {
   };
   
   return (
-    <div className="relative w-full h-[calc(100vh-64px)]">
-      {/* Main Slider */}
-      <div className="w-full h-full flex justify-center items-center">
-        <div className="w-full h-full relative bg-gray-400">
-          {projects.map((project, index) => (
-            <Link key={index} to="/work" className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
-              <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title} 
-                  className="slider-image w-1/2 h-1/2 md:w-full md:h-full object-contain md:object-cover" 
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-30 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <div className="text-center px-4 md:px-0">
-                    <h2 className="text-white text-xl md:text-3xl font-bold md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                      {project.title}
-                    </h2>
-                    <p className="text-white text-sm md:text-lg mt-1 md:mt-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                      {project.description}
-                    </p>
+    <div className="flex flex-col w-full">
+      {/* Main Slider Container */}
+      <div className="relative w-full h-[calc(100vh-64px)]">
+        {/* Main Slider */}
+        <div className="w-full h-full flex justify-center items-center">
+          <div className="w-full h-full relative bg-gray-400">
+            {projects.map((project, index) => (
+              <Link key={index} to="/work" className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
+                <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    className="slider-image w-1/2 h-1/2 md:w-full md:h-full object-contain md:object-cover" 
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-30 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                    <div className="text-center px-4 md:px-0">
+                      <h2 className="text-white text-xl md:text-3xl font-bold md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                        {project.title}
+                      </h2>
+                      <p className="text-white text-sm md:text-lg mt-1 md:mt-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                        {project.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Show Indicators */}
+        <div className="absolute bottom-4 left-4 z-10">
+          <SliderControls 
+            totalSlides={projects.length} 
+            currentIndex={currentIndex} 
+            goToSlide={goToSlide} 
+            prevSlide={prevSlide} 
+            nextSlide={nextSlide} 
+          />
         </div>
       </div>
 
-      {/* Show Indicators */}
-      <div className="absolute bottom-4 left-4 z-10">
-        <SliderControls 
-          totalSlides={projects.length} 
-          currentIndex={currentIndex} 
-          goToSlide={goToSlide} 
-          prevSlide={prevSlide} 
-          nextSlide={nextSlide} 
-        />
-      </div>
-
-      {/* Thumbnail Images */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 hidden md:flex space-x-2">
+      {/* Thumbnail Images - moved below the slider */}
+      <div className="py-4 bg-black hidden md:flex justify-center space-x-2">
         {projects.map((project, index) => (
           <div 
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-12 h-12 border-2 cursor-pointer transition-all duration-300 ${currentIndex === index ? 'border-white opacity-100' : 'border-white/40 opacity-60'}`}
+            className={`w-16 h-12 border-2 cursor-pointer transition-all duration-300 ${currentIndex === index ? 'border-white opacity-100' : 'border-white/40 opacity-60'}`}
           >
             <img 
               src={project.imageUrl} 
