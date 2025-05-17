@@ -1,8 +1,6 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { Mail, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
-
 const Contacts = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
@@ -19,9 +17,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <a href="mailto:dohyon18@nave.com" className="text-white hover:text-gray-300 transition-colors font-medium">
-                    dohyon18@nave.com
-                  </a>
+                  <a href="mailto:dohyon18@nave.com" className="text-white hover:text-gray-300 transition-colors font-medium">dohyon18@naver.com</a>
                 </div>
               </div>
               
@@ -32,9 +28,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Phone</p>
-                  <a href="tel:+12345678900" className="text-white hover:text-gray-300 transition-colors font-medium">
-                    +1 (234) 567-8900
-                  </a>
+                  <a href="tel:+12345678900" className="text-white hover:text-gray-300 transition-colors font-medium">+44 (0) 7587-458797</a>
                 </div>
               </div>
               
@@ -45,10 +39,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">LinkedIn</p>
-                  <a href="https://linkedin.com/in/dohyon" target="_blank" rel="noopener noreferrer" 
-                     className="text-white hover:text-gray-300 transition-colors font-medium">
-                    linkedin.com/in/dohyon
-                  </a>
+                  <a href="https://linkedin.com/in/dohyon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">lhttps://www.linkedin.com/in/dohyun-kim-028221343</a>
                 </div>
               </div>
               
@@ -59,10 +50,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Instagram</p>
-                  <a href="https://instagram.com/dohyon" target="_blank" rel="noopener noreferrer"
-                     className="text-white hover:text-gray-300 transition-colors font-medium">
-                    @dohyon
-                  </a>
+                  <a href="https://instagram.com/dohyon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">@ddon_kkim</a>
                 </div>
               </div>
               
@@ -73,10 +61,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">YouTube</p>
-                  <a href="https://youtube.com/@dohyon" target="_blank" rel="noopener noreferrer"
-                     className="text-white hover:text-gray-300 transition-colors font-medium">
-                    youtube.com/@dohyon
-                  </a>
+                  <a href="https://youtube.com/@dohyon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">https://www.youtube.com/channel/UCwwt3iNyM7nuIx_XbXiqlqw</a>
                 </div>
               </div>
             </div>
@@ -85,5 +70,4 @@ const Contacts = () => {
       </main>
     </div>;
 };
-
 export default Contacts;
