@@ -18,7 +18,11 @@ const About = () => {
               <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
                 <h3 className="text-xl font-semibold mb-2">Education</h3>
                 <ul className="space-y-2">
-                  <li>Master's in Design - VR/XR Focus</li>
+                  <li>University of the Arts London
+MA 
+
+
+                </li>
                   <li>Bachelor's in Spatial Design</li>
                 </ul>
               </div>
