@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Slider, { slideTransitionDuration, autoAdvanceInterval } from '../components/Slider';
+import Slider, { autoAdvanceInterval } from '../components/Slider';
 import SearchBox from '../components/SearchBox';
 import { Button } from '../components/ui/button';
 
@@ -12,7 +12,6 @@ const SliderIndicators = () => {
   const totalSlides = 6;
 
   // This effect syncs with the auto-advancing slider in the Slider component
-  // Reset the counter every time to maintain perfect sync with the slider
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % totalSlides);
@@ -22,7 +21,7 @@ const SliderIndicators = () => {
   return <div className="flex space-x-3">
       {Array.from({
       length: totalSlides
-    }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-${slideTransitionDuration} ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
+    }).map((_, index) => <div key={index} className={`h-2 w-2 rounded-full border border-white transition-all duration-500 ${currentIndex === index ? 'bg-white' : 'bg-transparent'}`} />)}
     </div>;
 };
 

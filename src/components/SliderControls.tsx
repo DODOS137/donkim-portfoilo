@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { slideTransitionDuration } from './Slider';
+
 interface SliderControlsProps {
   totalSlides: number;
   currentIndex: number;
@@ -8,6 +9,7 @@ interface SliderControlsProps {
   prevSlide: () => void;
   nextSlide: () => void;
 }
+
 const SliderControls: React.FC<SliderControlsProps> = ({
   totalSlides,
   currentIndex,
@@ -35,4 +37,5 @@ const SliderControls: React.FC<SliderControlsProps> = ({
       </div>
     </div>;
 };
+
 export default SliderControls;

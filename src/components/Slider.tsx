@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import SliderControls from './SliderControls';
 import { Link } from 'react-router-dom';
+import SliderControls from './SliderControls';
 
 interface Project {
   id: string;
