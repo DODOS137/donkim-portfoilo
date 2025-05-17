@@ -193,7 +193,7 @@ const ProjectDetail = () => {
               
               {/* Image section 1 - Project Type */}
               <div className="w-full my-10">
-                <img alt="Project Type" className="w-full h-auto object-contain" src="/lovable-uploads/03d94172-4144-444f-afb8-3599a0851ce4.png" />
+                <img alt="Project Type" className="w-full h-auto object-contain" src="/lovable-uploads/f477124f-9509-4791-95e7-96c76604b152.png" />
               </div>
               
               {/* Image section 2 - Approach */}
@@ -203,7 +203,7 @@ const ProjectDetail = () => {
               
               {/* Image section 3 - Process */}
               <div className="w-full my-10">
-                <img alt="Process" className="w-full h-auto object-contain" src="/lovable-uploads/16ab4037-015b-4574-9679-edfee2b2d386.png" />
+                <img alt="Process" className="w-full h-auto object-contain" src="/lovable-uploads/b7bcee38-0fa1-4423-8b70-82269a056822.png" />
               </div>
               
               {/* Image section 4 - Worldbuilding */}
