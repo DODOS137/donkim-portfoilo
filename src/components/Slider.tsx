@@ -159,13 +159,14 @@ const Slider = () => {
     // All other slides (positioned based on their relation to current slide)
     return index < currentIndex ? 'opacity-0 z-0 -translate-x-full' : 'opacity-0 z-0 translate-x-full';
   };
+  
   return (
     <div className="relative w-full h-[calc(100vh-64px)]">
       {/* Main Slider */}
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full h-full relative bg-gray-400">
           {projects.map((project, index) => (
-            <Link key={index} to={`/project/${project.slug}`} className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
+            <Link key={index} to="/work" className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
               <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
                 <img 
                   src={project.imageUrl} 
@@ -197,6 +198,23 @@ const Slider = () => {
           prevSlide={prevSlide} 
           nextSlide={nextSlide} 
         />
+      </div>
+
+      {/* Thumbnail Images */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 hidden md:flex space-x-2">
+        {projects.map((project, index) => (
+          <div 
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-12 h-12 border-2 cursor-pointer transition-all duration-300 ${currentIndex === index ? 'border-white opacity-100' : 'border-white/40 opacity-60'}`}
+          >
+            <img 
+              src={project.imageUrl} 
+              alt={`Thumbnail ${index + 1}`} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
