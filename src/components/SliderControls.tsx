@@ -32,24 +32,6 @@ const SliderControls: React.FC<SliderControlsProps> = ({
           />
         ))}
       </div>
-      
-      {/* Navigation buttons */}
-      <div className="flex space-x-3">
-        <button 
-          onClick={prevSlide} 
-          className="bg-black/50 backdrop-blur-sm p-2 rounded-full hover:bg-black/70 transition-colors"
-          aria-label="Previous slide"
-        >
-          <ArrowLeft size={16} className="text-white" />
-        </button>
-        <button 
-          onClick={nextSlide} 
-          className="bg-black/50 backdrop-blur-sm p-2 rounded-full hover:bg-black/70 transition-colors"
-          aria-label="Next slide"
-        >
-          <ArrowRight size={16} className="text-white" />
-        </button>
-      </div>
     </div>
   );
 };

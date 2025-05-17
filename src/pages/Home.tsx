@@ -12,7 +12,6 @@ const SliderIndicators = () => {
   const totalSlides = 6;
 
   // This effect syncs with the auto-advancing slider in the Slider component
-  // using the exact same interval imported from the Slider component
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % totalSlides);
