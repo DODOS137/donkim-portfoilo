@@ -569,7 +569,7 @@ const ProjectDetail = () => {
               
               {/* Add third image section - Project 5 detailed mockup */}
               <div className="w-full my-10">
-                <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/b486a1d3-787c-4c2b-af44-e68195f07449.png" />
+                <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/5469078d-c9df-443d-b9f0-4eab1a57cfbf.png" />
               </div>
               
               {/* Image section 4 - Site Selection */}
