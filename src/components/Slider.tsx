@@ -177,7 +177,7 @@ const Slider = () => {
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-30 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center px-4 md:px-0">
+                      <div className="text-center px-4 md:px-0 transform -translate-y-0">
                         <h2 className="text-white text-xl md:text-3xl font-bold md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                           {project.title}
                         </h2>
