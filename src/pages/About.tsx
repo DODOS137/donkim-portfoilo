@@ -22,7 +22,7 @@ const About = () => {
                   <li>London College of Communication, London, United Kingdom</li>
                   <li>MA Virtual Reality</li>
                        <li className="text-large font-semibold mb-2">Kookmin University</li>
-                <li>Seoul, Republic of Korea </li>
+                 <li>Seoul, Republic of Korea </li>
                   <li>BA Spatial Design </li>
               </div>
               
