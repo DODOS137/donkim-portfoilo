@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -309,6 +310,56 @@ const ProjectDetail = () => {
                   </form>
                 </Form> : <div>{editedDescription || project.fullDescription}</div>}
             </div>}
+          
+          {/* NEW: Image sections 2-10 for Thermal Trace (project-3) only */}
+          {project.slug === "project-3" && (
+            <>
+              {/* Image section 2 - Project Type */}
+              <div className="w-full my-10">
+                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/47c2ae01-80c5-4bb3-8e69-2b3b4c7cf1a2.png" />
+              </div>
+              
+              {/* Image section 3 - Process */}
+              <div className="w-full my-10">
+                <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/a9dfe5ac-2fa3-43f1-b9ac-3f2cc5da73f0.png" />
+              </div>
+              
+              {/* Image section 4 - Idea Development */}
+              <div className="w-full my-10">
+                <img alt="Idea Development" className="w-full h-auto object-contain" src="/lovable-uploads/c4be48d7-a9a2-4eea-90a7-b5e2c2bb73e1.png" />
+              </div>
+              
+              {/* Image section 5 - Spatial Design */}
+              <div className="w-full my-10">
+                <img alt="Spatial Design" className="w-full h-auto object-contain" src="/lovable-uploads/a9f90b7f-ba67-48b4-8091-b5356856ec97.png" />
+              </div>
+              
+              {/* Image section 6 - Design Flexibility */}
+              <div className="w-full my-10">
+                <img alt="Design Flexibility" className="w-full h-auto object-contain" src="/lovable-uploads/2f3e9d35-1302-442f-aacc-a70177c3e85d.png" />
+              </div>
+              
+              {/* Image section 7 - Exhibition Design */}
+              <div className="w-full my-10">
+                <img alt="Exhibition Design" className="w-full h-auto object-contain" src="/lovable-uploads/5b1ef4ab-a498-4400-8d25-4f87d0cc622d.png" />
+              </div>
+              
+              {/* Image section 8 - Thermal Vision Headset */}
+              <div className="w-full my-10">
+                <img alt="Thermal Vision Headset" className="w-full h-auto object-contain" src="/lovable-uploads/bdc851c3-6051-415d-b2eb-6b21f0a211f2.png" />
+              </div>
+              
+              {/* Image section 9 - Thermal Visualization */}
+              <div className="w-full my-10">
+                <img alt="Thermal Visualization" className="w-full h-auto object-contain" src="/lovable-uploads/c3b2d880-09cc-4011-96cb-13f32677e513.png" />
+              </div>
+              
+              {/* Image section 10 - Thermal Comparison */}
+              <div className="w-full my-10">
+                <img alt="Thermal Comparison" className="w-full h-auto object-contain" src="/lovable-uploads/456e9b82-cf1b-4c62-a448-f7982f317935.png" />
+              </div>
+            </>
+          )}
           
           {/* YouTube Video Section - Show for project-4 right after the text description */}
           {project.slug === "project-4" && <div className="w-full mb-10">
