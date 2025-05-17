@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-
 interface SliderControlsProps {
   totalSlides: number;
   currentIndex: number;
@@ -9,7 +7,6 @@ interface SliderControlsProps {
   prevSlide: () => void;
   nextSlide: () => void;
 }
-
 const SliderControls: React.FC<SliderControlsProps> = ({
   totalSlides,
   currentIndex,
@@ -26,16 +23,7 @@ const SliderControls: React.FC<SliderControlsProps> = ({
       </div>
       
       {/* Navigation buttons - improved for mobile */}
-      <div className="flex space-x-0 border border-white backdrop-blur-sm bg-transparent">
-        <button onClick={prevSlide} className="nav-button p-2 sm:p-3 hover:bg-white hover:text-black active:bg-white/90 active:text-black transition-colors text-white" aria-label="Previous slide">
-          <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-        </button>
-        <div className="border-r border-white h-full"></div>
-        <button onClick={nextSlide} className="nav-button p-2 sm:p-3 hover:bg-white hover:text-black active:bg-white/90 active:text-black transition-colors text-white" aria-label="Next slide">
-          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-        </button>
-      </div>
+      
     </div>;
 };
-
 export default SliderControls;
