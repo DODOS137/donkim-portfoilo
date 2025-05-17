@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, Linkedin, Instagram } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -38,21 +38,6 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <Mail className="w-4 h-4 md:w-5 md:h-5 text-white" />
               <a href="mailto:dohyon18@nave.com" className="text-white text-sm md:text-base hover:underline">dohyon18@naver.com</a>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Phone className="w-4 h-4 md:w-5 md:h-5 text-white" />
-              <a href="tel:+1234567890" className="text-white text-sm md:text-base hover:underline">+44 (0) 758-7458797
-            </a>
-            </div>
-            <div className="flex items-center space-x-3 mt-2 md:mt-4">
-              <Instagram className="w-4 h-4 md:w-5 md:h-5 text-white" />
-              <a href="https://instagram.com/username" className="text-white text-sm md:text-base hover:underline" target="_blank" rel="noreferrer">@donn_kkim</a>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Linkedin className="w-4 h-4 md:w-5 md:h-5 text-white" />
-              <a href="https://linkedin.com/in/username" className="text-white text-sm md:text-base hover:underline" target="_blank" rel="noreferrer">
-                Dohyun Kim
-              </a>
             </div>
           </div>
           
