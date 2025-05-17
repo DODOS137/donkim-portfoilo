@@ -19,8 +19,9 @@ const About = () => {
               <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
                 <h3 className="text-xl font-semibold mb-2">Education</h3>
                 <ul className="space-y-2">
-                  <li>Royal College of Art, London, United Kingdom
-MA Service Design</li>
+                  <li>University of the Arts London</li>
+                  <li>London College of Communication, London, United Kingdom</li>
+                  <li>MA Virtual Reality</li>
                   <li>Bachelor's in Spatial Design</li>
                 </ul>
               </div>
