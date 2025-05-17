@@ -21,7 +21,7 @@ const About = () => {
                   <li className="text-large font-semibold mb-2">University of the Arts London</li>
                   <li>London College of Communication, London, United Kingdom</li>
                   <li>MA Virtual Reality</li>
-                  <li>"className=="text-large font-semibold mb-2">Kookmin University</li>
+                       <li className="text-large font-semibold mb-2">Kookmin University</li>
                 </ul>t
               </div>
               
