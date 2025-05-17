@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { Mail, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
@@ -18,7 +17,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <a href="mailto:contact@dohyunkim.com" className="text-white hover:text-gray-300 transition-colors font-medium">contact@dohyunkim.com</a>
+                  <a href="mailto:contact@dohyunkim.com" className="text-white hover:text-gray-300 transition-colors font-medium">dohyon18@naver.com</a>
                 </div>
               </div>
               
