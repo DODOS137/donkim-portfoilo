@@ -203,8 +203,8 @@ const Slider = () => {
         </div>
       </div>
 
-      {/* Thumbnail Images - moved below the slider */}
-      <div className="py-4 bg-black hidden md:flex justify-center space-x-2">
+      {/* Thumbnail Images - moved below the slider - now visible on mobile */}
+      <div className="py-4 bg-black md:flex justify-center space-x-2 flex">
         {projects.map((project, index) => (
           <div 
             key={index}
