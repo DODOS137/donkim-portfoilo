@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 const About = () => {
@@ -19,7 +18,7 @@ const About = () => {
               <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
                 <h3 className="text-xl font-semibold mb-2">Education</h3>
                 <ul className="space-y-2">
-                  <li>University of the Arts London</li>
+                  <li className="text-large font-semibold mb-2">University of the Arts London</li>
                   <li>London College of Communication, London, United Kingdom</li>
                   <li>MA Virtual Reality</li>
                   <li>Bachelor's in Spatial Design</li>
