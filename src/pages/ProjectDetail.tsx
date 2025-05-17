@@ -564,12 +564,12 @@ const ProjectDetail = () => {
           {project.slug === "project-5" && <>
               {/* Image section 1 - Project info image section - Added below video */}
               <div className="w-full my-10">
-                <img alt="Project Information" className="w-full h-auto object-contain" src="/lovable-uploads/156e341c-46d4-400d-916d-942aa675ab4e.png" />
+                <img alt="Project Information" className="w-full h-auto object-contain" src="/lovable-uploads/f68f467d-89bb-4679-94d1-e354aaa0d733.png" />
               </div>
               
               {/* Add third image section - Project 5 detailed mockup */}
               <div className="w-full my-10">
-                <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/6db507e7-33b8-4ae2-8eff-915e9fb34663.png" />
+                <img alt="Project Details" className="w-full h-auto object-contain" src="/lovable-uploads/b486a1d3-787c-4c2b-af44-e68195f07449.png" />
               </div>
               
               {/* Image section 4 - Site Selection */}
