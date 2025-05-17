@@ -326,27 +326,27 @@ const ProjectDetail = () => {
               
               {/* Image section 3 - Process */}
               <div className="w-full my-10">
-                <img alt="Process" className="w-full h-auto object-contain" src="/lovable-uploads/5e22efb5-97e9-4fb2-92f0-24c80469f078.png" />
+                <img alt="Process" className="w-full h-auto object-contain" src="/lovable-uploads/6b64d68c-5c7f-44ff-8622-f0a536eddaa6.png" />
               </div>
               
               {/* Image section 4 - Idea Development */}
               <div className="w-full my-10">
-                <img alt="Idea Development" className="w-full h-auto object-contain" src="/lovable-uploads/d6f8e4b6-369a-4c4d-b123-0af214e753bc.png" />
+                <img alt="Idea Development" className="w-full h-auto object-contain" src="/lovable-uploads/9a130e34-16ea-4c25-869f-3a31c96c1c5f.png" />
               </div>
               
               {/* Image section 5 - Core Concept */}
               <div className="w-full my-10">
-                <img alt="Core Concept" className="w-full h-auto object-contain" src="/lovable-uploads/4e86c452-52e7-416b-87c9-f80781b563a2.png" />
+                <img alt="Core Concept" className="w-full h-auto object-contain" src="/lovable-uploads/18bece01-dc05-40e1-8bba-f7de8b355ea2.png" />
               </div>
               
               {/* Image section 6 - Product Design */}
               <div className="w-full my-10">
-                <img alt="Product Design" className="w-full h-auto object-contain" src="/lovable-uploads/f55a81c3-32db-403d-9187-aa33e67f00e5.png" />
+                <img alt="Product Design" className="w-full h-auto object-contain" src="/lovable-uploads/2b8b452b-5418-4a76-9c5f-fcc4cad9ac4a.png" />
               </div>
               
               {/* Image section 7 - Exhibition Elements */}
               <div className="w-full my-10">
-                <img alt="Exhibition Elements" className="w-full h-auto object-contain" src="/lovable-uploads/b66fabbb-7f0f-489c-9125-b193f338d9a6.png" />
+                <img alt="Exhibition Elements" className="w-full h-auto object-contain" src="/lovable-uploads/5d9a94d9-6f1a-4eb3-ae3b-56fd0282a40f.png" />
               </div>
               
               {/* Image section 8 - Exhibition Design */}
