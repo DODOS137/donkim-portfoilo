@@ -7,7 +7,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto mt-16">
           <h1 className="text-5xl font-bold text-white mb-8">About</h1>
           <div className="text-white space-y-8">
-            <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md">
+            <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
               <h2 className="text-2xl font-semibold mb-4">Do Hyun Kim</h2>
               <p className="text-xl leading-relaxed">
                 A passionate designer specializing in spatial design and VR/XR technologies. Continuously exploring how VR and XR can expand human experiences and create new forms of engagement within physical spaces. Committed to investigating the potential and effectiveness of immersive technologies across various environments, from gaming to exhibitions. Focused on pushing the boundaries of physical space to unlock new possibilities for interaction and presence.
