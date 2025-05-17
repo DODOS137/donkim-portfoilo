@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { Mail, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
@@ -17,7 +18,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <a href="mailto:dohyon18@nave.com" className="text-white hover:text-gray-300 transition-colors font-medium">dohyon18@naver.com</a>
+                  <a href="mailto:contact@dohyunkim.com" className="text-white hover:text-gray-300 transition-colors font-medium">contact@dohyunkim.com</a>
                 </div>
               </div>
               
@@ -28,7 +29,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Phone</p>
-                  <a href="tel:+12345678900" className="text-white hover:text-gray-300 transition-colors font-medium">+44 (0) 7587-458797</a>
+                  <a href="tel:+447587458797" className="text-white hover:text-gray-300 transition-colors font-medium">+44 (0) 7587-458797</a>
                 </div>
               </div>
               
@@ -39,7 +40,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">LinkedIn</p>
-                  <a href="https://linkedin.com/in/dohyon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">lhttps://www.linkedin.com/in/dohyun-kim-028221343</a>
+                  <a href="https://www.linkedin.com/in/dohyun-kim-028221343" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">linkedin.com/in/dohyun-kim</a>
                 </div>
               </div>
               
@@ -50,7 +51,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Instagram</p>
-                  <a href="https://instagram.com/dohyon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">@ddon_kkim</a>
+                  <a href="https://instagram.com/ddon_kkim" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">@ddon_kkim</a>
                 </div>
               </div>
               
@@ -61,7 +62,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">YouTube</p>
-                  <a href="https://youtube.com/@dohyon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">https://www.youtube.com/channel/UCwwt3iNyM7nuIx_XbXiqlqw</a>
+                  <a href="https://www.youtube.com/channel/UCwwt3iNyM7nuIx_XbXiqlqw" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">Do Hyun Kim - YouTube</a>
                 </div>
               </div>
             </div>
