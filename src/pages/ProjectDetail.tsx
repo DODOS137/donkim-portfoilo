@@ -9,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -289,7 +290,7 @@ const ProjectDetail = () => {
             
           {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
               <h1 className="text-4xl font-bold mb-4">
-                {project.slug === "project-4" ? "Whispers From the Bottom" : project.title}
+                {project.slug === "project-4" ? "Whispers From the Bottom" : project.slug === "project-3" ? "Thermal Trace" : project.title}
               </h1>
               
               {isEditing ? <Form {...form}>
