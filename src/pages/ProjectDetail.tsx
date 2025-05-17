@@ -406,13 +406,13 @@ const ProjectDetail = () => {
           {project.slug === "learn" && <>
               {/* Image section 1 - Project Type & Info */}
               <div className="w-full my-10">
-                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/ef24cead-42d8-43b8-b1f0-8aa6e0d5d06f.png" />
+                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/daf57c4f-a572-43fa-9fe2-eafca03fba49.png" />
               </div>
               
               
               {/* Image section 2 - Process */}
               <div className="w-full my-10">
-                <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/a48b1d3d-db37-47b3-965c-c773003ae280.png" />
+                <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/9377c794-5dfd-4cbc-95c1-924950254356.png" />
               </div>
               
               {/* Image section 3 - Worldbuilding */}
