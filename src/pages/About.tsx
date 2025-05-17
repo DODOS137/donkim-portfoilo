@@ -24,7 +24,7 @@ const About = () => {
               </div>
               
               <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
-                <h3 className="text-xl font-semibold mb-2">Expertise</h3>
+                <h3 className="text-xl font-semibold mb-2">Skills </h3>
                 <ul className="space-y-2">
                   <li>Spatial Design</li>
                   <li>Virtual Reality</li>
