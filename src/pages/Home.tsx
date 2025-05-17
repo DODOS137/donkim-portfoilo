@@ -59,8 +59,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Hide the slider on mobile devices */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2 hidden md:block">
+        {/* Make the slider visible on mobile devices by removing 'hidden md:block' */}
+        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2">
           <Slider />
         </div>
       </main>
