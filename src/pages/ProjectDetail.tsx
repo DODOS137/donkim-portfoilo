@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -168,7 +167,7 @@ const ProjectDetail = () => {
           {/* Title and description moved between image and video */}
           {project.slug === "invisible-space-museum" && <>
               <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
-                <h1 className="text-4xl font-bold mb-4">Invisible</h1>
+                <h1 className="text-2xl md:text-4xl font-bold mb-4">Invisible</h1>
                 {isEditing ? <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
                       <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
@@ -270,7 +269,7 @@ const ProjectDetail = () => {
             </>}
           
           {project.slug === "project-5" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
-              <h1 className="font-bold mb-4 text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
+              <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
               
               {isEditing ? <Form {...form}>
                   <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4 px-[50px]">
@@ -291,7 +290,7 @@ const ProjectDetail = () => {
             </div>}
             
           {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] px-[75px] my-[100px]">
-              <h1 className="text-4xl font-bold mb-4">
+              <h1 className="text-2xl md:text-4xl font-bold mb-4">
                 {project.slug === "project-4" ? "Whispers From the Bottom" : project.slug === "project-3" ? "Thermal Trace" : project.title}
               </h1>
               
