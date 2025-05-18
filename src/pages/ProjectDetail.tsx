@@ -161,7 +161,7 @@ const ProjectDetail = () => {
                   
                   <span>Thermal Trace - Interactive Demo</span>
                 </h3>
-                <div className="text-gray-400 text-sm">Press 'X' Key to activate with Fullscreen Mode</div>
+                <div className="text-gray-400 text-sm px-[240px]">Press 'X' Key to activate with Full-screen Mode</div>
               </div>
               <div className="w-full relative">
                 <AspectRatio ratio={16 / 9}>
