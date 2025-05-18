@@ -225,7 +225,7 @@ const ProjectDetail = () => {
               
               {/* Image section 4 - Worldbuilding */}
               <div className="w-full my-10">
-                <img alt="Worldbuilding - Environmental Setting" className="w-full h-auto object-contain" src="/lovable-uploads/387de526-8c89-4311-8b16-576ff3629389.png" />
+                <img alt="Worldbuilding - Environmental Setting" className="w-full h-auto object-contain" src="/lovable-uploads/501e5230-4841-4922-9d27-c24ede54b1fe.png" />
               </div>
               
               {/* Image section 5 - Planet A233 */}
