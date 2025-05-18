@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -70,7 +69,11 @@ const projects: Project[] = [{
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
 const ProjectDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const {
+    slug
+  } = useParams<{
+    slug: string;
+  }>();
   const project = projects.find(p => p.slug === slug);
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState("");
@@ -126,7 +129,6 @@ const ProjectDetail = () => {
       }
     }
   }, [slug]);
-
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -163,7 +165,7 @@ const ProjectDetail = () => {
           
           {/* Unity WebGL Player */}
           <div className="w-full my-10 bg-black border border-gray-800 rounded-lg overflow-hidden">
-            <div className="p-4 bg-gray-900 text-white border-b border-gray-800">
+            <div className="p-4 text-white border-b border-gray-800 bg-zinc-950">
               <h3 className="text-lg font-medium">Thermal Trace - Interactive Demo</h3>
             </div>
             <div id="unity-container" className="unity-desktop w-full">
@@ -178,7 +180,7 @@ const ProjectDetail = () => {
               <div id="unity-footer">
                 <div id="unity-webgl-logo"></div>
                 <div id="unity-fullscreen-button"></div>
-                <div id="unity-build-title">Thermal Trace</div>
+                
               </div>
             </div>
           </div>
