@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { ArrowLeft } from 'lucide-react';
@@ -115,6 +115,17 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
+
+  // Load Unity WebGL game when on project-3
+  useEffect(() => {
+    if (slug === "project-3" && window.createUnityInstance) {
+      const script = document.createElement("script");
+      script.src = "Build/TTrace.loader.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, [slug]);
+
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -143,20 +154,34 @@ const ProjectDetail = () => {
           {project.slug === "project-4" ? <div className="w-full mb-8">
               <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
             </div> : project.slug === "project-3" ?
-        // Special case for project-3: show the new uploaded image
-        <div className="w-full mb-8 relative">
-                <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
-                <div className="absolute inset-0 flex items-center">
-                  
+        // Special case for project-3: show the Unity WebGL game
+        <>
+          <div className="w-full mb-8 relative">
+            <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
+          </div>
+          
+          {/* Unity WebGL Player */}
+          <div className="w-full my-10 bg-black border border-gray-800 rounded-lg overflow-hidden">
+            <div className="p-4 bg-gray-900 text-white border-b border-gray-800">
+              <h3 className="text-lg font-medium">Thermal Trace - Interactive Demo</h3>
+            </div>
+            <div id="unity-container" className="unity-desktop w-full">
+              <canvas id="unity-canvas" width="960" height="600" tabIndex={-1} className="mx-auto"></canvas>
+              <div id="unity-loading-bar">
+                <div id="unity-logo"></div>
+                <div id="unity-progress-bar-empty">
+                  <div id="unity-progress-bar-full"></div>
                 </div>
-              </div> : project.slug === "invisible-space-museum" ?
-        // Special case for Invisible Space Museum: use the new uploaded image
-        <div className="w-full mb-8 relative">
-                <img src="/lovable-uploads/eec176ba-ebab-43a9-bb78-e6f08c59771b.png" alt={project.title} className="w-full h-auto object-contain" />
-                <div className="absolute inset-0 flex items-center">
-                  {/* This div is empty in the original code */}
-                </div>
-              </div> : project.imageUrl && <div className="w-full mb-8 relative">
+              </div>
+              <div id="unity-warning"> </div>
+              <div id="unity-footer">
+                <div id="unity-webgl-logo"></div>
+                <div id="unity-fullscreen-button"></div>
+                <div id="unity-build-title">Thermal Trace</div>
+              </div>
+            </div>
+          </div>
+        </> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
               <div className="absolute inset-0 flex items-center">
                 
