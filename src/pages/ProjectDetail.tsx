@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -173,7 +172,7 @@ const ProjectDetail = () => {
           {/* Replace Unity WebGL Player with iframe from external source - COMPLETELY REMOVED ALL BORDERS */}
           <div className="w-full my-10 bg-black rounded-lg overflow-hidden">
             <div className="p-4 text-white bg-transparent">
-              <h3 className="text-lg font-medium">Thermal Trace - Interactive Demo</h3>
+              <h3 className="text-lg font-medium">Thermal Trace - Demo ( Press 'X' Key on your board!'</h3>
             </div>
             <div className="w-full">
               <AspectRatio ratio={16 / 9}>
