@@ -235,7 +235,7 @@ const ProjectDetail = () => {
               
               {/* Image section 6 - Story Concept */}
               <div className="w-full my-10">
-                <img alt="Story Concept & Emotional Logic" className="w-full h-auto object-contain" src="/lovable-uploads/32f74435-8e0d-43c0-919e-40134ee4b745.png" />
+                <img alt="Story Concept & Emotional Logic" className="w-full h-auto object-contain" src="/lovable-uploads/ccc8e848-9291-4f9e-af1f-9363bf39c195.png" />
               </div>
               
               {/* Image section 7 - Video Development */}
