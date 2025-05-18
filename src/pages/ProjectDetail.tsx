@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -317,7 +316,7 @@ const ProjectDetail = () => {
                         저장
                       </Button>
                     </form>
-                  </Form> : <div className="px-0">{editedDescription || project.fullDescription}</div>}
+                  </Form> : <div className="px-0 py-[30px]">{editedDescription || project.fullDescription}</div>}
               </div>
               
               {/* Image section 1 - Project Type & Info */}
