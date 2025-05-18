@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -211,7 +210,7 @@ const ProjectDetail = () => {
               
               {/* REPLACED: Image section 2 - Approach replaced with user's uploaded image */}
               <div className="w-full my-10">
-                <img alt="Approach" className="w-full h-auto object-contain" src="/lovable-uploads/54fd727a-55a5-4761-b600-4c8f428f2dd9.png" />
+                <img alt="Approach" className="w-full h-auto object-contain" src="/lovable-uploads/43925604-215e-40c7-b19d-4464841bbb69.png" />
               </div>
               
               {/* Image section 3 - Process */}
@@ -301,14 +300,12 @@ const ProjectDetail = () => {
             </div>}
             
           {/* Updated all remaining projects to use the consistent text box design */}
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && (
-            <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
               <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
               <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
                 {project.fullDescription}
               </p>
-            </div>
-          )}
+            </div>}
           
           {/* NEW: Image sections for Thermal Trace (project-3) only */}
           {project.slug === "project-3" && <>
