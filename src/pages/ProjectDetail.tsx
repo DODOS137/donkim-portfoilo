@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -301,11 +302,6 @@ const ProjectDetail = () => {
           
           {/* NEW: Image sections 2-10 for Thermal Trace (project-3) only */}
           {project.slug === "project-3" && <>
-              {/* Image section 2 - Project Type */}
-              <div className="w-full my-10">
-                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/47c2ae01-80c5-4bb3-8e69-2b3b4c7cf1a2.png" />
-              </div>
-              
               {/* Image section 3 - Process */}
               <div className="w-full my-10">
                 <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/a9dfe5ac-2fa3-43f1-b9ac-3f2cc5da73f0.png" />
