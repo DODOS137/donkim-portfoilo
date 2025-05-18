@@ -155,7 +155,7 @@ const ProjectDetail = () => {
             </p>
           </div>
           
-          {/* Enhanced iframe with better styling and visual elements */}
+          {/* Enhanced iframe with better styling and visual elements - Updated with black background */}
           <div className="w-full my-10">
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-gray-800">
               <div className="p-4 bg-black bg-opacity-60 flex justify-between items-center">
@@ -170,7 +170,7 @@ const ProjectDetail = () => {
                   <iframe 
                     src="https://lucent-banoffee-a50286.netlify.app" 
                     title="Thermal Trace WebGL Demo" 
-                    className="w-full h-full border-0" 
+                    className="w-full h-full border-0 bg-black" 
                     allowFullScreen
                   />
                 </AspectRatio>
