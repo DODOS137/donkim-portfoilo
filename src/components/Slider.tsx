@@ -161,9 +161,9 @@ const Slider = () => {
   };
   
   return (
-    <div className="flex flex-col w-full hidden md:flex">
-      {/* Main Slider Container */}
-      <div className="relative w-full h-[calc(100vh-64px)]">
+    <div className="flex flex-col w-full">
+      {/* Main Slider Container - hide only the slider itself on mobile */}
+      <div className="relative w-full h-[calc(100vh-64px)] hidden md:block">
         {/* Main Slider */}
         <div className="w-full h-full flex justify-center items-center">
           <div className="w-full h-full relative bg-gray-400">
