@@ -362,7 +362,7 @@ const ProjectDetail = () => {
               
               {/* Image section 9 - 3D Storyboard Development */}
               <div className="w-full my-10">
-                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/92cbf397-42cb-489d-8507-e50f9ab90a7d.png" />
+                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/c3c01f35-32e6-4184-8b0f-4981a9e12657.png" />
               </div>
 
               {/* YouTube Video Section */}
