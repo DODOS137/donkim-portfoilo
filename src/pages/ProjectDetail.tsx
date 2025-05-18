@@ -9,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -114,20 +115,9 @@ const ProjectDetail = () => {
     }
   };
 
-  // Load Unity WebGL game when on project-3
-  useEffect(() => {
-    if (slug === "project-3") {
-      // Check if createUnityInstance exists on window
-      if (typeof window.createUnityInstance === 'function') {
-        const script = document.createElement("script");
-        script.src = "Build/TTrace.loader.js";
-        script.async = true;
-        document.body.appendChild(script);
-      } else {
-        console.warn("Unity WebGL build not available: createUnityInstance function not found");
-      }
-    }
-  }, [slug]);
+  // No longer need to load Unity WebGL game from local files
+  // We'll use an iframe to display the external WebGL content
+  
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -180,25 +170,20 @@ const ProjectDetail = () => {
               </Form> : <div>{editedDescription || project.fullDescription}</div>}
           </div>
           
-          {/* Unity WebGL Player */}
+          {/* Replace Unity WebGL Player with iframe from external source */}
           <div className="w-full my-10 bg-black border border-gray-800 rounded-lg overflow-hidden">
             <div className="p-4 text-white border-b border-gray-800 bg-transparent">
               <h3 className="text-lg font-medium">Thermal Trace - Interactive Demo</h3>
             </div>
-            <div id="unity-container" className="unity-desktop w-full">
-              <canvas id="unity-canvas" width="960" height="600" tabIndex={-1} className="mx-auto"></canvas>
-              <div id="unity-loading-bar">
-                <div id="unity-logo"></div>
-                <div id="unity-progress-bar-empty">
-                  <div id="unity-progress-bar-full"></div>
-                </div>
-              </div>
-              <div id="unity-warning"> </div>
-              <div id="unity-footer">
-                <div id="unity-webgl-logo"></div>
-                <div id="unity-fullscreen-button"></div>
-                
-              </div>
+            <div className="w-full">
+              <AspectRatio ratio={16 / 9}>
+                <iframe 
+                  src="https://lucent-banoffee-a50286.netlify.app" 
+                  title="Thermal Trace WebGL Demo" 
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                ></iframe>
+              </AspectRatio>
             </div>
           </div>
         </> : project.imageUrl && <div className="w-full mb-8 relative">
