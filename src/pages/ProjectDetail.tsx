@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -117,7 +116,7 @@ const ProjectDetail = () => {
 
   // No longer need to load Unity WebGL game from local files
   // We'll use an iframe to display the external WebGL content
-  
+
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -177,12 +176,7 @@ const ProjectDetail = () => {
             </div>
             <div className="w-full">
               <AspectRatio ratio={16 / 9}>
-                <iframe 
-                  src="https://lucent-banoffee-a50286.netlify.app" 
-                  title="Thermal Trace WebGL Demo" 
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                ></iframe>
+                <iframe src="https://lucent-banoffee-a50286.netlify.app" title="Thermal Trace WebGL Demo" className="w-full h-full border-0" allowFullScreen></iframe>
               </AspectRatio>
             </div>
           </div>
@@ -318,26 +312,7 @@ const ProjectDetail = () => {
                 </p>}
             </div>}
             
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
-              <h1 className="text-2xl md:text-4xl font-bold mb-4">
-                {project.slug === "project-4" ? "Whispers From the Bottom" : project.slug === "project-3" ? "Thermal Trace" : project.title}
-              </h1>
-              
-              {isEditing ? <Form {...form}>
-                  <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
-                    <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                field
-              }) => <FormItem>
-                          <FormControl>
-                            <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
-                          </FormControl>
-                        </FormItem>} />
-                    <Button type="submit" className="bg-white text-black hover:bg-gray-200">
-                      저장
-                    </Button>
-                  </form>
-                </Form> : <div>{editedDescription || project.fullDescription}</div>}
-            </div>}
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription}
           
           {/* NEW: Image sections 2-10 for Thermal Trace (project-3) only */}
           {project.slug === "project-3" && <>
