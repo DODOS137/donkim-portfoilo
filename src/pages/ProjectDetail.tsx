@@ -9,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -33,7 +34,7 @@ const projects: Project[] = [{
   title: "Learn",
   slug: "learn",
   description: "Educational platform for creative professionals",
-  fullDescription: " This project features three robot characters as protagonists and tells a story set in a library after the fall of humanity. It is a comprehensive VR content development process that includes level design, character design, storytelling and spatial design.",
+  fullDescription: "This project centers around three robot characters who serve as the main protagonists, unfolding a narrative set in a vast library after the collapse of human civilization. The story explores themes of memory, knowledge preservation, and the search for meaning in a world without humans. This work involves a comprehensive VR content development process, covering multiple aspects such as detailed level design to create an immersive environment, character design that brings the robots' personalities and roles to life, and storytelling that drives the emotional and conceptual depth of the experience. In addition, spatial design plays a key role in shaping the atmosphere and guiding the user's journey through the virtual world, ensuring that every element contributes to the overall narrative and engagement.",
   imageUrl: "/lovable-uploads/6a322fa7-6135-493f-849b-ca1ad98c7b86.png"
 }, {
   id: "3",
@@ -208,7 +209,7 @@ const ProjectDetail = () => {
                 <img alt="Project Type" className="w-full h-auto object-contain" src="/lovable-uploads/f477124f-9509-4791-95e7-96c76604b152.png" />
               </div>
               
-              {/* REPLACED: Image section 2 - Approach replaced with user's uploaded image */}
+              {/* Image section 2 - Approach */}
               <div className="w-full my-10">
                 <img alt="Approach" className="w-full h-auto object-contain" src="/lovable-uploads/43925604-215e-40c7-b19d-4464841bbb69.png" />
               </div>
@@ -352,7 +353,7 @@ const ProjectDetail = () => {
               {/* First 3D model viewer */}
               <ModelViewer modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" title="Interactive 3D Robot Model" isSketchfab={true} />
              
-              {/* Image section 8 - Robot Specs Detail - THIS IS THE ONE WE'RE REPLACING */}
+              {/* Image section 8 - Robot Specs Detail */}
               <div className="w-full my-10">
                 <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/5b3058a3-7730-40e1-a279-239b5c762def.png" />
               </div>
@@ -765,7 +766,7 @@ const ProjectDetail = () => {
               {/* First 3D model viewer */}
               <ModelViewer modelPath="https://sketchfab.com/models/ad41a20fb4cb43b5afefa525ddc60ea3/embed" title="Interactive 3D Robot Model" isSketchfab={true} />
              
-              {/* Image section 8 - Robot Specs Detail - THIS IS THE ONE WE'RE REPLACING */}
+              {/* Image section 8 - Robot Specs Detail */}
               <div className="w-full my-10">
                 <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/5b3058a3-7730-40e1-a279-239b5c762def.png" />
               </div>
@@ -808,21 +809,6 @@ const ProjectDetail = () => {
               {/* NEW: Image section 14 - Main Hall & Tree */}
               <div className="w-full my-10">
                 <img alt="Main Hall & Tree - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/993feb4e-7411-490f-8e5a-e51216d4f546.png" />
-              </div>
-              
-              {/* NEW: Image section 15 - Library Main Hall */}
-              <div className="w-full my-10">
-                <img alt="Library Main Hall with Robot Character" className="w-full h-auto object-contain" src="/lovable-uploads/923720d8-1f64-4936-9a07-71bedb9d4a0e.png" />
-              </div>
-              
-              {/* NEW: Image section 16 - Overhead View */}
-              <div className="w-full my-10">
-                <img alt="Overhead View of Library with Robot Character" className="w-full h-auto object-contain" src="/lovable-uploads/38be711f-81bc-4f86-8fd3-eea0c5226c1a.png" />
-              </div>
-              
-              {/* NEW: Image section 17 - Post-Project Direction */}
-              <div className="w-full my-10">
-                <img alt="Post-Project Direction - Future Development Plans" className="w-full h-auto object-contain" src="/lovable-uploads/2cc04897-cb27-46d1-92b6-76c95a2afbcd.png" />
               </div>
             </>}
           
