@@ -245,7 +245,7 @@ const ProjectDetail = () => {
               
               {/* Image section 8 - Video Series Description */}
               <div className="w-full my-10">
-                <img alt="Video Series Description" className="w-full h-auto object-contain" src="/lovable-uploads/1df2dafa-584c-4b6c-88c2-340c1e25ce3a.png" />
+                <img alt="Video Series Description" className="w-full h-auto object-contain" src="/lovable-uploads/194fd58a-6fcb-41ea-ad9e-e1d5e687e6d6.png" />
               </div>
               
               {/* Image section 9 - Level Design */}
