@@ -116,7 +116,7 @@ const SearchBox = () => {
         </button>
         <Button
           variant="ghost"
-          className="border-t border-r border-b border-white/40 px-4 py-2 w-64 text-left text-white/70 hover:text-white hover:bg-white/10 flex justify-between items-center transition-colors"
+          className="rounded-none border-t border-r border-b border-white/40 px-4 py-2 w-64 text-left text-white/70 hover:text-white hover:bg-white/10 flex justify-between items-center transition-colors"
           onClick={handleSearchClick}
         >
           <span>{searchQuery || "Type to search..."}</span>
