@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -156,8 +155,7 @@ const ProjectDetail = () => {
           {/* For project-4, we're replacing the first image with the uploaded one */}
           {project.slug === "project-4" ? <div className="w-full mb-8">
               <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
-            </div> : project.slug === "project-3" ?
-        <>
+            </div> : project.slug === "project-3" ? <>
           <div className="w-full mb-8 relative">
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
           </div>
@@ -169,8 +167,8 @@ const ProjectDetail = () => {
             {isEditing ? <Form {...form}>
                 <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
                   <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-              field
-            }) => <FormItem>
+                  field
+                }) => <FormItem>
                         <FormControl>
                           <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                         </FormControl>
@@ -184,7 +182,7 @@ const ProjectDetail = () => {
           
           {/* Unity WebGL Player */}
           <div className="w-full my-10 bg-black border border-gray-800 rounded-lg overflow-hidden">
-            <div className="p-4 text-white border-b border-gray-800 bg-zinc-950">
+            <div className="p-4 text-white border-b border-gray-800 bg-transparent">
               <h3 className="text-lg font-medium">Thermal Trace - Interactive Demo</h3>
             </div>
             <div id="unity-container" className="unity-desktop w-full">
