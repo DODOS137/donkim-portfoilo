@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -40,8 +39,8 @@ const Home = () => {
         <div className="w-full md:w-1/2 relative flex flex-col justify-between order-2 md:order-1 pt-16 md:pt-0 px-4 md:px-0">
           {/* Removing the vertical line that was here */}
           
-          {/* Main heading */}
-          <div className="md:absolute left-6 md:left-32 top-8 md:top-1/3 z-10 px-0 md:px-0 mt-4 md:mt-0">
+          {/* Main heading - increased z-index to ensure it's on top */}
+          <div className="md:absolute left-6 md:left-32 top-8 md:top-1/3 z-50 px-0 md:px-0 mt-4 md:mt-0">
             <h1 className="text-3xl md:text-7xl font-bold tracking-wide md:tracking-widest text-white">DOHYUN KIM</h1>
             <p className="text-white mt-2 md:mt-4 text-sm md:text-base">Hello :)</p>
             
