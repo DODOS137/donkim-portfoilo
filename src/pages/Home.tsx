@@ -66,8 +66,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Make the panel visible on mobile, but hide the slider component inside */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2">
+        {/* Make the panel visible on mobile with proper height to fill the screen */}
+        <div className="w-full md:w-1/2 h-[30vh] md:h-full order-1 md:order-2">
           <Slider />
         </div>
       </main>

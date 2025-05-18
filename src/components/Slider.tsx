@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SliderControls from './SliderControls';
@@ -162,13 +161,44 @@ const Slider = () => {
   
   return (
     <div className="flex flex-col w-full">
-      {/* Main Slider Container - hide only the slider itself on mobile */}
+      {/* Mobile Slider - visible only on mobile */}
+      <div className="relative w-full h-full md:hidden flex-grow">
+        <div className="w-full h-full flex justify-center items-center">
+          <div className="w-full h-full relative bg-gray-400">
+            {projects.map((project, index) => (
+              <Link key={`mobile-${index}`} to="/work" className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
+                <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover" 
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center px-4 transform -translate-y-0">
+                        <h2 className="text-white text-xl font-bold">
+                          {project.title}
+                        </h2>
+                        <p className="text-white text-sm mt-1">
+                          {project.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Slider - hide on mobile */}
       <div className="relative w-full h-[calc(100vh-64px)] hidden md:block">
         {/* Main Slider */}
         <div className="w-full h-full flex justify-center items-center">
           <div className="w-full h-full relative bg-gray-400">
             {projects.map((project, index) => (
-              <Link key={index} to="/work" className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
+              <Link key={`desktop-${index}`} to="/work" className={`absolute top-0 left-0 w-full h-full ${getSlideClass(index)} transition-all duration-${slideTransitionDuration} ease-in-out group`}>
                 <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
                   <img 
                     src={project.imageUrl} 
@@ -205,7 +235,7 @@ const Slider = () => {
         </div>
       </div>
 
-      {/* Thumbnail Images - moved below the slider - now visible on mobile */}
+      {/* Thumbnail Images - visible on all screen sizes */}
       <div className="py-4 bg-black md:flex justify-center space-x-2 flex">
         {projects.map((project, index) => (
           <div 
