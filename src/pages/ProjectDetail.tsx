@@ -9,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -137,7 +138,7 @@ const ProjectDetail = () => {
             
           </div>
           
-          {/* For project-4, we're replacing the first image with the uploaded one */}
+          {/* Image display based on project slug */}
           {project.slug === "project-4" ? <div className="w-full mb-8">
               <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
             </div> : project.slug === "project-3" ? <>
@@ -145,7 +146,7 @@ const ProjectDetail = () => {
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
           </div>
           
-          {/* Updated text description style for project-3 to match other projects */}
+          {/* Consistent text description style for all projects */}
           <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
             <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
             <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
@@ -158,7 +159,6 @@ const ProjectDetail = () => {
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-gray-800">
               <div className="p-4 bg-opacity-60 flex justify-between items-center bg-black">
                 <h3 className="text-lg font-medium text-white flex items-center">
-                  
                   <span>Thermal Trace - Interactive Demo</span>
                 </h3>
                 <div className="text-gray-400 text-sm px-[240px]">Press 'X' Key to activate with Full-screen Mode</div>
@@ -167,16 +167,12 @@ const ProjectDetail = () => {
                 <AspectRatio ratio={16 / 9}>
                   <iframe src="https://lucent-banoffee-a50286.netlify.app" title="Thermal Trace WebGL Demo" className="w-full h-full border-0 bg-black" allowFullScreen />
                 </AspectRatio>
-                
               </div>
-              
             </div>
           </div>
         </> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
-              <div className="absolute inset-0 flex items-center">
-                
-              </div>
+              <div className="absolute inset-0 flex items-center"></div>
             </div>}
           
           {/* Title and description moved between image and video */}
@@ -213,9 +209,9 @@ const ProjectDetail = () => {
                 <img alt="Project Type" className="w-full h-auto object-contain" src="/lovable-uploads/f477124f-9509-4791-95e7-96c76604b152.png" />
               </div>
               
-              {/* Image section 2 - Approach */}
+              {/* REPLACED: Image section 2 - Approach replaced with user's uploaded image */}
               <div className="w-full my-10">
-                <img alt="Approach" className="w-full h-auto object-contain" src="/lovable-uploads/9751cb12-0235-44d3-baee-13d44e7f47bf.png" />
+                <img alt="Approach" className="w-full h-auto object-contain" src="/lovable-uploads/54fd727a-55a5-4761-b600-4c8f428f2dd9.png" />
               </div>
               
               {/* Image section 3 - Process */}
@@ -304,7 +300,15 @@ const ProjectDetail = () => {
                 </p>}
             </div>}
             
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && project.fullDescription}
+          {/* Updated all remaining projects to use the consistent text box design */}
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && (
+            <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+              <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
+              <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
+                {project.fullDescription}
+              </p>
+            </div>
+          )}
           
           {/* NEW: Image sections for Thermal Trace (project-3) only */}
           {project.slug === "project-3" && <>
