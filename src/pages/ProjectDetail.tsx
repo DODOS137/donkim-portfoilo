@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -146,6 +145,11 @@ const ProjectDetail = () => {
             </div> : project.slug === "project-3" ? <>
           <div className="w-full mb-8 relative">
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
+          </div>
+          
+          {/* Restored text description above the iframe for project-3 */}
+          <div className="prose prose-invert max-w-none mb-8">
+            <p>{project.fullDescription}</p>
           </div>
           
           {/* Enhanced iframe with better styling and visual elements */}
