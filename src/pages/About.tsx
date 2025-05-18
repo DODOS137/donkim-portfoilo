@@ -10,8 +10,8 @@ const About = () => {
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
               <h2 className="text-2xl font-semibold mb-4">Do Hyun Kim</h2>
               <p className="text-xl leading-relaxed">A passionate designer specializing in spatial design and VR/XR technologies. Continuously exploring how VR and XR can expand human experiences and create new forms of engagement within physical spaces. Committed to investigating the potential and effectiveness of immersive technologies across various environments, from gaming to exhibitions. Focused on pushing the boundaries of physical space to unlock new possibilities for interaction and presence. 
-
-
+              <p className="text-xl leading-relaxed"> I enjoy working within teams and exchanging ideas with people from diverse backgrounds. I find energy and inspiration in listening to others, exploring different perspectives on a shared goal, and openly discussing those ideas together.
+              <p className="text-xl leading-relaxed"> What I value most in collaboration is finding the balance between creative vision and practical feasibility. I believe that thoughtful discussion around how an idea can be realistically implemented is just as important as the idea itself, and I see this process as essential to meaningful, effective design.
 
 I enjoy working within teams and exchanging ideas with people from diverse backgrounds. I find energy and inspiration in listening to others, exploring different perspectives on a shared goal, and openly discussing those ideas together. What I value most in collaboration is finding the balance between creative vision and practical feasibility. I believe that thoughtful discussion around how an idea can be realistically implemented is just as important as the idea itself, and I see this process as essential to meaningful, effective design.</p>
             </div>
