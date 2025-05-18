@@ -42,7 +42,7 @@ const About = () => {
             </div>
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
-              <h2 className="text-2xl font-semibold mb-4">Research Interests</h2>
+              <h2 className="text-2xl font-semibold mb-4">Design Direction</h2>
               <p className="text-xl leading-relaxed">
                 Exploring the intersection of digital and physical spaces through immersive technologies. My research focuses on how spatial design principles can enhance user engagement in virtual environments and create meaningful experiences that transcend traditional boundaries.
               </p>
