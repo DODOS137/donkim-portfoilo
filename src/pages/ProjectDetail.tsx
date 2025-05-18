@@ -341,7 +341,7 @@ const ProjectDetail = () => {
               
               {/* Image section 5 - Character Design */}
               <div className="w-full my-10">
-                <img alt="Character Design Details" className="w-full h-auto object-contain" src="/lovable-uploads/1d6874b7-0d89-4c5a-9380-cb934ba6281d.png" />
+                <img alt="Character Design Details" className="w-full h-auto object-contain" src="/lovable-uploads/21467fb9-09f2-4077-a2c1-0d8a7c478c55.png" />
               </div>
               
               {/* Image section 6 - Robot Models */}
