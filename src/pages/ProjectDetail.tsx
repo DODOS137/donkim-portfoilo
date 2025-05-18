@@ -9,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -114,9 +115,6 @@ const ProjectDetail = () => {
     }
   };
 
-  // No longer need to load Unity WebGL game from local files
-  // We'll use an iframe to display the external WebGL content
-
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -149,25 +147,7 @@ const ProjectDetail = () => {
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
           </div>
           
-          {/* Text description moved above the WebGL frame */}
-          <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4">Thermal Trace</h1>
-            
-            {isEditing ? <Form {...form}>
-                <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
-                  <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                  field
-                }) => <FormItem>
-                        <FormControl>
-                          <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
-                        </FormControl>
-                      </FormItem>} />
-                  <Button type="submit" className="bg-white text-black hover:bg-gray-200">
-                    저장
-                  </Button>
-                </form>
-              </Form> : <div>{editedDescription || project.fullDescription}</div>}
-          </div>
+          {/* Removed text description above the WebGL frame */}
           
           {/* Replace Unity WebGL Player with iframe from external source - COMPLETELY REMOVED ALL BORDERS */}
           <div className="w-full my-10 bg-black rounded-lg overflow-hidden">
