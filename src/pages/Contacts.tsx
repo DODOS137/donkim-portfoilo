@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { Mail, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
@@ -17,7 +18,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <a href="mailto:contact@dohyunkim.com" className="text-white hover:text-gray-300 transition-colors font-medium">dohyon18@naver.com</a>
+                  <a href="mailto:do_hyun18@naver.com" className="text-white hover:text-gray-300 transition-colors font-medium">do_hyun18@naver.com</a>
                 </div>
               </div>
               
@@ -39,7 +40,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">LinkedIn</p>
-                  <a href="https://www.linkedin.com/in/dohyun-kim-028221343" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">linkedin.com/in/dohyun-kim</a>
+                  <a href="https://www.linkedin.com/in/do-hyun-kim-028221343" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">linkedin.com/in/do-hyun-kim</a>
                 </div>
               </div>
               
@@ -50,7 +51,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Instagram</p>
-                  <a href="https://instagram.com/ddon_kkim" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">@ddon_kkim</a>
+                  <a href="https://instagram.com/do_hyun18" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">@do_hyun18</a>
                 </div>
               </div>
               
@@ -61,7 +62,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">YouTube</p>
-                  <a href="https://www.youtube.com/channel/UCwwt3iNyM7nuIx_XbXiqlqw" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">Do Hyun Kim - YouTube</a>
+                  <a href="https://www.youtube.com/channel/UCY_8o23cNTxIYHy9rKX8Svg" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">Do Hyun Kim - YouTube</a>
                 </div>
               </div>
             </div>
