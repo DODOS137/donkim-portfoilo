@@ -230,7 +230,7 @@ const ProjectDetail = () => {
               
               {/* Image section 5 - Planet A233 */}
               <div className="w-full my-10">
-                <img alt="Planet A233 Concept" className="w-full h-auto object-contain" src="/lovable-uploads/f329517d-c2eb-46f6-af30-bfcda37c460f.png" />
+                <img alt="Planet A233 Concept" className="w-full h-auto object-contain" src="/lovable-uploads/490f1604-abcc-484e-8a48-7105a5fc9f92.png" />
               </div>
               
               {/* Image section 6 - Story Concept */}
