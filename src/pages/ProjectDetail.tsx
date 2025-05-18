@@ -9,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -58,7 +59,6 @@ const projects: Project[] = [{
   fullDescription: "The Seodaemun Natural History Museum is dedicated to preserving, researching, and exhibiting geological and biological evidence and records related to Korea's regional environment. Notably, it is recognized as the first natural history museum in South Korea established by a public institution.",
   imageUrl: "/lovable-uploads/4c29e171-4bbf-4092-854c-13bf32686e5e.png",
   videoId: "8GEK3igRom0",
-  // Updated video ID for Seoul Natural History Museum
   secondaryImageUrl: "/lovable-uploads/64773a01-61f1-46bc-8953-87f1a74a756a.png" // Added project info image
 }, {
   id: "6",
@@ -157,10 +157,29 @@ const ProjectDetail = () => {
           {project.slug === "project-4" ? <div className="w-full mb-8">
               <img src="/lovable-uploads/8f1ac9c4-a3f8-4eed-93d3-859b298cea4d.png" alt={project.title} className="w-full h-auto object-contain" />
             </div> : project.slug === "project-3" ?
-        // Special case for project-3: show the Unity WebGL game
         <>
           <div className="w-full mb-8 relative">
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
+          </div>
+          
+          {/* Text description moved above the WebGL frame */}
+          <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
+            <h1 className="text-2xl md:text-4xl font-bold mb-4">Thermal Trace</h1>
+            
+            {isEditing ? <Form {...form}>
+                <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
+                  <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
+              field
+            }) => <FormItem>
+                        <FormControl>
+                          <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
+                        </FormControl>
+                      </FormItem>} />
+                  <Button type="submit" className="bg-white text-black hover:bg-gray-200">
+                    저장
+                  </Button>
+                </form>
+              </Form> : <div>{editedDescription || project.fullDescription}</div>}
           </div>
           
           {/* Unity WebGL Player */}
