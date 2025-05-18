@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -114,7 +113,6 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
-
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -158,27 +156,20 @@ const ProjectDetail = () => {
           {/* Enhanced iframe with better styling and visual elements - Updated with black background */}
           <div className="w-full my-10">
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-gray-800">
-              <div className="p-4 bg-black bg-opacity-60 flex justify-between items-center">
+              <div className="p-4 bg-opacity-60 flex justify-between items-center bg-black">
                 <h3 className="text-lg font-medium text-white flex items-center">
-                  <span className="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                  
                   <span>Thermal Trace - Interactive Demo</span>
                 </h3>
-                <div className="text-gray-400 text-sm">Press 'X' Key to activate</div>
+                <div className="text-gray-400 text-sm">Press 'X' Key to activate with Fullscreen Mode</div>
               </div>
               <div className="w-full relative">
                 <AspectRatio ratio={16 / 9}>
-                  <iframe 
-                    src="https://lucent-banoffee-a50286.netlify.app" 
-                    title="Thermal Trace WebGL Demo" 
-                    className="w-full h-full border-0 bg-black" 
-                    allowFullScreen
-                  />
+                  <iframe src="https://lucent-banoffee-a50286.netlify.app" title="Thermal Trace WebGL Demo" className="w-full h-full border-0 bg-black" allowFullScreen />
                 </AspectRatio>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+                
               </div>
-              <div className="px-4 py-2 bg-black bg-opacity-80 flex justify-end">
-                <div className="text-xs text-gray-500">© Interactive WebGL Experience</div>
-              </div>
+              
             </div>
           </div>
         </> : project.imageUrl && <div className="w-full mb-8 relative">
