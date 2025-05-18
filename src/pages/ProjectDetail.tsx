@@ -147,8 +147,6 @@ const ProjectDetail = () => {
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
           </div>
           
-          {/* Removed text description above the WebGL frame */}
-          
           {/* Replace Unity WebGL Player with iframe from external source - COMPLETELY REMOVED ALL BORDERS */}
           <div className="w-full my-10 bg-black rounded-lg overflow-hidden">
             <div className="p-4 text-white bg-transparent">
