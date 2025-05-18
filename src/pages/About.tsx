@@ -47,13 +47,6 @@ const About = () => {
               <p className="text-xl leading-relaxed">
                 Exploring the dynamic relationship between digital and physical environments. My research investigates how spatial design principles can be applied across both realms to create cohesive, meaningful experiences that bridge the gap between virtual and physical spaces.
               </p>
-              <div className="mt-6">
-                <Link to="/contacts">
-                  <Button variant="outline" className="border-white transition-colors text-black bg-white my-0">
-                    Contact
-                  </Button>
-                </Link>
-              </div>
             </div>
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
@@ -61,6 +54,14 @@ const About = () => {
               <p className="text-xl leading-relaxed">
                 Exploring the intersection of digital and physical spaces through immersive technologies. My research focuses on how spatial design principles can enhance user engagement in virtual environments and create meaningful experiences that transcend traditional boundaries.
               </p>
+            </div>
+            
+            <div className="mt-8 flex justify-center">
+              <Link to="/contacts">
+                <Button variant="outline" className="border-white transition-colors text-black bg-white my-0">
+                  Contact
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
