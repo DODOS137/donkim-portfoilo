@@ -300,7 +300,7 @@ const ProjectDetail = () => {
             </div>}
             
           {/* Updated all remaining projects to use the consistent text box design */}
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8 px-0 my-0 py-[30px]">
               <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
               <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
                 {project.fullDescription}
