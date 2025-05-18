@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -65,8 +66,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Make the slider visible on mobile devices by removing 'hidden md:block' */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2">
+        {/* Now hidden on mobile devices with hidden class */}
+        <div className="w-full md:w-1/2 h-[40vh] md:h-full order-1 md:order-2 hidden md:block">
           <Slider />
         </div>
       </main>

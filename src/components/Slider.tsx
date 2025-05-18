@@ -161,7 +161,7 @@ const Slider = () => {
   };
   
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full hidden md:flex">
       {/* Main Slider Container */}
       <div className="relative w-full h-[calc(100vh-64px)]">
         {/* Main Slider */}
