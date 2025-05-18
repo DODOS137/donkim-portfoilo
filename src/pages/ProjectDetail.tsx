@@ -70,11 +70,7 @@ const projects: Project[] = [{
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
 const ProjectDetail = () => {
-  const {
-    slug
-  } = useParams<{
-    slug: string;
-  }>();
+  const { slug } = useParams<{ slug: string }>();
   const project = projects.find(p => p.slug === slug);
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState("");
@@ -118,11 +114,16 @@ const ProjectDetail = () => {
 
   // Load Unity WebGL game when on project-3
   useEffect(() => {
-    if (slug === "project-3" && window.createUnityInstance) {
-      const script = document.createElement("script");
-      script.src = "Build/TTrace.loader.js";
-      script.async = true;
-      document.body.appendChild(script);
+    if (slug === "project-3") {
+      // Check if createUnityInstance exists on window
+      if (typeof window.createUnityInstance === 'function') {
+        const script = document.createElement("script");
+        script.src = "Build/TTrace.loader.js";
+        script.async = true;
+        document.body.appendChild(script);
+      } else {
+        console.warn("Unity WebGL build not available: createUnityInstance function not found");
+      }
     }
   }, [slug]);
 
