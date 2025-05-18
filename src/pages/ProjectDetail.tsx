@@ -147,9 +147,12 @@ const ProjectDetail = () => {
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
           </div>
           
-          {/* Restored text description above the iframe for project-3 */}
-          <div className="prose prose-invert max-w-none mb-8">
-            <p>{project.fullDescription}</p>
+          {/* Updated text description style for project-3 to match other projects */}
+          <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+            <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
+            <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
+              {project.fullDescription}
+            </p>
           </div>
           
           {/* Enhanced iframe with better styling and visual elements */}
