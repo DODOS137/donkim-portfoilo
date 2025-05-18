@@ -42,16 +42,12 @@ const About = () => {
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
               <h2 className="text-2xl font-semibold mb-4">Research Interests</h2>
-              <p className="text-xl leading-relaxed">
-                Exploring the dynamic relationship between digital and physical environments. My research investigates how spatial design principles can be applied across both realms to create cohesive, meaningful experiences that bridge the gap between virtual and physical spaces.
-              </p>
+              <p className="text-xl leading-relaxed"> I take a human- and environment-centred approach to design, drawing inspiration from the fundamental principles found in nature and the patterns of human thinking we encounter in everyday life. I aim to reframe these familiar elements through fresh and diverse perspectives, exploring how they can be meaningfully applied to real-world contexts.</p>
             </div>
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
               <h2 className="text-2xl font-semibold mb-4">Design Direction</h2>
-              <p className="text-xl leading-relaxed">
-                Exploring the intersection of digital and physical spaces through immersive technologies. My research focuses on how spatial design principles can enhance user engagement in virtual environments and create meaningful experiences that transcend traditional boundaries.
-              </p>
+              <p className="text-xl leading-relaxed"> Focusing on content that reflects common experiences—objects we frequently see or emotions we often feel—I strive to create work that feels both relatable and impactful. I believe that when design is rooted in what people already understand and connect with, it becomes more intuitive, accessible, and relevant in daily life.</p>
             </div>
             
             <div className="mt-8 flex justify-center">
