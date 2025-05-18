@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { Button } from '../components/ui/button';
-
 const About = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
@@ -22,9 +20,9 @@ const About = () => {
               <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10">
                 <h3 className="text-xl font-semibold mb-2">Education</h3>
                 <ul className="space-y-2">
-                  <li className="text-large font-semibold mb-2">Royal College of Art</li>
-                  <li>London, United Kingdom</li>
-                  <li>MA Service Design</li>
+                  <li className="text-large font-semibold mb-2">University of the Arts London</li>
+                  <li>London College of Communication, London, United Kingdom</li>
+                  <li>MA Virtual Reality</li>
                   <li className="text-large font-semibold mb-2">Kookmin University</li>
                   <li>Seoul, Republic of Korea</li>
                   <li>BA Spatial Design</li>
@@ -36,7 +34,7 @@ const About = () => {
                 <ul className="space-y-2">
                   <li>Spatial Design</li>
                   <li>Virtual Reality</li>
-                  <li>Extended Reality</li>
+                  
                   <li>Exhibition Design</li>
                 </ul>
               </div>
