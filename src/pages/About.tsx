@@ -1,5 +1,9 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { Button } from '../components/ui/button';
+
 const About = () => {
   return <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
@@ -43,6 +47,13 @@ const About = () => {
               <p className="text-xl leading-relaxed">
                 Exploring the dynamic relationship between digital and physical environments. My research investigates how spatial design principles can be applied across both realms to create cohesive, meaningful experiences that bridge the gap between virtual and physical spaces.
               </p>
+              <div className="mt-6">
+                <Link to="/contacts">
+                  <Button variant="outline" className="border-white transition-colors text-black bg-white my-0">
+                    Contact
+                  </Button>
+                </Link>
+              </div>
             </div>
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
