@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -10,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -150,15 +150,10 @@ const ProjectDetail = () => {
             <img src="/lovable-uploads/593420bb-8761-48fc-b4fc-4c74bd31769c.png" alt={project.title} className="w-full h-auto object-contain" />
           </div>
           
-          {/* Image section 2 - Project Type */}
-          <div className="w-full my-10">
-            <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/47c2ae01-80c5-4bb3-8e69-2b3b4c7cf1a2.png" />
-          </div>
-          
           {/* Replace Unity WebGL Player with iframe from external source - COMPLETELY REMOVED ALL BORDERS */}
           <div className="w-full my-10 bg-black rounded-lg overflow-hidden">
             <div className="p-4 text-white bg-transparent">
-              <h3 className="text-lg font-medium">Thermal Trace - Demo ( Press 'X' Key on your board!'</h3>
+              <h3 className="text-lg font-medium">Thermal Trace - Interactive Demo</h3>
             </div>
             <div className="w-full">
               <AspectRatio ratio={16 / 9}>
@@ -207,101 +202,11 @@ const ProjectDetail = () => {
                 <img alt="Project Type" className="w-full h-auto object-contain" src="/lovable-uploads/f477124f-9509-4791-95e7-96c76604b152.png" />
               </div>
               
-              {/* Image section 2 - Approach */}
+              {/* Image section 2 - Project Type */}
               <div className="w-full my-10">
-                <img alt="Approach" className="w-full h-auto object-contain" src="/lovable-uploads/7e372c1b-9df6-4c47-8747-ea0728cc3480.png" />
+                <img alt="Project Type Information" className="w-full h-auto object-contain" src="/lovable-uploads/47c2ae01-80c5-4bb3-8e69-2b3b4c7cf1a2.png" />
               </div>
               
-              {/* Image section 3 - Process */}
-              <div className="w-full my-10">
-                <img alt="Process" className="w-full h-auto object-contain" src="/lovable-uploads/b7bcee38-0fa1-4423-8b70-82269a056822.png" />
-              </div>
-              
-              {/* Image section 4 - Worldbuilding */}
-              <div className="w-full my-10">
-                <img alt="Worldbuilding - Environmental Setting" className="w-full h-auto object-contain" src="/lovable-uploads/387de526-8c89-4311-8b16-576ff3629389.png" />
-              </div>
-              
-              {/* Image section 5 - Planet A233 */}
-              <div className="w-full my-10">
-                <img alt="Planet A233 Concept" className="w-full h-auto object-contain" src="/lovable-uploads/f329517d-c2eb-46f6-af30-bfcda37c460f.png" />
-              </div>
-              
-              {/* Image section 6 - Story Concept */}
-              <div className="w-full my-10">
-                <img alt="Story Concept & Emotional Logic" className="w-full h-auto object-contain" src="/lovable-uploads/32f74435-8e0d-43c0-919e-40134ee4b745.png" />
-              </div>
-              
-              {/* Image section 7 - Video Development */}
-              <div className="w-full my-10">
-                <img alt="Video Development Concepts" className="w-full h-auto object-contain" src="/lovable-uploads/910bd54b-f2a9-4c14-a7eb-1e2fa388c89b.png" />
-              </div>
-              
-              {/* Image section 8 - Video Series Description */}
-              <div className="w-full my-10">
-                <img alt="Video Series Description" className="w-full h-auto object-contain" src="/lovable-uploads/1df2dafa-584c-4b6c-88c2-340c1e25ce3a.png" />
-              </div>
-              
-              {/* Image section 9 - Level Design */}
-              <div className="w-full my-10">
-                <img alt="Level Design Layout" className="w-full h-auto object-contain" src="/lovable-uploads/2ced82fe-7596-46c4-971b-9754596a28d3.png" />
-              </div>
-              
-              {/* Image section 10 - User Journey */}
-              <div className="w-full my-10">
-                <img alt="User Journey Flow" className="w-full h-auto object-contain" src="/lovable-uploads/005e67f1-2918-488a-bf73-884dcdbe32e7.png" />
-              </div>
-              
-              {/* Image section 11 - Spatial Design */}
-              <div className="w-full my-10">
-                <img alt="Spatial Design Concepts" className="w-full h-auto object-contain" src="/lovable-uploads/fdbf9b1f-d044-4c35-b65e-e702cd3cb8d3.png" />
-              </div>
-              
-              {/* NEW: Additional YouTube Video Section */}
-              <div className="w-full my-10">
-                <div className="w-full">
-                  <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
-                    <YouTube videoId="KT0Cwy9s5n8" opts={videoOptions} className="w-full h-full" />
-                  </AspectRatio>
-                </div>
-              </div>
-              
-              {/* NEW: Image section 13 - Post-Project Direction */}
-              <div className="w-full my-10">
-                <img alt="Post-Project Direction - Interactive Elements" className="w-full h-auto object-contain" src="/lovable-uploads/a96a1fbb-7e20-4e12-83dd-8b2908b357fe.png" />
-              </div>
-              
-              {/* NEW: Image section 14 - Interactive Evolution Concept */}
-              <div className="w-full my-10">
-                <img alt="Interactive Evolution Concept Visualization" className="w-full h-auto object-contain" src="/lovable-uploads/f6086651-deb6-4878-bcb1-bfa446e03f6b.png" />
-              </div>
-            </>}
-          
-          {project.slug === "project-5" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
-              <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
-              
-              {isEditing ? <Form {...form}>
-                  <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4 px-[50px]">
-                    <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                field
-              }) => <FormItem>
-                          <FormControl>
-                            <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
-                          </FormControl>
-                        </FormItem>} />
-                    <Button type="submit" className="bg-white text-black hover:bg-gray-200">
-                      저장
-                    </Button>
-                  </form>
-                </Form> : <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
-                  {editedDescription || project.fullDescription}
-                </p>}
-            </div>}
-            
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription}
-          
-          {/* NEW: Image sections 2-10 for Thermal Trace (project-3) only */}
-          {project.slug === "project-3" && <>
               {/* Image section 3 - Process */}
               <div className="w-full my-10">
                 <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/a9dfe5ac-2fa3-43f1-b9ac-3f2cc5da73f0.png" />
@@ -342,6 +247,29 @@ const ProjectDetail = () => {
                 <img alt="Thermal Comparison" className="w-full h-auto object-contain" src="/lovable-uploads/456e9b82-cf1b-4c62-a448-f7982f317935.png" />
               </div>
             </>}
+          
+          {project.slug === "project-5" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+              <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
+              
+              {isEditing ? <Form {...form}>
+                  <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4 px-[50px]">
+                    <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
+                field
+              }) => <FormItem>
+                          <FormControl>
+                            <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
+                          </FormControl>
+                        </FormItem>} />
+                    <Button type="submit" className="bg-white text-black hover:bg-gray-200">
+                      저장
+                    </Button>
+                  </form>
+                </Form> : <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
+                  {editedDescription || project.fullDescription}
+                </p>}
+            </div>}
+            
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.fullDescription}
           
           {/* YouTube Video Section - Show for project-4 right after the text description */}
           {project.slug === "project-4" && <div className="w-full mb-10">
