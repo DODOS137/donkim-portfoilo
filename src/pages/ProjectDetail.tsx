@@ -170,9 +170,9 @@ const ProjectDetail = () => {
               </Form> : <div>{editedDescription || project.fullDescription}</div>}
           </div>
           
-          {/* Replace Unity WebGL Player with iframe from external source - REMOVED WHITE OUTLINE */}
-          <div className="w-full my-10 bg-black border border-gray-800 rounded-lg overflow-hidden">
-            <div className="p-4 text-white border-b border-gray-800 bg-transparent">
+          {/* Replace Unity WebGL Player with iframe from external source - COMPLETELY REMOVED ALL BORDERS */}
+          <div className="w-full my-10 bg-black rounded-lg overflow-hidden">
+            <div className="p-4 text-white bg-transparent">
               <h3 className="text-lg font-medium">Thermal Trace - Interactive Demo</h3>
             </div>
             <div className="w-full">
