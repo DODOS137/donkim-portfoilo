@@ -1,7 +1,10 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
+
 const About = () => {
-  return <div className="min-h-screen bg-black overflow-hidden">
+  return (
+    <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
       <main className="pt-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto mt-16">
@@ -9,11 +12,9 @@ const About = () => {
           <div className="text-white space-y-8">
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
               <h2 className="text-2xl font-semibold mb-4">Do Hyun Kim</h2>
-              <p className="text-xl leading-relaxed">A passionate designer specializing in spatial design and VR/XR technologies. Continuously exploring how VR and XR can expand human experiences and create new forms of engagement within physical spaces. Committed to investigating the potential and effectiveness of immersive technologies across various environments, from gaming to exhibitions. Focused on pushing the boundaries of physical space to unlock new possibilities for interaction and presence. 
-              <p className="text-xl leading-relaxed"> I enjoy working within teams and exchanging ideas with people from diverse backgrounds. I find energy and inspiration in listening to others, exploring different perspectives on a shared goal, and openly discussing those ideas together.
-              <p className="text-xl leading-relaxed"> What I value most in collaboration is finding the balance between creative vision and practical feasibility. I believe that thoughtful discussion around how an idea can be realistically implemented is just as important as the idea itself, and I see this process as essential to meaningful, effective design.
-
-I enjoy working within teams and exchanging ideas with people from diverse backgrounds. I find energy and inspiration in listening to others, exploring different perspectives on a shared goal, and openly discussing those ideas together. What I value most in collaboration is finding the balance between creative vision and practical feasibility. I believe that thoughtful discussion around how an idea can be realistically implemented is just as important as the idea itself, and I see this process as essential to meaningful, effective design.</p>
+              <p className="text-xl leading-relaxed">A passionate designer specializing in spatial design and VR/XR technologies. Continuously exploring how VR and XR can expand human experiences and create new forms of engagement within physical spaces. Committed to investigating the potential and effectiveness of immersive technologies across various environments, from gaming to exhibitions. Focused on pushing the boundaries of physical space to unlock new possibilities for interaction and presence.</p>
+              <p className="text-xl leading-relaxed">I enjoy working within teams and exchanging ideas with people from diverse backgrounds. I find energy and inspiration in listening to others, exploring different perspectives on a shared goal, and openly discussing those ideas together.</p>
+              <p className="text-xl leading-relaxed">What I value most in collaboration is finding the balance between creative vision and practical feasibility. I believe that thoughtful discussion around how an idea can be realistically implemented is just as important as the idea itself, and I see this process as essential to meaningful, effective design.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -41,6 +42,13 @@ I enjoy working within teams and exchanging ideas with people from diverse backg
             </div>
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
+              <h2 className="text-2xl font-semibold mb-4">Research Interests</h2>
+              <p className="text-xl leading-relaxed">
+                Exploring the dynamic relationship between digital and physical environments. My research investigates how spatial design principles can be applied across both realms to create cohesive, meaningful experiences that bridge the gap between virtual and physical spaces.
+              </p>
+            </div>
+            
+            <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
               <h2 className="text-2xl font-semibold mb-4">Design Direction</h2>
               <p className="text-xl leading-relaxed">
                 Exploring the intersection of digital and physical spaces through immersive technologies. My research focuses on how spatial design principles can enhance user engagement in virtual environments and create meaningful experiences that transcend traditional boundaries.
@@ -49,6 +57,8 @@ I enjoy working within teams and exchanging ideas with people from diverse backg
           </div>
         </div>
       </main>
-    </div>;
+    </div>
+  );
 };
+
 export default About;
