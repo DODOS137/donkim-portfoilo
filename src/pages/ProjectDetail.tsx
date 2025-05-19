@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -68,9 +67,12 @@ const projects: Project[] = [{
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
-
 const ProjectDetail = () => {
-  const { slug } = useParams<{ slug: string; }>();
+  const {
+    slug
+  } = useParams<{
+    slug: string;
+  }>();
   const project = projects.find(p => p.slug === slug);
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState("");
@@ -92,7 +94,6 @@ const ProjectDetail = () => {
         setShowScrollToTop(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -136,7 +137,6 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
-  
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -359,14 +359,14 @@ const ProjectDetail = () => {
             </>}
           
           {project.slug === "project-5" && <>
-              <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8">
+              <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8 px-0">
                 <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
                 
                 {isEditing ? <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4 px-[50px]">
                       <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                field
-              }) => <FormItem>
+                  field
+                }) => <FormItem>
                             <FormControl>
                               <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                             </FormControl>
@@ -690,14 +690,13 @@ const ProjectDetail = () => {
             </>}
           
           {/* Updated all remaining projects to use the consistent text box design */}
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && project.slug !== "learn" && project.slug !== "project-6" && 
-            <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && project.slug !== "learn" && project.slug !== "project-6" && <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
               <h1 className="text-2xl md:text-4xl font-bold mb-4">{project.slug === "project-4" ? "Whispers from the bottom" : project.title}</h1>
               {isEditing ? <Form {...form}>
                 <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
                   <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                  field
-                }) => <FormItem>
+                field
+              }) => <FormItem>
                         <FormControl>
                           <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                         </FormControl>
@@ -707,8 +706,7 @@ const ProjectDetail = () => {
                   </Button>
                 </form>
               </Form> : <div>{editedDescription || project.fullDescription}</div>}
-            </div>
-          }
+            </div>}
           
           {/* YouTube Video Section - Show for project-4 right after the text description */}
           {project.slug === "project-4" && <div className="w-full mb-10">
@@ -809,16 +807,9 @@ const ProjectDetail = () => {
       </main>
 
       {/* "Top" floating button */}
-      {showScrollToTop && (
-        <Button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 rounded-full w-12 h-12 bg-white/30 backdrop-blur-sm hover:bg-white/60 text-white flex items-center justify-center shadow-lg transition-all z-50"
-          aria-label="Scroll to top"
-        >
+      {showScrollToTop && <Button onClick={scrollToTop} className="fixed bottom-8 right-8 rounded-full w-12 h-12 bg-white/30 backdrop-blur-sm hover:bg-white/60 text-white flex items-center justify-center shadow-lg transition-all z-50" aria-label="Scroll to top">
           <ArrowUp className="h-5 w-5" />
-        </Button>
-      )}
+        </Button>}
     </div>;
 };
-
 export default ProjectDetail;
