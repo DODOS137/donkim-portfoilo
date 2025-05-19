@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -68,7 +67,6 @@ const projects: Project[] = [{
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
-
 const ProjectDetail = () => {
   const {
     slug
@@ -190,42 +188,42 @@ const ProjectDetail = () => {
 
           {/* IMAGE SECTION 3: Project Detail 1 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/db878cb6-21bb-45ed-bb18-f32fc6f63ec0.png" alt="Project Detail 1" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 1" className="w-full h-auto object-contain" src="/lovable-uploads/40711394-3ec4-4a63-b98d-3a59882383cc.png" />
           </div>
 
           {/* IMAGE SECTION 4: Project Detail 2 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/33404ace-d96d-4d85-ad0e-9528701598b0.png" alt="Project Detail 2" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 2" className="w-full h-auto object-contain" src="/lovable-uploads/b4be558a-6e57-41d5-b7ff-4df1cae97923.png" />
           </div>
 
           {/* IMAGE SECTION 5: Project Detail 3 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/21467fb9-09f2-4077-a2c1-0d8a7c478c55.png" alt="Project Detail 3" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 3" className="w-full h-auto object-contain" src="/lovable-uploads/b5c01922-cad3-4341-af67-b84a24191175.png" />
           </div>
 
           {/* IMAGE SECTION 6: Project Detail 4 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" alt="Project Detail 4" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 4" className="w-full h-auto object-contain" src="/lovable-uploads/2acad0fc-8ea3-4cce-9805-708bcb3dde3b.png" />
           </div>
 
           {/* IMAGE SECTION 7: Project Detail 5 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/5b3058a3-7730-40e1-a279-239b5c762def.png" alt="Project Detail 5" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 5" className="w-full h-auto object-contain" src="/lovable-uploads/60f4e28b-ec3b-4789-a8f2-2de9c8c3afa7.png" />
           </div>
 
           {/* IMAGE SECTION 8: Project Detail 6 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/65e7ff25d71f4512829dfc88c5537add/embed" alt="Project Detail 6" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 6" className="w-full h-auto object-contain" src="/lovable-uploads/754153ec-8716-40c2-a499-40e5afb19803.png" />
           </div>
 
           {/* IMAGE SECTION 9: Project Detail 7 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/c3c01f35-32e6-4184-8b0f-4981a9e12657.png" alt="Project Detail 7" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 7" className="w-full h-auto object-contain" src="/lovable-uploads/3e247063-e599-4542-b6f4-48027625ef69.png" />
           </div>
 
           {/* IMAGE SECTION 10: Project Detail 8 */}
           <div className="w-full my-10">
-            <img src="/lovable-uploads/05b3cbcd-f9ff-4e49-a6c9-332c83271abc.png" alt="Project Detail 8" className="w-full h-auto object-contain" />
+            <img alt="Project Detail 8" className="w-full h-auto object-contain" src="/lovable-uploads/aadab6a8-16af-4f84-86bc-f2e9a8bef4fa.png" />
           </div>
         </> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
@@ -239,8 +237,8 @@ const ProjectDetail = () => {
                 {isEditing ? <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
                       <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                field
-              }) => <FormItem>
+                  field
+                }) => <FormItem>
                           <FormControl>
                             <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                           </FormControl>
