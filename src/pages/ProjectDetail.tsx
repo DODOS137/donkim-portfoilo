@@ -41,7 +41,7 @@ const projects: Project[] = [{
   title: "Project 3",
   slug: "project-3",
   description: "Innovative digital solution for modern problems",
-  fullDescription: "This project proposes a new paradigm by introducing a stage where hidden objects can be identified through body heat detection, offering an innovative approach to spatial interaction and audience engagement.",
+  fullDescription: "This project proposes a new paradigm by introducing a stage where hidden objects can be revealed through body heat detection technology. By allowing the audience to interact with the environment using their own presence and movement, the project presents an innovative approach to spatial interaction and redefines how viewers engage with space. Instead of relying on conventional visual cues or interfaces, the system responds to the audience's physical proximity and body temperature, creating a dynamic and intuitive form of communication between the user and the environment. This interactive mechanism not only enhances audience participation but also encourages exploration, curiosity, and personal interpretation. Through this sensory-based engagement, the project opens up new possibilities for experiential design, offering a fresh perspective on how technology can deepen emotional and spatial connections in performance and exhibition settings.",
   imageUrl: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=1974&auto=format&fit=crop"
 }, {
   id: "4",
@@ -68,6 +68,7 @@ const projects: Project[] = [{
   fullDescription: " This project reimagines a bridge as a public space that captures the unique characteristics of an island. By redesigning the bridge, the project aims to bring the diverse and natural beauty of the island into the urban landscape, allowing city dwellers to experience the island's essence within the city environment. The design blends functionality with the island's distinctive features, creating a space that not only connects locations but also serves as a reflection of the island's identity, fostering a deeper connection between nature, architecture, and the urban community.",
   imageUrl: "/lovable-uploads/e4ee8415-921a-44fe-bf59-82af2b5be394.png"
 }];
+
 const ProjectDetail = () => {
   const {
     slug
