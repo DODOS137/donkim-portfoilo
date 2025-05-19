@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -171,13 +170,13 @@ const ProjectDetail = () => {
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-gray-800">
               <div className="p-4 bg-opacity-60 flex justify-between items-center bg-black">
                 <h3 className="text-lg font-medium text-white flex items-center">
-                  <span>Thermal Trace - Interactive Demo</span>
+                  <span>Visual Trace - Interactive Demo</span>
                 </h3>
                 <div className="text-gray-400 text-sm px-[240px]">Press 'X' Key to activate with Full-screen Mode</div>
               </div>
               <div className="w-full relative">
                 <AspectRatio ratio={16 / 9}>
-                  <iframe src="https://lucent-banoffee-a50286.netlify.app" title="Thermal Trace WebGL Demo" className="w-full h-full border-0 bg-black" allowFullScreen />
+                  <iframe src="https://lucent-banoffee-a50286.netlify.app" title="Visual Trace WebGL Demo" className="w-full h-full border-0 bg-black" allowFullScreen />
                 </AspectRatio>
               </div>
             </div>
