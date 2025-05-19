@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUp } from 'lucide-react';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
@@ -70,14 +70,11 @@ const projects: Project[] = [{
 }];
 
 const ProjectDetail = () => {
-  const {
-    slug
-  } = useParams<{
-    slug: string;
-  }>();
+  const { slug } = useParams<{ slug: string; }>();
   const project = projects.find(p => p.slug === slug);
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState("");
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   // Form setup for editable content
   const form = useForm({
@@ -85,6 +82,30 @@ const ProjectDetail = () => {
       fullDescription: project?.fullDescription || ""
     }
   });
+
+  // Handle scroll events to show/hide the scroll to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   // Handle edit toggle
   const toggleEdit = () => {
@@ -115,6 +136,7 @@ const ProjectDetail = () => {
       autoplay: 0
     }
   };
+  
   if (!project) {
     return <div className="min-h-screen bg-black">
         <Navbar />
@@ -755,6 +777,18 @@ const ProjectDetail = () => {
           </div>
         </div>
       </main>
+
+      {/* "Top" floating button */}
+      {showScrollToTop && (
+        <Button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 rounded-full w-12 h-12 bg-white/30 backdrop-blur-sm hover:bg-white/60 text-white flex items-center justify-center shadow-lg transition-all z-50"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </Button>
+      )}
     </div>;
 };
+
 export default ProjectDetail;
