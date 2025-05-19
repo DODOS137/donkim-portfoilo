@@ -87,17 +87,7 @@ const ModelViewer = ({
     const modelId = getSketchfabModelId(modelPath);
     // If the URL already contains /embed, use it directly, otherwise construct it
     const embedUrl = modelPath.includes('/embed') ? modelPath : `https://sketchfab.com/models/${modelId}/embed`;
-    return <div className="w-full my-10">
-        {title}
-        <div className="bg-gray-900 rounded-lg overflow-hidden">
-          <AspectRatio ratio={16 / 9}>
-            <iframe title={title || "Sketchfab Model"} frameBorder="0" allowFullScreen={true} allow="autoplay; fullscreen; xr-spatial-tracking" src={embedUrl} className="w-full h-full" />
-          </AspectRatio>
-        </div>
-        <p className="text-gray-400 text-sm mt-2">
-          Interactive 3D model powered by Sketchfab
-        </p>
-      </div>;
+    return;
   }
   return <div className="w-full my-10">
       {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
