@@ -389,12 +389,12 @@ const ProjectDetail = () => {
               
               {/* NEW: Image section 13 - Final Concept */}
               <div className="w-full my-10">
-                <img alt="Final Concept Images - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/39979ae1-c0f1-41d9-8035-d47b33b6520e.png" />
+                <img alt="Final Concept Images - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/19f88eb1-55fc-447c-9910-a8acad4cdcfe.png" />
               </div>
               
               {/* NEW: Image section 14 - Main Hall & Tree */}
               <div className="w-full my-10">
-                <img alt="Main Hall & Tree - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/993feb4e-7411-490f-8e5a-e51216d4f546.png" />
+                <img alt="Main Hall & Tree - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/ccda885d-f430-43ba-8966-4adb619d47a2.png" />
               </div>
               
               {/* NEW: Image section 15 - Library Main Hall */}
