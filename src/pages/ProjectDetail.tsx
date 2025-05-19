@@ -182,6 +182,11 @@ const ProjectDetail = () => {
               </div>
             </div>
           </div>
+          
+          {/* NEW IMAGE SECTION: 프로젝트 정보 추가 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/1fb09718-c420-4de4-87fc-14efe41aa711.png" alt="Project Information" className="w-full h-auto object-contain" />
+          </div>
         </> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
               <div className="absolute inset-0 flex items-center"></div>
@@ -194,12 +199,12 @@ const ProjectDetail = () => {
                 {isEditing ? <Form {...form}>
                     <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
                       <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                  field
-                }) => <FormItem>
-                            <FormControl>
-                              <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
-                            </FormControl>
-                          </FormItem>} />
+                field
+              }) => <FormItem>
+                          <FormControl>
+                            <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
+                          </FormControl>
+                        </FormItem>} />
                       <Button type="submit" className="bg-white text-black hover:bg-gray-200">
                         저장
                       </Button>
