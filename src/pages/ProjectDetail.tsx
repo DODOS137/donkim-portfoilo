@@ -9,7 +9,6 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
-
 interface Project {
   id: string;
   title: string;
@@ -152,8 +151,8 @@ const ProjectDetail = () => {
             {isEditing ? <Form {...form}>
                 <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
                   <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
-                field
-              }) => <FormItem>
+                  field
+                }) => <FormItem>
                         <FormControl>
                           <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
                         </FormControl>
@@ -170,7 +169,7 @@ const ProjectDetail = () => {
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-gray-800">
               <div className="p-4 bg-opacity-60 flex justify-between items-center bg-black">
                 <h3 className="text-lg font-medium text-white flex items-center">
-                  <span>Visual Trace - Interactive Demo</span>
+                  <span>Thermal Trace - Interactive Demo</span>
                 </h3>
                 <div className="text-gray-400 text-sm px-[240px]">Press 'X' Key to activate with Full-screen Mode</div>
               </div>
