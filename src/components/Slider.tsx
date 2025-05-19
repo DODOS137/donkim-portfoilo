@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SliderControls from './SliderControls';
@@ -123,7 +124,7 @@ const Slider = () => {
       clearTimeout(timerRef.current);
     }
 
-    // Set up new timer for auto-advance - using exact same interval as indicators
+    // Set up new timer for auto-advance
     timerRef.current = setTimeout(() => {
       nextSlide();
     }, autoAdvanceInterval);
