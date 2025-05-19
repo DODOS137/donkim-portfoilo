@@ -1,3 +1,4 @@
+
 import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF, Text } from '@react-three/drei';
@@ -83,12 +84,32 @@ const ModelViewer = ({
     // If nothing matches, return the original URL (might be a direct embed URL)
     return url;
   };
+  
   if (isSketchfab) {
     const modelId = getSketchfabModelId(modelPath);
     // If the URL already contains /embed, use it directly, otherwise construct it
     const embedUrl = modelPath.includes('/embed') ? modelPath : `https://sketchfab.com/models/${modelId}/embed`;
-    return;
+    
+    return (
+      <div className="w-full my-10">
+        {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
+        <div className="bg-gray-900 rounded-lg overflow-hidden">
+          <AspectRatio ratio={16 / 9}>
+            <iframe 
+              title={title || "3D Model Viewer"} 
+              className="w-full h-full border-0" 
+              src={embedUrl}
+              allowFullScreen
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              loading="lazy"
+            />
+          </AspectRatio>
+        </div>
+        <p className="text-gray-400 text-sm mt-2">Click and drag to rotate. Scroll to zoom.</p>
+      </div>
+    );
   }
+  
   return <div className="w-full my-10">
       {title && <h3 className="text-white text-xl mb-4">{title}</h3>}
       <div className="bg-gray-900 rounded-lg overflow-hidden">
