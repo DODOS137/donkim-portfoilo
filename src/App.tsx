@@ -11,28 +11,10 @@ import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
-import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Remove Lovable badge on component mount
-  useEffect(() => {
-    // Find and remove the Lovable badge
-    const removeBadge = () => {
-      const badge = document.querySelector('[aria-label="Edit with Lovable"]');
-      if (badge) {
-        badge.remove();
-      }
-    };
-    
-    // Run once on mount and then periodically to ensure it's removed
-    removeBadge();
-    const interval = setInterval(removeBadge, 1000);
-    
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
