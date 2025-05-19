@@ -42,7 +42,7 @@ const About = () => {
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
               <h2 className="text-2xl font-semibold mb-4">Research Interests</h2>
-              <p className="text-xl leading-relaxed"> I take a human- and environment-centred approach to design, drawing inspiration from the fundamental principles found in nature and the patterns of human thinking we encounter in everyday life. I aim to reframe these familiar elements through fresh and diverse perspectives, exploring how they can be meaningfully applied to real-world contexts.</p>
+              <p className="text-xl leading-relaxed"> I take a human and environment centred approach to design, drawing inspiration from the fundamental principles found in nature and the patterns of human thinking we encounter in everyday life. I aim to reframe these familiar elements through fresh and diverse perspectives, exploring how they can be meaningfully applied to real-world contexts.</p>
             </div>
             
             <div className="backdrop-blur-sm p-6 border border-black/10 bg-transparent rounded-md px-0">
