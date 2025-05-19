@@ -9,6 +9,7 @@ import ModelViewer from '../components/ModelViewer';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
+
 interface Project {
   id: string;
   title: string;
@@ -636,12 +637,25 @@ const ProjectDetail = () => {
             </>}
           
           {/* Updated all remaining projects to use the consistent text box design */}
-          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && project.slug !== "learn" && <div className="mt-6 text-white p-6 rounded-xl bg-black bg-opacity-60 mb-8 px-0 my-0 py-[30px]">
-              <h1 className="font-bold mb-4 text-2xl md:text-3xl my-0 py-[30px] px-[50px]">{project.title}</h1>
-              <p className="leading-relaxed py-0 my-[50px] text-base px-[50px]">
-                {project.fullDescription}
-              </p>
-            </div>}
+          {project.slug !== "project-5" && project.slug !== "invisible-space-museum" && project.slug !== "project-3" && project.slug !== "learn" && 
+            <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
+              <h1 className="text-2xl md:text-4xl font-bold mb-4">{project.title}</h1>
+              {isEditing ? <Form {...form}>
+                <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
+                  <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
+                  field
+                }) => <FormItem>
+                        <FormControl>
+                          <Textarea className="min-h-40 bg-gray-800 text-white" {...field} />
+                        </FormControl>
+                      </FormItem>} />
+                  <Button type="submit" className="bg-white text-black hover:bg-gray-200">
+                    저장
+                  </Button>
+                </form>
+              </Form> : <div>{editedDescription || project.fullDescription}</div>}
+            </div>
+          }
           
           {/* YouTube Video Section - Show for project-4 right after the text description */}
           {project.slug === "project-4" && <div className="w-full mb-10">
