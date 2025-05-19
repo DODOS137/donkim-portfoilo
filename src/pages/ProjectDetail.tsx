@@ -148,7 +148,7 @@ const ProjectDetail = () => {
           
           {/* Changed the text description style to match project-1 (Invisible Space Museum) */}
           <div className="prose prose-invert max-w-none mb-8 rounded-3xl py-[30px] my-[100px] px-0">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4">Project 3</h1>
+            <h1 className="text-2xl md:text-4xl font-bold mb-4">Thermal Trace</h1>
             {isEditing ? <Form {...form}>
                 <form onSubmit={form.handleSubmit(handleSave)} className="space-y-4">
                   <FormField control={form.control} name="fullDescription" defaultValue={project.fullDescription} render={({
