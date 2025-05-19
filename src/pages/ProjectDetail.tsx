@@ -365,7 +365,12 @@ const ProjectDetail = () => {
                 <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/c3c01f35-32e6-4184-8b0f-4981a9e12657.png" />
               </div>
 
-              {/* YouTube Video Section - REMOVED as requested */}
+              {/* YouTube Video Section */}
+              <div className="w-full my-10">
+                <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                  <YouTube videoId="aCJblmM9yzs" opts={videoOptions} className="w-full h-full" />
+                </AspectRatio>
+              </div>
               
               {/* NEW: Image section 10 - Level Design */}
               <div className="w-full my-10">
@@ -728,33 +733,33 @@ const ProjectDetail = () => {
           {project.slug === "learn" && <>
               {/* Image section 1 - Project Type & Info */}
               <div className="w-full my-10">
-                <img alt="Project Type and Info" className="w-full h-auto object-contain" src="/lovable-uploads/7ef87db2-c0b5-4b14-9c44-a02673bbfa89.png" />
+                
               </div>
               
               
               {/* Image section 2 - Process */}
               <div className="w-full my-10">
-                <img alt="Project Process" className="w-full h-auto object-contain" src="/lovable-uploads/9377c794-5dfd-4cbc-95c1-924950254356.png" />
+                
               </div>
               
               {/* Image section 3 - Worldbuilding */}
               <div className="w-full my-10">
-                <img alt="Worldbuilding - Environmental Setting" className="w-full h-auto object-contain" src="/lovable-uploads/db878cb6-21bb-45ed-bb18-f32fc6f63ec0.png" />
+                
               </div>
               
               {/* Image section 4 - Story Concept */}
               <div className="w-full my-10">
-                <img alt="Story Concept and Plot" className="w-full h-auto object-contain" src="/lovable-uploads/33404ace-d96d-4d85-ad0e-9528701598b0.png" />
+                
               </div>
               
               {/* Image section 5 - Character Design */}
               <div className="w-full my-10">
-                <img alt="Character Design Details" className="w-full h-auto object-contain" src="/lovable-uploads/21467fb9-09f2-4077-a2c1-0d8a7c478c55.png" />
+                
               </div>
               
               {/* Image section 6 - Robot Models */}
               <div className="w-full my-10">
-                <img alt="Robot Character Models" className="w-full h-auto object-contain" src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" />
+                
               </div>
               
               {/* First 3D model viewer */}
@@ -762,7 +767,7 @@ const ProjectDetail = () => {
              
               {/* Image section 8 - Robot Specs Detail */}
               <div className="w-full my-10">
-                <img alt="Robot LS1-07 Specifications" className="w-full h-auto object-contain" src="/lovable-uploads/5b3058a3-7730-40e1-a279-239b5c762def.png" />
+                
               </div>
               
               {/* Use the exact URL provided by the user for the second model */}
@@ -770,34 +775,39 @@ const ProjectDetail = () => {
               
               {/* Image section 9 - 3D Storyboard Development */}
               <div className="w-full my-10">
-                <img alt="3D Storyboard Development" className="w-full h-auto object-contain" src="/lovable-uploads/c3c01f35-32e6-4184-8b0f-4981a9e12657.png" />
+                
               </div>
 
-              {/* YouTube Video Section - REMOVED as requested */}
+              {/* YouTube Video Section */}
+              <div className="w-full my-10">
+                <AspectRatio ratio={16 / 9} className="bg-gray-900 overflow-hidden rounded-lg">
+                  <YouTube videoId="aCJblmM9yzs" opts={videoOptions} className="w-full h-full" />
+                </AspectRatio>
+              </div>
               
               {/* NEW: Image section 10 - Level Design */}
               <div className="w-full my-10">
-                <img alt="Level Design Layout" className="w-full h-auto object-contain" src="/lovable-uploads/05b3cbcd-f9ff-4e49-a6c9-332c83271abc.png" />
+                
               </div>
               
               {/* NEW: Image section 11 - Artifacts Detail */}
               <div className="w-full my-10">
-                <img alt="Artifact Details and Interactive Elements" className="w-full h-auto object-contain" src="/lovable-uploads/e7e6311d-ad0e-492f-bc55-6f702900d494.png" />
+                
               </div>
               
               {/* NEW: Image section 12 - Player Journey */}
               <div className="w-full my-10">
-                <img alt="Player Journey and Narrative Flow" className="w-full h-auto object-contain" src="/lovable-uploads/139ca29f-9912-4258-8381-65443de63395.png" />
+                
               </div>
               
               {/* NEW: Image section 13 - Final Concept */}
               <div className="w-full my-10">
-                <img alt="Final Concept Images - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/19f88eb1-55fc-447c-9910-a8acad4cdcfe.png" />
+                
               </div>
               
               {/* NEW: Image section 14 - Main Hall & Tree */}
               <div className="w-full my-10">
-                <img alt="Main Hall & Tree - Library Environment" className="w-full h-auto object-contain" src="/lovable-uploads/ccda885d-f430-43ba-8966-4adb619d47a2.png" />
+                
               </div>
             </>}
           
