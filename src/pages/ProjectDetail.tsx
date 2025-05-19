@@ -183,9 +183,49 @@ const ProjectDetail = () => {
             </div>
           </div>
           
-          {/* NEW IMAGE SECTION: 프로젝트 정보 추가 */}
+          {/* IMAGE SECTION 2: Project Information */}
           <div className="w-full my-10">
             <img src="/lovable-uploads/1fb09718-c420-4de4-87fc-14efe41aa711.png" alt="Project Information" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 3: Project Detail 1 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/db878cb6-21bb-45ed-bb18-f32fc6f63ec0.png" alt="Project Detail 1" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 4: Project Detail 2 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/33404ace-d96d-4d85-ad0e-9528701598b0.png" alt="Project Detail 2" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 5: Project Detail 3 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/21467fb9-09f2-4077-a2c1-0d8a7c478c55.png" alt="Project Detail 3" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 6: Project Detail 4 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/c408582f-77b8-472b-a63a-0044aae0b097.png" alt="Project Detail 4" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 7: Project Detail 5 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/5b3058a3-7730-40e1-a279-239b5c762def.png" alt="Project Detail 5" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 8: Project Detail 6 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/65e7ff25d71f4512829dfc88c5537add/embed" alt="Project Detail 6" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 9: Project Detail 7 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/c3c01f35-32e6-4184-8b0f-4981a9e12657.png" alt="Project Detail 7" className="w-full h-auto object-contain" />
+          </div>
+
+          {/* IMAGE SECTION 10: Project Detail 8 */}
+          <div className="w-full my-10">
+            <img src="/lovable-uploads/05b3cbcd-f9ff-4e49-a6c9-332c83271abc.png" alt="Project Detail 8" className="w-full h-auto object-contain" />
           </div>
         </> : project.imageUrl && <div className="w-full mb-8 relative">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain" />
