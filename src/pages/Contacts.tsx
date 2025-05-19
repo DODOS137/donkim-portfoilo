@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { Mail, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
@@ -51,7 +50,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Instagram</p>
-                  <a href="https://www.instagram.com/donn_kkim" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">@ddon_kkim</a>
+                  <a href="https://www.instagram.com/donn_kkim" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors font-medium">@donn_kkim</a>
                 </div>
               </div>
               
