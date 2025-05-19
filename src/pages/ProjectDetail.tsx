@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -501,7 +500,7 @@ const ProjectDetail = () => {
               
               {/* NEW: Image section 17 - Post-Project Direction */}
               <div className="w-full my-10">
-                <img alt="Post-Project Direction - Future Development Plans" className="w-full h-auto object-contain" src="/lovable-uploads/2cc04897-cb27-46d1-92b6-76c95a2afbcd.png" />
+                <img alt="Post-Project Direction - Interactive Elements" className="w-full h-auto object-contain" src="/lovable-uploads/2cc04897-cb27-46d1-92b6-76c95a2afbcd.png" />
               </div>
             </>}
           
